@@ -10,7 +10,7 @@ extension String {
             UIApplication.shared.open(url)
         } else {
             guard let new = addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-                Sys.log.error("Unable to urlencode \(self)")
+                //Sys.log.error("Unable to urlencode \(self)")
                 return
             }
             if let url = URL(string: new) {
