@@ -6,7 +6,7 @@ import Foundation
 import UIKit
 
 extension Sys {
-    static func settings() {
+    public static func settings() {
         UIApplication.openSettingsURLString.openWeb()
     }
 }

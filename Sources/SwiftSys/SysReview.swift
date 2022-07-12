@@ -9,7 +9,7 @@ import UIKit
 extension Sys {
     static var count: Int = 0
 
-    static func review(after: Int = 20) {
+    publiuc static func review(after: Int = 20) {
         count += 1
         if count > after {
             count = 0

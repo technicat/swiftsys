@@ -3,4 +3,4 @@
 //
 import Foundation
 
-final class Sys {}
+public final class Sys {}
