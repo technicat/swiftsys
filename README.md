@@ -1,3 +1,3 @@
 # SwiftSys
 
-A description of this package.
+Some misc utility functions.
