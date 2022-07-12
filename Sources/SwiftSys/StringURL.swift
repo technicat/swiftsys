@@ -5,7 +5,7 @@
 import UIKit
 
 extension String {
-    func openWeb() {
+    public func openWeb() {
         if let url = URL(string: self) {
             UIApplication.shared.open(url)
         } else {
