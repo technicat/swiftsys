@@ -2,11 +2,12 @@
 //  Copyright © 2020 Technicat. All rights reserved.
 //
 
-import Foundation
-import UIKit
+#if !os(macOS)
+    import UIKit
 
-public extension Sys {
-    static func settings() {
-        UIApplication.openSettingsURLString.openWeb()
+    public extension Sys {
+        static func settings() {
+            UIApplication.openSettingsURLString.openWeb()
+        }
     }
-}
+#endif
