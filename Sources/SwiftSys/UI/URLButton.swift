@@ -5,8 +5,8 @@
 import SwiftUI
 
 public struct URLButton: View {
-    let url: String
-    let name: String
+    public let url: String
+    public let name: String
 
     public var body: some View {
         Button(action: { url.openWeb() },
