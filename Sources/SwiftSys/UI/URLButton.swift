@@ -1,8 +1,7 @@
 //  Created by Philip Chu on 10/22/19.
 //  Copyright © 2019 Technicat. All rights reserved.
-//
 
-import SwiftSys
+#if !os(macOS)
 import SwiftUI
 
 struct URLButton: View {
@@ -16,3 +15,4 @@ struct URLButton: View {
                })
     }
 }
+#endif
