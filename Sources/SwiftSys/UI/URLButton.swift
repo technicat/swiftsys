@@ -4,7 +4,7 @@
 #if !os(macOS)
 import SwiftUI
 
-struct URLButton: View {
+public struct URLButton: View {
     let url: String
     let name: String
 

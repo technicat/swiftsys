@@ -4,7 +4,7 @@
 #if !os(macOS)
 import SwiftUI
 
-struct LinkView: View {
+public struct LinkView: View {
     let link: Link
 
     var body: some View {

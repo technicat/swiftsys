@@ -4,7 +4,7 @@
 #if !os(macOS)
 import SwiftUI
 
-struct EmailButton: View {
+public struct EmailButton: View {
     let url: String // todo - prepend "mailto:"
     let name: String
 
