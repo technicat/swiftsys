@@ -8,7 +8,7 @@ public struct EmailButton: View {
     let url: String // todo - prepend "mailto:"
     let name: String
 
-    var body: some View {
+    public var body: some View {
         Button(action: { url.openWeb() },
                label: {
                    Label(name, systemImage: "mail")

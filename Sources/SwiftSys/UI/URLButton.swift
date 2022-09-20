@@ -8,7 +8,7 @@ public struct URLButton: View {
     let url: String
     let name: String
 
-    var body: some View {
+    public var body: some View {
         Button(action: { url.openWeb() },
                label: {
                    Label(name, systemImage: "link")

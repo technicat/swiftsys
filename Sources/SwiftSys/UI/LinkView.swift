@@ -7,7 +7,7 @@ import SwiftUI
 public struct LinkView: View {
     let link: Link
 
-    var body: some View {
+    public var body: some View {
         URLButton(url: link.url, name: link.name)
     }
 }
