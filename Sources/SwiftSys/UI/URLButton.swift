@@ -11,6 +11,11 @@ public struct URLButton: View {
     public init(link: Link) {
         self.init(url: link.url, name: link.name)
     }
+    
+    public init(url: String, name: String) {
+        self.url = url
+        self.name = name
+    }
 
     public var body: some View {
         Button(action: { url.openWeb() },
