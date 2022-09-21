@@ -7,6 +7,15 @@ import SwiftUI
 public struct EmailButton: View {
     public let url: String // todo - prepend "mailto:"
     public let name: String
+    
+    public init(link: Link) {
+        self.init(url: link.url, name: link.name)
+    }
+    
+    public init(url: String, name: String) {
+        self.url = url
+        self.name = name
+    }
 
     public var body: some View {
         Button(action: { url.openWeb() },
