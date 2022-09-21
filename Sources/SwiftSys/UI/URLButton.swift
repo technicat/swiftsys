@@ -7,6 +7,10 @@ import SwiftUI
 public struct URLButton: View {
     public let url: String
     public let name: String
+    
+    public init(link: Link) {
+        self.init(url: link.url, name: link.name)
+    }
 
     public var body: some View {
         Button(action: { url.openWeb() },
