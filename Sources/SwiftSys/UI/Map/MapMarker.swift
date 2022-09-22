@@ -4,10 +4,10 @@
 import SwiftUI
 
 @available(macOS 11.0, *)
-struct MapMarker: View {
+public struct MapMarker: View {
     let place: Place
 
-    var body: some View {
+    public var body: some View {
         VStack {
             Image(systemName: "mappin")
                 .imageScale(.large)

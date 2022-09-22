@@ -5,12 +5,12 @@ import MapKit
 import SwiftUI
 
 @available(macOS 11.0, *)
-struct NavigationMapView: View {
+public struct NavigationMapView: View {
     let region: Region
 
     @State private var cregion = MKCoordinateRegion()
 
-    init(region: Region, place: Place) {
+    public init(region: Region, place: Place) {
         self.region = region
         _cregion = .init(initialValue:
             MKCoordinateRegion(center: place.coordinate,
@@ -18,7 +18,7 @@ struct NavigationMapView: View {
                                                       longitudeDelta: 0.005)))
     }
 
-    var body: some View {
+    public var body: some View {
         Map(coordinateRegion: $cregion,
             showsUserLocation: true,
             annotationItems: region.places,
