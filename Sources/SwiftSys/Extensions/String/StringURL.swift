@@ -11,6 +11,7 @@
             } else {
                 guard let new = addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
                     // Sys.log.error("Unable to urlencode \(self)")
+                    // todo - throw
                     return
                 }
                 if let url = URL(string: new) {
