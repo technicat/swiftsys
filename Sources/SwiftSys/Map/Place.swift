@@ -2,7 +2,6 @@
 //  Copyright © 2016 Technicat. All rights reserved.
 
 import MapKit
-import SwiftSys
 
 public struct Place {
     public var name: String
