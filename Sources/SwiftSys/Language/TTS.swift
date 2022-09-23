@@ -4,7 +4,7 @@
 import AVFoundation
 
 @available(macOS 10.14, *)
-enum TTS: Error {
+public enum TTS: Error {
     case NoVoice(_ lang: Chinese)
 
     private static var synth: AVSpeechSynthesizer?
