@@ -13,6 +13,13 @@ final class SwiftSysTests: XCTestCase {
         XCTAssertEqual(link.url, url)
         XCTAssertEqual(link.id, url)
     }
+    func testLanguage() throws {
+        XCTAssertNoThrow(try Chinese.language(0))
+        XCTAssertNoThrow(try Chinese.language(1))
+        XCTAssertNoThrow(try Chinese.language(2))
+        XCTAssertThrowsError(try Chinese.language(3))
+        XCTAssertThrowsError(try Chinese.language(-1))
+    }
     func testTTS() throws {
         XCTAssertFalse(TTS.isSpeaking)
         XCTAssertNoThrow(try TTS.say("我想要中國茶", language: Chinese.cantonese, rate: 0.3))

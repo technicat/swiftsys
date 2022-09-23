@@ -26,9 +26,11 @@ public enum Chinese {
 }
 
 extension Chinese : CaseIterable {
-    public static func language(_ index: Int) -> Chinese {
-        Chinese.allCases[index]
-        // should check for out of range
+    public static func language(_ index: Int) throws -> Chinese {
+        guard index >= 0 && index < Chinese.allCases.count else {
+            throw LanguageError.NoLanguage(index)
+        }
+        return Chinese.allCases[index]
     }
 }
 
