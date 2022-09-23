@@ -4,8 +4,8 @@
 import AVFoundation
 
 @available(macOS 10.14, *)
-public enum TTS: Error {
-    case NoVoice(_ lang: Chinese)
+public class TTS {
+  //  case NoVoice(_ lang: Chinese)
 
     private static var synth: AVSpeechSynthesizer?
 
@@ -27,7 +27,7 @@ public enum TTS: Error {
         // precreate voices?
         let lang = language.spoken
         guard let voice = AVSpeechSynthesisVoice(language: lang) else {
-            throw NoVoice(language)
+            throw LanguageError.NoVoice(language)
         }
         utterance.voice = voice
         utterance.rate = rate
