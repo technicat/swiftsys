@@ -5,7 +5,6 @@ import AVFoundation
 
 @available(macOS 10.14, *)
 public class TTS {
-  //  case NoVoice(_ lang: Chinese)
 
     private static var synth: AVSpeechSynthesizer?
 
