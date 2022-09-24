@@ -35,7 +35,7 @@ extension Chinese: CaseIterable {
         return Chinese.allCases[index]
     }
 
-    public static func langCanto(_ index: Int) throws -> Chinese {
+    public static func langCanto(_ index: Int) -> Chinese {
         guard let lang = try? language(index) else {
             return .cantonese
         }
