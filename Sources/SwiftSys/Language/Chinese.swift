@@ -2,10 +2,11 @@
 //  Copyright (c) 2015 Technicat. All rights reserved.
 
 public enum Chinese {
+
     case cantonese
     case mandarin
     case simplified
-    
+
     // language codes used for TTS and STT
     public var spoken: String {
         switch self {
@@ -14,7 +15,7 @@ public enum Chinese {
         case .simplified: return "zh-CN"
         }
     }
-    
+
     // could also use this as a localization key
     public var label: String {
         switch self {
@@ -25,12 +26,20 @@ public enum Chinese {
     }
 }
 
-extension Chinese : CaseIterable {
+extension Chinese: CaseIterable {
+
     public static func language(_ index: Int) throws -> Chinese {
         guard index >= 0 && index < Chinese.allCases.count else {
             throw LanguageError.noLanguage(index)
         }
         return Chinese.allCases[index]
+    }
+
+    public static func langCanto(_ index: Int) throws -> Chinese {
+        guard let lang = try? language(index) else {
+            return .cantonese
+        }
+        return lang
     }
 }
 
