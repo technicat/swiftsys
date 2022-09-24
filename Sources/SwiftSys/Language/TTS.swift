@@ -26,7 +26,7 @@ public class TTS {
         // precreate voices?
         let lang = language.spoken
         guard let voice = AVSpeechSynthesisVoice(language: lang) else {
-            throw LanguageError.NoVoice(language)
+            throw LanguageError.noVoice(language)
         }
         utterance.voice = voice
         utterance.rate = rate

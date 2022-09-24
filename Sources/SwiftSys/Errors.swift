@@ -4,10 +4,10 @@
 // cases should be lowercase?
 
 public enum FileError : Error {
-    case NotFound(_ file: String)
+    case notFound(_ file: String)
 }
 
 public enum LanguageError: Error {
-    case NoVoice(_ lang: Chinese)
-    case NoLanguage(_ index: Int)
+    case noVoice(_ lang: Chinese)
+    case noLanguage(_ index: Int)
 }
