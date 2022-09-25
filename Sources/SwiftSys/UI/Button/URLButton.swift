@@ -18,7 +18,7 @@ public struct URLButton: View {
     }
 
     public var body: some View {
-        Button(action: { url.openWeb() },
+        Button(action: { try? url.openWeb() },
                label: {
                    Label(name, systemImage: "link")
                })

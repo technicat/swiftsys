@@ -7,7 +7,7 @@
 
     public extension Sys {
         static func settings() {
-            UIApplication.openSettingsURLString.openWeb()
+            try? UIApplication.openSettingsURLString.openWeb()
         }
     }
 #endif
