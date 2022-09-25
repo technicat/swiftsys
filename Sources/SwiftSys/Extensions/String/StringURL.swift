@@ -5,19 +5,21 @@
     import UIKit
 
     public extension String {
-        func openWeb() {
+        
+        func openWeb() throws {
             if let url = URL(string: self) {
                 UIApplication.shared.open(url)
             } else {
-                guard let new = addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-                    // Sys.log.error("Unable to urlencode \(self)")
-                    // todo - throw
-                    return
-                }
-                if let url = URL(string: new) {
-                    UIApplication.shared.open(url)
-                }
+                let url = self.urlEncode
+                UIApplication.shared.open(url)
             }
+        }
+
+        var urlEncode: String {
+            guard let new = addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+                throw StringError.urlEncodeFail(self)
+            }
+            return new
         }
     }
 #endif

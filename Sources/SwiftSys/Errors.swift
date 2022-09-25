@@ -9,3 +9,7 @@ public enum LanguageError: Error {
     case noVoice(_ lang: Chinese)
     case noLanguage(_ index: Int)
 }
+
+public enum StringError: Error {
+    case urlEncodeFail(_ url: String)
+}
