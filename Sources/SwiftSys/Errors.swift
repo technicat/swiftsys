@@ -12,4 +12,5 @@ public enum LanguageError: Error {
 
 public enum StringError: Error {
     case urlEncodeFail(_ url: String)
+    case urlFail(_ url: String)
 }

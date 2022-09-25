@@ -4,7 +4,7 @@ import XCTest
 final class SwiftSysTests: XCTestCase {
     func testString() throws {
         XCTAssertEqual("id".id, "id")
-       // XCTAssertThrowsError(try "".urlEncode())
+        XCTAssertNoThrow(try "".urlEncode())
     }
     func testLink() throws {
         let name = "Technicat"
