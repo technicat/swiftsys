@@ -15,6 +15,9 @@ final class SwiftSysTests: XCTestCase {
         XCTAssertEqual(link.id, url)
     }
     func testLanguage() throws {
+        XCTAssertEqual(Chinese.cantonese.rawValue, "cantonese")
+        XCTAssertEqual(Chinese.mandarin.rawValue, "mandarin")
+        XCTAssertEqual(Chinese.simplified.rawValue, "simplified")
         XCTAssertNoThrow(try Chinese.language(0))
         XCTAssertNoThrow(try Chinese.language(1))
         XCTAssertNoThrow(try Chinese.language(2))
