@@ -32,7 +32,8 @@ public struct Item {
     public func isTag(_ word: Word) -> Bool {
         tags.contains(word.id)
     }
-
+    
+    @available(iOS 15, *)
     public var markdown: AttributedString {
         (try? AttributedString(markdown: description, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace))) ?? AttributedString()
     }
