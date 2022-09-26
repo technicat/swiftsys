@@ -15,15 +15,6 @@ public enum Chinese : String {
         case .simplified: return "zh-CN"
         }
     }
-
-    // could also use this as a localization key
-    public var label: String {
-        switch self {
-        case .cantonese: return "Cantonese"
-        case .mandarin: return "Mandarin"
-        case .simplified: return "Simplified"
-        }
-    }
 }
 
 extension Chinese: CaseIterable {
