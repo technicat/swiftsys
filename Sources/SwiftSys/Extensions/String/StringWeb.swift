@@ -1,25 +1,24 @@
 //  Created by Philip Chu on 7/29/15.
 //  Copyright (c) 2015 Technicat. All rights reserved.
-//
-#if !os(macOS)
+
+#if os(iOS)
     import UIKit
-//#else
- //   import Foundation
-//#endif
+#endif
+#if os(macOS)
+    import Foundation
+#endif
 
-    public extension String {
+public extension String {
 
-        func openWeb() throws {
-            // should check canOpenURL
-            if let url = URL(string: self) {
-                UIApplication.shared.open(url)
+    func openWeb() throws {
+        if let url = URL(string: self) {
+            url.open()
+        } else {
+            if let url = try? URL(string: self.urlEncode()) {
+                url.open()
             } else {
-                if let url = try? URL(string: self.urlEncode()) {
-                    UIApplication.shared.open(url)
-                } else {
-                    throw StringError.urlFail(self)
-                }
+                throw StringError.urlFail(self)
             }
         }
     }
-#endif
+}
