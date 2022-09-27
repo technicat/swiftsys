@@ -1,9 +1,9 @@
 //  Created by Philip Chu on 10/22/19.
 //  Copyright © 2019 Technicat. All rights reserved.
 
-#if !os(macOS)
 import SwiftUI
 
+@available(macOS 11.0, *)
 public struct EmailButton: View {
     public let url: String // todo - prepend "mailto:"
     public let name: String
@@ -24,4 +24,4 @@ public struct EmailButton: View {
                })
     }
 }
-#endif
+
