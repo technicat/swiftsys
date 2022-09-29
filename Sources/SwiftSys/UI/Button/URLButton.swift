@@ -1,4 +1,3 @@
-//  Created by Philip Chu on 10/22/19.
 //  Copyright © 2019 Technicat. All rights reserved.
 
 import SwiftUI
@@ -8,7 +7,7 @@ public struct URLButton: View {
     public let url: String
     public let name: String
     
-    public init(link: Link) {
+    public init(_ link: Link) {
         self.init(url: link.url, name: link.name)
     }
     
@@ -22,6 +21,13 @@ public struct URLButton: View {
                label: {
                    Label(name, systemImage: "link")
                })
+    }
+}
+
+@available(macOS 11.0, *)
+struct URLButton_Previews: PreviewProvider {
+    static var previews: some View {
+        URLButton(url: "http://technicat.com/", name: "Technicat")
     }
 }
 
