@@ -5,7 +5,6 @@
 #endif
 #if os(macOS)
     import AppKit
-    public typealias UIImage = NSImage
 #endif
 
 public extension Item {
