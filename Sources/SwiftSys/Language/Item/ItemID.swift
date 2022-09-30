@@ -1,8 +1,6 @@
-
 //  Created by Philip Chu on 5/16/17.
 //  Copyright © 2017 Technicat. All rights reserved.
 
-#if !os(macOS)
 import Foundation
 
 public func == (lhs: Item, rhs: Item) -> Bool {
@@ -14,4 +12,4 @@ extension Item: Identifiable, Equatable {
         word.id
     }
 }
-#endif
+

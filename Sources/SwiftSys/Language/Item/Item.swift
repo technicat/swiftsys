@@ -1,7 +1,11 @@
 //  Created by Philip Chu on 5/16/17.
 //  Copyright © 2017 Technicat. All rights reserved.
-#if !os(macOS)
+#if os(macOS)
+import AppKit
+#endif
+#if os(iOS)
 import UIKit
+#endif
 
 public typealias ImageList = [(image: String, place: String)]
 
@@ -33,10 +37,10 @@ public struct Item {
         tags.contains(word.id)
     }
     
+    @available(macOS 12, *)
     @available(iOS 15, *)
     public var markdown: AttributedString {
         (try? AttributedString(markdown: description, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace))) ?? AttributedString()
     }
 }
 
-#endif

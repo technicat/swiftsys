@@ -1,7 +1,12 @@
 //  Created by Philip Chu on 5/16/17.
 //  Copyright © 2017 Technicat. All rights reserved.
-#if !os(macOS)
-import UIKit
+#if os(iOS)
+    import UIKit
+#endif
+#if os(macOS)
+    import AppKit
+    public typealias UIImage = NSImage
+#endif
 
 public extension Item {
     var image: UIImage? {
@@ -27,4 +32,3 @@ public extension Item {
     }
 }
 
-#endif
