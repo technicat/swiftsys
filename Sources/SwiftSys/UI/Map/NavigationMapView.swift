@@ -13,9 +13,9 @@ public struct NavigationMapView: View {
     public init(region: Region, place: Place) {
         self.region = region
         _cregion = .init(initialValue:
-            MKCoordinateRegion(center: place.coordinate,
-                               span: MKCoordinateSpan(latitudeDelta: 0.005,
-                                                      longitudeDelta: 0.005)))
+                MKCoordinateRegion(center: place.coordinate,
+                span: MKCoordinateSpan(latitudeDelta: 0.005,
+                    longitudeDelta: 0.005)))
     }
 
     public var body: some View {
@@ -30,5 +30,13 @@ public struct NavigationMapView: View {
                     MapMarker(place: place)
                 }
             })
+    }
+}
+
+@available(macOS 11.0, *)
+struct NavigationMapView_Previews:
+    PreviewProvider {
+    static var previews: some View {
+        NavigationMapView(region: Region(name: "region", places: []), place: Place(name: "nowhere", links: [], city: "somecity", coordinate: CLLocationCoordinate2D(), address: "return to sender"))
     }
 }
