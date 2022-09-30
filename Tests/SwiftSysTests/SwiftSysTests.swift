@@ -5,6 +5,7 @@ final class SwiftSysTests: XCTestCase {
     func testString() throws {
         XCTAssertEqual("id".id, "id")
         XCTAssertNoThrow(try "".urlEncode())
+        XCTAssertNoThrow(try "http://technicat.com/".openWeb())
     }
     func testLink() throws {
         let name = "Technicat"
