@@ -19,7 +19,7 @@ extension UIImage {
     }
 
     static func pathSave(_ name: String) -> URL {
-        FileManager.default.documentsPath(name)
+        Sys.documentsPath(name)
     }
 
 #if os(iOS)
