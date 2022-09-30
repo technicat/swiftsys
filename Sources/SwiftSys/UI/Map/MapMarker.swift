@@ -1,6 +1,7 @@
 //  Created by Philip Chu on 9/26/19.
 //  Copyright © 2019 Technicat. All rights reserved.
 
+import MapKit
 import SwiftUI
 
 @available(macOS 11.0, *)
@@ -18,3 +19,11 @@ public struct MapMarker: View {
         }
     }
 }
+
+@available(macOS 11.0, *)
+struct MapMarker_Previews: PreviewProvider {
+    static var previews: some View {
+        MapMarker(place: Place(name: "nowhere", links: [], city: "somecity", coordinate: CLLocationCoordinate2D(), address: "return to sender")) 
+    }
+}
+
