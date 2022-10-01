@@ -16,7 +16,7 @@ extension UIImage.Orientation {
         case .right: self = .right
         case .rightMirrored: self = .rightMirrored
         @unknown default:
-            Sys.log.warning("unknown orientation")
+            // should throw something
             self = .up
         }
     }
