@@ -7,3 +7,5 @@ In-progress, this is a hodgepodge of code from my [Talk Dim Sum](http://talkdims
 - misc stuff
 
 Formatted with [Swimat](https://github.com/Jintin/Swimat)
+
+Should follow [Swift API guidelines](https://www.swift.org/documentation/api-design-guidelines/).
