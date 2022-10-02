@@ -8,7 +8,7 @@ public class TTS {
 
     private static var synth: AVSpeechSynthesizer?
 
-    public static var isSpeaking: Bool {
+    public class var isSpeaking: Bool {
         synth?.isSpeaking ?? false
     }
 
