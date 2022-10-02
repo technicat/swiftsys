@@ -16,8 +16,9 @@ public extension URL {
         }
         #endif
         #if os(iOS)
-        // should first check canOpenURL
-        if !UIApplication.shared.open(self) {
+        if UIApplication.shared.canOpenURL(self) {
+            UIApplication.shared.open(self)
+        } else {
             throw StringError.urlOpenFail(self)
         }
         #endif
