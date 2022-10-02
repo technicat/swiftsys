@@ -2,6 +2,10 @@
 import XCTest
 
 final class SwiftSysTests: XCTestCase {
+    func testJSON() throws {
+        XCTAssertThrowsError(try Sys.jsonPath("jsonfile"))
+        XCTAssertThrowsError(try Sys.jsonURL("jsonfile"))
+    }
     func testString() throws {
         XCTAssertEqual("id".id, "id")
         XCTAssertNoThrow(try "".urlEncode())
