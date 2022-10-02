@@ -12,12 +12,12 @@ public extension String {
 
     func openWeb() throws {
         if let url = URL(string: self) {
-            url.open()
+            try url.open()
         } else {
             if let url = try? URL(string: self.urlEncode()) {
-                url.open()
+                try url.open()
             } else {
-                throw StringError.urlFail(self)
+                throw StringError.urlEncodeFail(self)
             }
         }
     }

@@ -9,13 +9,17 @@
 #endif
 
 public extension URL {
-    // should check canOpenURL
-    func open() {
+    func open() throws {
         #if os(macOS)
-        NSWorkspace.shared.open(self)
+        if !NSWorkspace.shared.open(self) {
+            throw StringError.urlOpenFail(self)
+        }
         #endif
         #if os(iOS)
-            UIApplication.shared.open(self)
+        // should first check canOpenURL
+        if !UIApplication.shared.open(self) {
+            throw StringError.urlOpenFail(self)
+        }
         #endif
     }
 }
