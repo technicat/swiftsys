@@ -11,6 +11,10 @@ public class TTS {
     public class var isSpeaking: Bool {
         synth?.isSpeaking ?? false
     }
+    
+    public static func reset() {
+        synth = nil
+    }
 
     public static func say(_ words: String,
 
@@ -21,7 +25,7 @@ public class TTS {
         if synth == nil {
             synth = AVSpeechSynthesizer()
         }
-        synth!.delegate = delegate
+        synth?.delegate = delegate
         let utterance = AVSpeechUtterance(string: words)
         // precreate voices?
         let lang = language.spoken
