@@ -3,7 +3,7 @@
 
 import AVFoundation
 
-@available(macOS 10.14, *)
+@available(macOS 11, *)
 public class TTS {
 
     private static var synth: AVSpeechSynthesizer?
@@ -11,7 +11,7 @@ public class TTS {
     public class var isSpeaking: Bool {
         synth?.isSpeaking ?? false
     }
-    
+
     public static func reset() {
         synth = nil
     }
@@ -20,7 +20,8 @@ public class TTS {
 
         delegate: AVSpeechSynthesizerDelegate? = nil,
         language: Chinese,
-        rate: Float) throws
+        rate: Float,
+        volume: Float) throws
     {
         if synth == nil {
             synth = AVSpeechSynthesizer()
@@ -34,6 +35,8 @@ public class TTS {
         }
         utterance.voice = voice
         utterance.rate = rate
+        utterance.volume = volume
+        utterance.prefersAssistiveTechnologySettings = false
         synth?.speak(utterance)
     }
 

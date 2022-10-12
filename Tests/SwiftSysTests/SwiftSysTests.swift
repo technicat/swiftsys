@@ -34,6 +34,9 @@ final class SwiftSysTests: XCTestCase {
     }
     func testTTS() throws {
         XCTAssertFalse(TTS.isSpeaking)
-        XCTAssertNoThrow(try TTS.say("我想要中國茶", language: Chinese.cantonese, rate: 0.3))
+        XCTAssertNoThrow(try TTS.say("我想要中國茶",
+                                     language: Chinese.cantonese,
+                                     rate: 0.3,
+                                     volume: 1.0))
     }
 }
