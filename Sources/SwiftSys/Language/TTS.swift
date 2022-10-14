@@ -19,29 +19,37 @@ public class TTS {
     public static func say(_ words: String,
 
         delegate: AVSpeechSynthesizerDelegate? = nil,
-        language: Chinese,
-        rate: Float,
-        volume: Float) throws
+        language: Chinese = Chinese.cantonese,
+        rate: Float = 0.3,
+        volume: Float = 1.0) throws
     {
         if synth == nil {
             synth = AVSpeechSynthesizer()
         }
-        synth?.delegate = delegate
+        guard let synth = synth else {
+            // unable to create synth
+            return // or throw?
+        }
         let utterance = AVSpeechUtterance(string: words)
-        // precreate voices?
-        let lang = language.spoken
-        guard let voice = AVSpeechSynthesisVoice(language: lang) else {
+        // should we precreate voices?
+        guard let voice = AVSpeechSynthesisVoice(language: language.spoken) else {
             throw LanguageError.noVoice(language)
         }
         utterance.voice = voice
         utterance.rate = rate
         utterance.volume = volume
         utterance.prefersAssistiveTechnologySettings = false
-        synth?.speak(utterance)
+        synth.delegate = delegate
+        synth.speak(utterance)
     }
 
     public static func stop() {
-        synth?.stopSpeaking(at: AVSpeechBoundary.word)
+        guard let synth = synth else {
+            return
+        }
+        if (synth.isSpeaking) {
+            synth.stopSpeaking(at: AVSpeechBoundary.word)
+        }
     }
 }
 
