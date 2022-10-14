@@ -13,6 +13,7 @@ public class TTS {
     }
 
     public static func reset() {
+        stop()
         synth = nil
     }
 
@@ -26,10 +27,6 @@ public class TTS {
         if synth == nil {
             synth = AVSpeechSynthesizer()
         }
-        guard let synth = synth else {
-            // unable to create synth
-            return // or throw?
-        }
         let utterance = AVSpeechUtterance(string: words)
         // should we precreate voices?
         guard let voice = AVSpeechSynthesisVoice(language: language.spoken) else {
@@ -39,8 +36,8 @@ public class TTS {
         utterance.rate = rate
         utterance.volume = volume
         utterance.prefersAssistiveTechnologySettings = false
-        synth.delegate = delegate
-        synth.speak(utterance)
+        synth!.delegate = delegate
+        synth!.speak(utterance)
     }
 
     public static func stop() {
