@@ -42,6 +42,7 @@ public class TTS {
 
     public static func stop() {
         guard let synth = synth else {
+            // nothing to do here
             return
         }
         if (synth.isSpeaking) {
