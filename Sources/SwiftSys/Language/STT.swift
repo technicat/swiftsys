@@ -1,6 +1,8 @@
 //  Created by Philip Chu on 4/24/15.
 //  Copyright (c) 2015 Technicat. All rights reserved.
 
+import Speech
+
 public enum STT {
     case notlistening
     case listening
@@ -9,7 +11,7 @@ public enum STT {
     case error
 }
 
-enum STTError: Error {
+public enum STTError: Error {
     case startEngine
     case noRecognizer
     case noSampleRate
