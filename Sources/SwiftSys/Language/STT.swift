@@ -11,7 +11,7 @@ public enum STT {
     case success
     case error
     
-    public func tapNode(_ node: AVAudioInputNode,
+    static public func tapNode(_ node: AVAudioInputNode,
                            _ request: SFSpeechAudioBufferRecognitionRequest) throws {
         let recordingFormat = node.outputFormat(forBus: 0)
         // also check channel count? per input node doc
