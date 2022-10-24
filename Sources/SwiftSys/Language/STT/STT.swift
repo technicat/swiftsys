@@ -4,13 +4,7 @@
 import Speech
 
 @available(macOS 10.15, *)
-public enum STT {
-    case notlistening
-    case listening
-    case fail
-    case success
-    case error
-    
+public class STT {
     static public func tapNode(_ node: AVAudioInputNode,
                            _ request: SFSpeechAudioBufferRecognitionRequest) throws {
         let recordingFormat = node.outputFormat(forBus: 0)
@@ -27,13 +21,4 @@ public enum STT {
     static public func untapNode(_ node: AVAudioInputNode) {
         node.removeTap(onBus: 0)
     }
-
 }
-
-public enum STTError: Error {
-    case startEngine
-    case noRecognizer
-    case noSampleRate
-    case unavailableRecognizer
-}
-
