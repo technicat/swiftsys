@@ -50,6 +50,10 @@ public struct Word {
     }
 
     public func chineseEnglish(_ language: Chinese) -> String {
-        chineseText(language) + " " + english
+        "\(chineseText(language)) \(english)"
+    }
+    
+    public func chineseEnglishParens(_ language: Chinese) -> String {
+        "\(chineseText(language)) (\(english))"
     }
 }
