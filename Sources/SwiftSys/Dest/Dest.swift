@@ -1,7 +1,9 @@
 //  Created by Philip Chu on 12/10/16.
 //  Copyright © 2016 Technicat. All rights reserved.
 
-public struct Link {
+// rename to avoid confusion with SwiftUI Link
+// make url a URL?
+public struct Dest {
     public var name: String
     public var url: String
 

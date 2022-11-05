@@ -3,11 +3,11 @@
 import SwiftUI
 
 @available(macOS 11.0, *)
-public struct URLButton: View {
+public struct URLLink: View {
     public let url: String
     public let name: String
     
-    public init(_ link: Link) {
+    public init(_ link: Dest) {
         self.init(url: link.url, name: link.name)
     }
     
@@ -17,17 +17,16 @@ public struct URLButton: View {
     }
 
     public var body: some View {
-        Button(action: { try? url.openWeb() },
-               label: {
-                   Label(name, systemImage: "link")
-               })
+        Link(destination: URL(string: url)!) {
+            Label(name, systemImage: "link")
+        }
     }
 }
 
 @available(macOS 11.0, *)
-struct URLButton_Previews: PreviewProvider {
+struct URLLink_Previews: PreviewProvider {
     static var previews: some View {
-        URLButton(url: "http://technicat.com/", name: "Technicat")
+        URLLink(url: "http://technicat.com/", name: "Technicat")
     }
 }
 

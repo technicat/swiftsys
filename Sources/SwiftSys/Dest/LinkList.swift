@@ -3,4 +3,4 @@
 
 import Foundation
 
-public typealias LinkList = [Link]
+public typealias LinkList = [Dest]
