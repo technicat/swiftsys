@@ -3,7 +3,7 @@
 import SwiftUI
 
 @available(macOS 11.0, *)
-public struct URLLink: View {
+public struct LinkView: View {
     public let url: URL
     public let name: String
     public let image: String // system image
@@ -30,7 +30,7 @@ public struct URLLink: View {
 @available(macOS 11.0, *)
 struct URLLink_Previews: PreviewProvider {
     static var previews: some View {
-        URLLink(url: "http://technicat.com/", name: "Technicat")
+        LinkView(url: "http://technicat.com/", name: "Technicat")
     }
 }
 
