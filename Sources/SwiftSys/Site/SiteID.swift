@@ -3,7 +3,7 @@
 
 import Foundation
 
-extension Dest: Identifiable {
+extension Site: Identifiable {
     public var id: URL {
         url
     }

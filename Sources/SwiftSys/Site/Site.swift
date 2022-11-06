@@ -3,7 +3,7 @@
 
 import Foundation
 
-public struct Dest {
+public struct Site {
     public var name: String
     public var url: URL
 

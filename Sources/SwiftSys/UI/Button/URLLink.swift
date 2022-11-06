@@ -8,7 +8,7 @@ public struct URLLink: View {
     public let name: String
     public let image: String // system image
     
-    public init(_ link: Dest, image: String = "link") {
+    public init(_ link: Site, image: String = "link") {
         self.url = link.url
         self.name = link.name
         self.image = image
