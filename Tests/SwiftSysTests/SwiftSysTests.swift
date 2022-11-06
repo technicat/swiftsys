@@ -13,12 +13,12 @@ final class SwiftSysTests: XCTestCase {
     }
     func testLink() throws {
         let name = "Technicat"
-        let url = "http://technicat.com/"
+        let url = URL(string: "http://technicat.com/")!
         let link = Dest(name: name, url: url)
         XCTAssertEqual(link.name, name)
         XCTAssertEqual(link.url, url)
         XCTAssertEqual(link.id, url)
-        XCTAssertNoThrow(try url.openWeb())
+        XCTAssertNoThrow(try url.open())
     }
     func testLanguage() throws {
         XCTAssertEqual(Chinese.cantonese.rawValue, "cantonese")

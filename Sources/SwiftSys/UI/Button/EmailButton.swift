@@ -1,5 +1,5 @@
 //  Copyright © 2019 Technicat. All rights reserved.
-
+/*
 import SwiftUI
 
 @available(macOS 11.0, *)
@@ -31,3 +31,4 @@ struct EmailButton_Previews: PreviewProvider {
     }
 }
 
+*/

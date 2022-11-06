@@ -1,5 +1,5 @@
 //  Copyright © 2019 Technicat. All rights reserved.
-
+/*
 import SwiftUI
 
 @available(macOS 11.0, *)
@@ -30,4 +30,4 @@ struct URLButton_Previews: PreviewProvider {
         URLButton(url: "http://technicat.com/", name: "Technicat")
     }
 }
-
+*/

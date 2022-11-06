@@ -4,21 +4,25 @@ import SwiftUI
 
 @available(macOS 11.0, *)
 public struct URLLink: View {
-    public let url: String
+    public let url: URL
     public let name: String
+    public let image: String // system image
     
-    public init(_ link: Dest) {
-        self.init(url: link.url, name: link.name)
+    public init(_ link: Dest, image: String = "link") {
+        self.url = link.url
+        self.name = link.name
+        self.image = image
     }
     
-    public init(url: String, name: String) {
-        self.url = url
+    public init(url: String, name: String, image: String = "link") {
+        self.url = URL(string: url)!
         self.name = name
+        self.image = image
     }
 
     public var body: some View {
-        Link(destination: URL(string: url)!) {
-            Label(name, systemImage: "link")
+        Link(destination: url) {
+            Label(name, systemImage: image)
         }
     }
 }

@@ -4,7 +4,7 @@
 import Foundation
 
 extension Dest: Identifiable {
-    public var id: String {
+    public var id: URL {
         url
     }
 }

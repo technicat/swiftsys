@@ -8,6 +8,8 @@
     import AppKit
 #endif
 
+import SwiftUI
+
 public extension URL {
     func open() throws {
         #if os(macOS)
