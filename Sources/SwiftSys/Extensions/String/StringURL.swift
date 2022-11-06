@@ -12,15 +12,17 @@ public extension String {
         return new
     }
     
-    func urlCreate() throws -> URL {
+    // urlencode should be an option?
+    func urlCreate(urlencode: Bool = false) throws -> URL {
         if let url = URL(string: self) {
             return url
         } else {
-            if let url = try? URL(string: self.urlEncode()) {
-                return url
-            } else {
-                throw StringError.urlEncodeFail(self)
+            if urlencode {
+                if let url = try? URL(string: self.urlEncode()) {
+                    return url
+                }
             }
+            throw StringError.urlEncodeFail(self)
         }
     }
 }
