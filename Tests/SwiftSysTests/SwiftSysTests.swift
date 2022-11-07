@@ -9,9 +9,11 @@ final class SwiftSysTests: XCTestCase {
     func testString() throws {
         XCTAssertEqual("id".id, "id")
         XCTAssertNoThrow(try "".urlEncode())
+        XCTAssertNoThrow(try "http://technicat.com/".urlCreate())
+        XCTAssertThrowsError(try "noturl".urlCreate())
         XCTAssertNoThrow(try "http://technicat.com/".openWeb())
     }
-    func testLink() throws {
+    func testSite() throws {
         let name = "Technicat"
         let url = URL(string: "http://technicat.com/")!
         let link = Site(name: name, url: url)
