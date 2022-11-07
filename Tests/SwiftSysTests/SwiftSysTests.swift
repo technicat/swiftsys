@@ -10,7 +10,6 @@ final class SwiftSysTests: XCTestCase {
         XCTAssertEqual("id".id, "id")
         XCTAssertNoThrow(try "".urlEncode())
         XCTAssertNoThrow(try "http://technicat.com/".urlCreate())
-        XCTAssertThrowsError(try "noturl".urlCreate())
         XCTAssertNoThrow(try "http://technicat.com/".openWeb())
     }
     func testSite() throws {
