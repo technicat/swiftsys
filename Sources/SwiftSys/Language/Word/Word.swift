@@ -1,6 +1,12 @@
 //  Created by Philip Chu on 7/31/15.
 //  Copyright (c) 2015 Technicat. All rights reserved.
 
+// todo: start using this inside Word
+public struct ChineseWord {
+    public var chars: String
+    public var resources: LinkList?
+}
+
 public struct Word {
     public var cantonese: String
     public var english: String
