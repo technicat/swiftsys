@@ -12,6 +12,13 @@ public extension String {
         return new
     }
     
+    func urlDecode() throws -> String  {
+        guard let new = removingPercentEncoding else {
+            throw StringError.urlDecodeFail(self)
+        }
+        return new
+    }
+    
     // urlencode should be an option?
     func urlCreate(urlencode: Bool = false) throws -> URL {
         if let url = URL(string: self) {
