@@ -3,7 +3,7 @@
 
 // todo: start using this inside Word
 public struct ChineseWord {
-    public var chars: String
+    public var text: String
     public var resources: LinkList?
 }
 
