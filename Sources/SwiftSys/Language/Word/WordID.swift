@@ -3,6 +3,6 @@
 
 extension Word: Identifiable {
     public var id: String {
-        cantonese
+        cantonese.text
     }
 }
