@@ -4,6 +4,11 @@
 public struct Characters {
     public var text: String
     public var refs: LinkList?
+    
+    public init(_ text: String, refs: LinkList?) {
+        self.text = text
+        self.refs = refs
+    }
 }
 
 // todo: rename, could be more than one word
@@ -34,23 +39,19 @@ public struct Word {
         }
     }
 
-    private var cantoneseText: String {
-        cantonese.text
-    }
-
-    private var mandarinText: String {
-        mandarin?.text ?? cantoneseText
-    }
-
-    private var simplifiedText: String {
-        simplified?.text ?? mandarinText
-    }
-
     public func chineseText(_ language: Chinese) -> String {
         switch language {
-        case .cantonese: return cantoneseText
-        case .mandarin: return mandarinText
-        case .simplified: return simplifiedText
+        case .cantonese: return cantonese.text
+        case .mandarin: return  mandarin?.text ?? cantonese.text
+        case .simplified: return simplified?.text ?? mandarin?.text ?? cantonese.text
+        }
+    }
+    
+    public func chineseRefs(_ language: Chinese) -> LinkList? {
+        switch language {
+        case .cantonese: return cantonese.refs
+        case .mandarin: return  mandarin?.refs ?? cantonese.refs
+        case .simplified: return simplified?.refs ?? mandarin?.refs ?? cantonese.refs
         }
     }
 
