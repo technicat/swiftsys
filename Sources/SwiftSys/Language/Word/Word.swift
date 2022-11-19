@@ -47,7 +47,7 @@ public struct Word {
         }
     }
     
-    public func chineseRefs(_ language: Chinese) -> LinkList? {
+    public func chineseRefs(_ language: Chinese) -> LinkList {
         switch language {
         case .cantonese: return cantonese.refs
         case .mandarin: return  mandarin?.refs ?? cantonese.refs
