@@ -12,9 +12,11 @@ public struct Site {
         self.url = url
     }
     
-    // should throw, probably
-    public init(name: String, dest: String) {
-        self.name = name
-        self.url = URL(string: dest)!
+    public init?(name: String, dest: String) {
+        if let url = URL(string: dest) {
+            self.init(name: name, url: url)
+        } else {
+            return nil
+        }
     }
 }
