@@ -3,7 +3,7 @@
 
 public struct Characters {
     public var text: String
-    public var refs: LinkList?
+    public var refs: LinkList
     
     public init(_ text: String, refs: LinkList = []) {
         self.text = text
