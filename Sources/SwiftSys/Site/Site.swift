@@ -11,7 +11,7 @@ public struct Site {
         self.name = name
         self.url = url
     }
-    
+
     public init?(name: String, dest: String) {
         if let url = URL(string: dest) {
             self.init(name: name, url: url)

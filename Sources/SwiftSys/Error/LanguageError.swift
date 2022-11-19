@@ -5,4 +5,3 @@ public enum LanguageError: Error {
     case noVoice(_ lang: Chinese)
     case noLanguage(_ index: Int)
 }
-

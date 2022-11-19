@@ -37,6 +37,11 @@ public struct NavigationMapView: View {
 struct NavigationMapView_Previews:
     PreviewProvider {
     static var previews: some View {
-        NavigationMapView(region: Region(name: "region", places: []), place: Place(name: "nowhere", links: [], city: "somecity", coordinate: CLLocationCoordinate2D(), address: "return to sender"))
+        NavigationMapView(region: Region(name: "region", places: []),
+                          place: Place(name: "nowhere",
+                                       links: [],
+                                       city: "somecity",
+                                       coordinate: CLLocationCoordinate2D(),
+                                       address: "return to sender"))
     }
 }

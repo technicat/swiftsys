@@ -6,7 +6,7 @@ import Speech
 @available(macOS 10.15, *)
 public class STT {
     static public func tapNode(_ node: AVAudioInputNode,
-                           _ request: SFSpeechAudioBufferRecognitionRequest) throws {
+                               _ request: SFSpeechAudioBufferRecognitionRequest) throws {
         let recordingFormat = node.outputFormat(forBus: 0)
         // also check channel count? per input node doc
         guard recordingFormat.sampleRate > 0 else {

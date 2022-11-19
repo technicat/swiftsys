@@ -17,7 +17,9 @@ public struct Word {
     public var resources: LinkList?
 
     // just so we can make it public
-    public init(cantonese: String, english: String, yale: String, pinyin: String, mandarin: String?, simplified: String?, resources: LinkList?) {
+    public init(cantonese: String, english: String,
+                yale: String, pinyin: String, mandarin: String?, simplified: String?,
+                resources: LinkList?) {
         self.cantonese = cantonese
         self.english = english
         self.yale = yale
@@ -58,7 +60,7 @@ public struct Word {
     public func chineseEnglish(_ language: Chinese) -> String {
         "\(chineseText(language)) \(english)"
     }
-    
+
     public func chineseEnglishParens(_ language: Chinese) -> String {
         "\(chineseText(language)) (\(english))"
     }

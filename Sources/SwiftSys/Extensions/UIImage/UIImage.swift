@@ -10,7 +10,7 @@
 #endif
 
 extension UIImage {
-    
+
     static func pathJPEG(_ name: String) -> URL {
         pathSave(name + ".jpg")
     }

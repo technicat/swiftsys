@@ -9,7 +9,7 @@ extension Sys {
         let documentsDirectory = paths[0]
         return documentsDirectory
     }
-    
+
     static public func documentsPath(_ name: String) -> URL {
         documentsDirectory.appendingPathComponent(name)
     }

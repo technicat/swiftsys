@@ -7,13 +7,13 @@ public struct LinkView: View {
     public let url: URL
     public let name: String
     public let image: String // system image
-    
+
     public init(_ link: Site, image: String = "link") {
         self.url = link.url
         self.name = link.name
         self.image = image
     }
-    
+
     public init(url: String, name: String, image: String = "link") {
         self.url = URL(string: url)!
         self.name = name
@@ -33,4 +33,3 @@ struct URLLink_Previews: PreviewProvider {
         LinkView(url: "http://technicat.com/", name: "Technicat")
     }
 }
-

@@ -6,4 +6,3 @@ extension Item: Hashable {
         hasher.combine(id)
     }
 }
-

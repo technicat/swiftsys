@@ -7,4 +7,3 @@ public enum STTError: Error {
     case noSampleRate
     case unavailableRecognizer
 }
-

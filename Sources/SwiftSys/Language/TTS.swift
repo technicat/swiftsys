@@ -19,20 +19,18 @@ public class TTS {
     }
 
     public static func say(_ words: String,
-
-        delegate: AVSpeechSynthesizerDelegate? = nil,
-        language: Chinese = Chinese.cantonese,
-        rate: Float = 0.3,
-        volume: Float = 1.0) throws
-    {
+                           delegate: AVSpeechSynthesizerDelegate? = nil,
+                           language: Chinese = Chinese.cantonese,
+                           rate: Float = 0.3,
+                           volume: Float = 1.0) throws {
         //https://stackoverflow.com/questions/53619027/avspeechsynthesizer-volume-too-low
-        #if os(iOS)
-            let audioSession = AVAudioSession.sharedInstance()
-            try audioSession.setCategory(AVAudioSession.Category.playAndRecord)
-            try audioSession.setMode(AVAudioSession.Mode.default)
-            try audioSession.setActive(true)
-            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
-        #endif
+#if os(iOS)
+        let audioSession = AVAudioSession.sharedInstance()
+        try audioSession.setCategory(AVAudioSession.Category.playAndRecord)
+        try audioSession.setMode(AVAudioSession.Mode.default)
+        try audioSession.setActive(true)
+        try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
+#endif
         if synth == nil {
             synth = AVSpeechSynthesizer()
         }
@@ -55,9 +53,8 @@ public class TTS {
             // nothing to do here
             return
         }
-        if (synth.isSpeaking) {
+        if synth.isSpeaking {
             synth.stopSpeaking(at: AVSpeechBoundary.word)
         }
     }
 }
-
