@@ -6,6 +6,6 @@ In-progress, this is a hodgepodge of code from my [Talk Dim Sum](http://talkdims
 - map display and info links of places collected by region and country (used for restaurants in Talk Dim Sum but could be anything)
 - misc stuff
 
-Formatted with [Swimat](https://github.com/Jintin/Swimat)
+Formatted with [Swimat](https://github.com/Jintin/Swimat). Linted with swiftlint.
 
 Should follow [Swift API guidelines](https://www.swift.org/documentation/api-design-guidelines/).
