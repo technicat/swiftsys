@@ -23,7 +23,7 @@ public class TTS {
                            language: Chinese = Chinese.cantonese,
                            rate: Float = 0.3,
                            volume: Float = 1.0) throws {
-        //https://stackoverflow.com/questions/53619027/avspeechsynthesizer-volume-too-low
+        // https://stackoverflow.com/questions/53619027/avspeechsynthesizer-volume-too-low
 #if os(iOS)
         let audioSession = AVAudioSession.sharedInstance()
         try audioSession.setCategory(AVAudioSession.Category.playAndRecord)

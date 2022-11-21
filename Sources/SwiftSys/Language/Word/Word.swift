@@ -4,7 +4,7 @@
 public struct Characters {
     public var text: String
     public var refs: LinkList
-    
+
     public init(_ text: String, refs: LinkList = []) {
         self.text = text
         self.refs = refs
@@ -46,7 +46,7 @@ public struct Word {
         case .simplified: return simplified?.text ?? mandarin?.text ?? cantonese.text
         }
     }
-    
+
     public func chineseRefs(_ language: Chinese) -> LinkList {
         switch language {
         case .cantonese: return cantonese.refs
