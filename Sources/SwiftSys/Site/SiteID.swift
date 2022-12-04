@@ -3,13 +3,8 @@
 
 import Foundation
 
-extension Site {
-
-    public init? (wkty chars: String) {
-        guard let url = try? "https://en.wiktionary.org/wiki/\(chars)".urlEncode() else {
-            return nil
-        }
-        self.init(name: chars,
-            dest: url)
+extension Site: Identifiable {
+    public var id: URL {
+        url
     }
 }
