@@ -4,10 +4,11 @@ import SwiftUI
 
 @available(macOS 11.0, *)
 public struct LinkView: View {
+
     public let url: URL
     public let name: String
     public let image: String // system image
-    
+
     public init(_ url: URL, name: String, image: String = "link") {
         self.url = url
         self.name = name
