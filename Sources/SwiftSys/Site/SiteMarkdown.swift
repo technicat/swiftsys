@@ -3,9 +3,9 @@
 
 import Foundation
 
-extension Site {
+extension Site: Identifiable {
 
-    public var markdown: String {
-        "[\(name)](\(url))"
+    public var id: URL {
+        url
     }
 }

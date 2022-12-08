@@ -19,6 +19,7 @@ final class SwiftSysTests: XCTestCase {
         XCTAssertEqual(link.name, name)
         XCTAssertEqual(link.url, url)
         XCTAssertEqual(link.id, url)
+        XCTAssertEqual(link.markdown, "[Technicat](http://technicat.com/)")
         XCTAssertNoThrow(try url.open())
     }
     func testLanguage() throws {
