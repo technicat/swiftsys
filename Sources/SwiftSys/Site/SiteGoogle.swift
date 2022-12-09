@@ -9,4 +9,9 @@ extension Site {
     let url = "https://www.google.com/maps/@?api=1&map_action=map&center=\(lat)%2C\(lon)"
         self.init("google maps", url: url)
     }
+    
+    public init? (gmap: (lat: Double, lon: Double)) {
+        let url = "https://www.google.com/maps/@?api=1&map_action=map&center=\(gmap.lat)%2C\(gmap.lon)"
+        self.init("google maps", url: url)
+    }
 }
