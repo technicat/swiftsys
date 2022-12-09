@@ -8,5 +8,4 @@ extension Site: Identifiable {
     public var markdown: String {
         "[\(name)](\(url))"
     }
-    
 }
