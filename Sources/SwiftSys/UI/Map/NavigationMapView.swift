@@ -6,6 +6,7 @@ import SwiftUI
 
 @available(macOS 11.0, *)
 public struct NavigationMapView: View {
+
     let region: Region
 
     @State private var cregion = MKCoordinateRegion()

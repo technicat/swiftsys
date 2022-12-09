@@ -2,6 +2,7 @@
 //  Copyright © 2018 Technicat. All rights reserved.
 
 public struct Dialog {
+
     public var name: String
     public var lines: [Line] = []
 

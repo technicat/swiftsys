@@ -2,6 +2,7 @@
 //  Copyright © 2018 Technicat. All rights reserved.
 
 extension Line: Hashable {
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

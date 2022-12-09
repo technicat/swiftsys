@@ -2,6 +2,7 @@
 //  Copyright © 2018 Technicat. All rights reserved.
 
 public struct Line: Identifiable {
+
     public var id: Int = 0
     public var name: String
     public var words: [Word]

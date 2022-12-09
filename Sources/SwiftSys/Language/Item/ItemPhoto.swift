@@ -8,6 +8,7 @@
 #endif
 
 public extension Item {
+
     var image: UIImage? {
         stockImage
     }

@@ -6,6 +6,7 @@ import SwiftUI
 
 @available(macOS 11.0, *)
 public struct MapMarker: View {
+
     let place: Place
 
     public var body: some View {

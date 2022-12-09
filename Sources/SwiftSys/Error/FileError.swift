@@ -2,5 +2,6 @@
 //  Copyright © 2019 Technicat. All rights reserved.
 
 public enum FileError: Error {
+
     case notFound(_ file: String)
 }

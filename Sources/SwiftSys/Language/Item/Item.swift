@@ -10,6 +10,7 @@
 public typealias ImageList = [(image: String, place: String)]
 
 public struct Item {
+
     public var word: Word {
         words[0]
     }

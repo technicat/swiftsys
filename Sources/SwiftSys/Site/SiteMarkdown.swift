@@ -5,7 +5,8 @@ import Foundation
 
 extension Site: Identifiable {
 
-    public var id: URL {
-        url
+    public var markdown: String {
+        "[\(name)](\(url))"
     }
+    
 }

@@ -2,6 +2,7 @@
 //  Copyright © 2018 Technicat. All rights reserved.
 
 extension Dialog: Identifiable {
+
     public var id: String {
         name
     }
