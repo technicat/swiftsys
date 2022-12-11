@@ -1,5 +1,6 @@
 @testable import SwiftSys
 import XCTest
+import MapKit
 
 final class SwiftSysTests: XCTestCase {
     func testJSON() throws {
@@ -20,7 +21,12 @@ final class SwiftSysTests: XCTestCase {
         XCTAssertEqual(link.url, url)
         XCTAssertEqual(link.id, url)
         XCTAssertEqual(link.markdown, "[Technicat](http://technicat.com/)")
-        XCTAssertNoThrow(try url.open())
+        XCTAssertNoThrow(try link.url.open())
+    }
+    func testGoogleMap() throws {
+        let link = Site(gmap: CLLocationCoordinate2D(latitude: 36.1639229,
+                                                     longitude: -115.1457802))
+        XCTAssertNoThrow(try link!.url.open())
     }
     func testLanguage() throws {
         XCTAssertEqual(Chinese.cantonese.rawValue, "cantonese")
