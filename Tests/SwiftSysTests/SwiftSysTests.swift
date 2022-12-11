@@ -28,6 +28,10 @@ final class SwiftSysTests: XCTestCase {
                                                      longitude: -115.1457802))
         XCTAssertNoThrow(try link!.url.open())
     }
+    func testWiktionary() throws {
+        let link = Site(wkty: "芋頭糕")
+        XCTAssertNoThrow(try link!.url.open())
+    }
     func testLanguage() throws {
         XCTAssertEqual(Chinese.cantonese.rawValue, "cantonese")
         XCTAssertEqual(Chinese.mandarin.rawValue, "mandarin")
