@@ -11,11 +11,7 @@ public typealias ImageList = [(image: String, place: String)]
 
 public struct Item {
 
-    public var word: Word {
-        words[0]
-    }
-
-    public var words: [Word]
+    public var word: Word
 
     public var imageFile: ImageList
 
@@ -26,8 +22,8 @@ public struct Item {
     public var resources: LinkList
 
     // just so we can make it public
-    public init(words: [Word], imageFile: ImageList, description: String, tags: [String], resources: LinkList) {
-        self.words = words
+    public init(word: Word, imageFile: ImageList, description: String, tags: [String], resources: LinkList) {
+        self.word = word
         self.imageFile = imageFile
         self.description = description
         self.tags = tags
