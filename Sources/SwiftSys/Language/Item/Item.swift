@@ -29,17 +29,4 @@ public struct Item {
         self.tags = tags
         self.resources = resources
     }
-
-    public func isTag(_ word: Word) -> Bool {
-        tags.contains(word.id)
-    }
-
-    @available(macOS 12, *)
-    @available(iOS 15, *)
-    public var markdown: AttributedString {
-        (try? AttributedString(markdown: description,
-                               options: AttributedString.MarkdownParsingOptions(interpretedSyntax: 
-                                    .inlineOnlyPreservingWhitespace)))
-                                    ?? AttributedString()
-    }
 }
