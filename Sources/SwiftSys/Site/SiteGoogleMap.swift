@@ -8,6 +8,6 @@ extension Site {
 
     public init? (gmap loc: CLLocationCoordinate2D) {
         let url = "https://www.google.com/maps/@?api=1&map_action=map&center=\(loc.latitude)%2C\(loc.longitude)"
-        self.init("google maps", url: url)
+        self.init("Google Maps", url: url)
     }
 }

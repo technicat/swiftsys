@@ -8,6 +8,6 @@ extension Site {
 
     public init? (amap loc: CLLocationCoordinate2D) {
         let url = "http://maps.apple.com/?ll=\(loc.latitude),\(loc.longitude)"
-        self.init("apple maps", url: url)
+        self.init("Apple Maps", url: url)
     }
 }

@@ -33,6 +33,11 @@ final class SwiftSysTests: XCTestCase {
                                                      longitude: -115.1457802))
         XCTAssertNoThrow(try link!.url.open())
     }
+    func testOSM() throws {
+        let link = Site(osm: CLLocationCoordinate2D(latitude: 36.1639229,
+                                                     longitude: -115.1457802))
+        XCTAssertNoThrow(try link!.url.open())
+    }
     func testWiktionary() throws {
         let link = Site(wkty: "芋頭糕")
         XCTAssertNoThrow(try link!.url.open())

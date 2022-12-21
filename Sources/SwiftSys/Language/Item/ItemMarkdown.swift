@@ -8,6 +8,8 @@ import RegexBuilder
 @available(iOS 16, *)
 extension Item {
     
+    // make lazy?
+    
     public var markdown: AttributedString {
         (try? AttributedString(markdown: Item.processDesc(description),
                                options: AttributedString.MarkdownParsingOptions(interpretedSyntax: 
@@ -33,4 +35,5 @@ extension Item {
         }
         return res
     }
+
 }
