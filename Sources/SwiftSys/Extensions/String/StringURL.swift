@@ -19,7 +19,6 @@ public extension String {
         return new
     }
 
-    // urlencode should be an option?
     func urlCreate(urlencode: Bool = false) throws -> URL {
         if let url = URL(string: self) {
             return url
