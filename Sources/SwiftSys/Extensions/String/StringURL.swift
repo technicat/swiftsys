@@ -31,4 +31,9 @@ public extension String {
             throw StringError.urlEncodeFail(self)
         }
     }
+    
+    func urlHttps(urlencode: Bool = false) throws -> URL {
+        try "https://\(self)".urlCreate(urlencode: urlencode)
+    }
+    
 }

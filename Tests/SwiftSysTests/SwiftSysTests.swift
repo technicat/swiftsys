@@ -7,20 +7,21 @@ final class SwiftSysTests: XCTestCase {
         XCTAssertThrowsError(try Sys.jsonPath("jsonfile"))
         XCTAssertThrowsError(try Sys.jsonURL("jsonfile"))
     }
-    func testString() throws {
+    func testStringURL() throws {
         XCTAssertEqual("id".id, "id")
         XCTAssertNoThrow(try "".urlEncode())
         XCTAssertNoThrow(try "http://technicat.com/".urlCreate())
         XCTAssertNoThrow(try "http://technicat.com/".openWeb())
+        XCTAssertNoThrow(try "technicat.com".urlHttps().open())
     }
     func testSite() throws {
         let name = "Technicat"
-        let url = URL(string: "http://technicat.com/")!
+        let url = URL(string: "https://technicat.com/")!
         let link = Site(name, url: url)
         XCTAssertEqual(link.name, name)
         XCTAssertEqual(link.url, url)
         XCTAssertEqual(link.id, url)
-        XCTAssertEqual(link.markdown, "[Technicat](http://technicat.com/)")
+        XCTAssertEqual(link.markdown, "[Technicat](https://technicat.com/)")
         XCTAssertNoThrow(try link.url.open())
     }
     func testAppleMap() throws {
