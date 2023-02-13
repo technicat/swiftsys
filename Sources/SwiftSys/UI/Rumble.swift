@@ -5,11 +5,11 @@
     import SwiftUI
 
     public class Rumble {
-        static var light = UIImpactFeedbackGenerator(style: .light)
+        public static var light = UIImpactFeedbackGenerator(style: .light)
 
-        static var soft = UIImpactFeedbackGenerator(style: .soft)
+        public static var soft = UIImpactFeedbackGenerator(style: .soft)
 
-        static var medium = UIImpactFeedbackGenerator(style: .medium)
+        public static var medium = UIImpactFeedbackGenerator(style: .medium)
     }
 #endif
 
