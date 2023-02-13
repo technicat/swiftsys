@@ -4,7 +4,7 @@
 #if !os(macOS)
     import SwiftUI
 
-    class Rumble {
+    public class Rumble {
         static var light = UIImpactFeedbackGenerator(style: .light)
 
         static var soft = UIImpactFeedbackGenerator(style: .soft)
