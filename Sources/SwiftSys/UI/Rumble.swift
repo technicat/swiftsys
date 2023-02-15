@@ -11,22 +11,28 @@
             light.impactOccurred()
         }
 
-        public static var soft = UIImpactFeedbackGenerator(style: .soft)
-        
-        public static func softly() {
-            soft.impactOccurred()
-        }
-
         public static var medium = UIImpactFeedbackGenerator(style: .medium)
         
         public static func mediumly() {
             medium.impactOccurred()
         }
         
-        public static var hard = UIImpactFeedbackGenerator(style: .hard)
+        public static var heavy = UIImpactFeedbackGenerator(style: .heavy)
         
-        public static func hardly() {
-            hard.impactOccurred()
+        public static func heavily() {
+            heavy.impactOccurred()
+        }
+        
+        public static var soft = UIImpactFeedbackGenerator(style: .soft)
+        
+        public static func softly() {
+            soft.impactOccurred()
+        }
+        
+        public static var rigid = UIImpactFeedbackGenerator(style: .rigid)
+        
+        public static func rigidly() {
+            rigid.impactOccurred()
         }
     }
 #endif
