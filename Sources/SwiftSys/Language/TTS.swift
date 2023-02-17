@@ -9,10 +9,6 @@ public class TTS: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
 
     private var synth: AVSpeechSynthesizer?
 
-    public var isSpeaking: Bool {
-        synth?.isSpeaking ?? false
-    }
-
     public func reset() {
         stop()
         synth = nil
