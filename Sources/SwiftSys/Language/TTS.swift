@@ -60,11 +60,11 @@ public class TTS: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
 
     // delegate, observable
 
-    @Published var speaking = false
-    @Published var muted = false
-    @Published var range = NSRange()
-    @Published var speechRate = 0.3
-    @Published var utter = ""
+    @Published public var speaking = false
+    @Published public var muted = false
+    @Published public var range = NSRange()
+    @Published public var speechRate = 0.3
+    @Published public var utter = ""
 
 
     public func speechSynthesizer(_: AVSpeechSynthesizer,
