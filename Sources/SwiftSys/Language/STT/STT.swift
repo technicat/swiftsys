@@ -62,7 +62,7 @@ public class STT: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
         request?.endAudio()
         request = nil
         engine.stop()
-        STT.untapNode(engine.inputNode)
+        untapNode(engine.inputNode)
   //      sttEngine.reset()
   //      sttTask = nil
     }
@@ -76,7 +76,7 @@ public class STT: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
             if request == nil {
                 request = SFSpeechAudioBufferRecognitionRequest()
             }
-            try STT.tapNode(engine.inputNode, request!)
+            try tapNode(engine.inputNode, request!)
             try engine.start()
             state = .listening
             text = ""
@@ -147,7 +147,7 @@ public class STT: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
 
 // 
 
-    static public func tapNode(_ node: AVAudioInputNode,
+    public func tapNode(_ node: AVAudioInputNode,
                                _ request: SFSpeechAudioBufferRecognitionRequest) throws {
         let recordingFormat = node.outputFormat(forBus: 0)
         // also check channel count? per input node doc
@@ -160,7 +160,7 @@ public class STT: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
             request.append(buffer)
         }
     }
-    static public func untapNode(_ node: AVAudioInputNode) {
+    public func untapNode(_ node: AVAudioInputNode) {
         node.removeTap(onBus: 0)
     }
 }
