@@ -5,7 +5,7 @@ import AVFoundation
 import AVFAudio
 
 @available(macOS 11, *)
-public class TTS {
+public class TTS: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
 
     private static var synth: AVSpeechSynthesizer?
 
@@ -19,18 +19,18 @@ public class TTS {
     }
 
     public static func say(_ words: String,
-                           delegate: AVSpeechSynthesizerDelegate? = nil,
-                           language: Chinese = Chinese.cantonese,
-                           rate: Float = 0.3,
-                           volume: Float = 1.0) throws {
+        delegate: AVSpeechSynthesizerDelegate? = nil,
+        language: Chinese = Chinese.cantonese,
+        rate: Float = 0.3,
+        volume: Float = 1.0) throws {
         // https://stackoverflow.com/questions/53619027/avspeechsynthesizer-volume-too-low
-#if os(iOS)
-        let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(AVAudioSession.Category.playAndRecord)
-        try audioSession.setMode(AVAudioSession.Mode.default)
-        try audioSession.setActive(true)
-        try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
-#endif
+        #if os(iOS)
+            let audioSession = AVAudioSession.sharedInstance()
+            try audioSession.setCategory(AVAudioSession.Category.playAndRecord)
+            try audioSession.setMode(AVAudioSession.Mode.default)
+            try audioSession.setActive(true)
+            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
+        #endif
         if synth == nil {
             synth = AVSpeechSynthesizer()
         }
@@ -57,4 +57,47 @@ public class TTS {
             synth.stopSpeaking(at: AVSpeechBoundary.word)
         }
     }
+
+    // delegate, observable
+
+    @Published var speaking = false
+    @Published var muted = false
+    @Published var range = NSRange()
+    @Published var speechRate = 0.3
+    @Published var utter = ""
+
+
+    public func speechSynthesizer(_: AVSpeechSynthesizer,
+        didStart utterance: AVSpeechUtterance) {
+        speaking = true
+        muted = false
+        utter = utterance.speechString
+    }
+
+    public func speechSynthesizer(_: AVSpeechSynthesizer,
+        didPause _: AVSpeechUtterance) {
+        speaking = false
+    }
+
+    public func speechSynthesizer(_: AVSpeechSynthesizer,
+        didCancel _: AVSpeechUtterance) {
+        speaking = false
+    }
+
+    public func speechSynthesizer(_: AVSpeechSynthesizer,
+        didContinue _: AVSpeechUtterance) {
+        speaking = true
+    }
+
+    public func speechSynthesizer(_: AVSpeechSynthesizer,
+        willSpeakRangeOfSpeechString characterRange: NSRange,
+        utterance _: AVSpeechUtterance) {
+        range = characterRange
+    }
+
+    public func speechSynthesizer(_: AVSpeechSynthesizer,
+        didFinish _: AVSpeechUtterance) {
+        speaking = false
+    }
+
 }
