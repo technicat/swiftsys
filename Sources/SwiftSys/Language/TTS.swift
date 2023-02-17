@@ -7,18 +7,18 @@ import AVFAudio
 @available(macOS 11, *)
 public class TTS: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
 
-    private static var synth: AVSpeechSynthesizer?
+    private var synth: AVSpeechSynthesizer?
 
-    public class var isSpeaking: Bool {
+    public var isSpeaking: Bool {
         synth?.isSpeaking ?? false
     }
 
-    public static func reset() {
+    public func reset() {
         stop()
         synth = nil
     }
 
-    public static func say(_ words: String,
+    public func say(_ words: String,
         delegate: AVSpeechSynthesizerDelegate? = nil,
         language: Chinese = Chinese.cantonese,
         rate: Float = 0.3,
@@ -48,7 +48,7 @@ public class TTS: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         synth!.speak(utterance)
     }
 
-    public static func stop() {
+    public func stop() {
         guard let synth = synth else {
             // nothing to do here
             return
