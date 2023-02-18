@@ -5,52 +5,23 @@ import Speech
 
 @available(macOS 10.15, *)
 public class STT: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
-    
-    // stt delegate
 
-    @Published public var authorized = false
-    @Published public var text = ""
-    @Published public var errorText = ""
-    @Published public var state = STTState.notListening
-
-    internal var matchWord: Word?
-    internal let engine = AVAudioEngine()
-    internal var request: SFSpeechAudioBufferRecognitionRequest?
-    internal var task: SFSpeechRecognitionTask?
-
-    public func start(word: Word, lang: Chinese) {
-        matchWord = word
-        SFSpeechRecognizer.requestAuthorization { authStatus in
-            OperationQueue.main.addOperation {
-                switch authStatus {
-                case .authorized:
-                    self.authorized = true
-                    self.listen(lang)
-                case .denied:
-                    self.authorized = false
-                    self.errorlog("User denied access to speech recognition")
-                case .restricted:
-                    self.authorized = false
-                    self.errorlog("Speech recognition restricted on this device")
-                case .notDetermined:
-                    self.authorized = false
-                    self.errorlog("Speech recognition not yet authorized")
-                @unknown default:
-                    self.authorized = false
-                    self.errorlog("Unknown error")
-                }
-            }
+    private func tapNode(_ node: AVAudioInputNode,
+                         _ request: SFSpeechAudioBufferRecognitionRequest) throws {
+        let recordingFormat = node.outputFormat(forBus: 0)
+        // also check channel count? per input node doc
+        guard recordingFormat.sampleRate > 0 else {
+            throw STTError.noSampleRate
+        }
+        node.installTap(onBus: 0,
+            bufferSize: 1024,
+            format: recordingFormat) { buffer, _ in
+            request.append(buffer)
         }
     }
 
-    private func errorlog(_ error: String) {
-        errorText = error
-      //  Sys.log.error("Speech to text error: \(error)")
-    }
-
-    public func stop() {
-        cancelRecording()
-        state = .notListening
+    private func untapNode(_ node: AVAudioInputNode) {
+        node.removeTap(onBus: 0)
     }
 
     private func cancelRecording() {
@@ -144,23 +115,51 @@ public class STT: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
         )
     }
 
+    // stt delegate
 
-// 
+    @Published public var authorized = false
+    @Published public var text = ""
+    @Published public var errorText = ""
+    @Published public var state = STTState.notListening
 
-    public func tapNode(_ node: AVAudioInputNode,
-                               _ request: SFSpeechAudioBufferRecognitionRequest) throws {
-        let recordingFormat = node.outputFormat(forBus: 0)
-        // also check channel count? per input node doc
-        guard recordingFormat.sampleRate > 0 else {
-            throw STTError.noSampleRate
-        }
-        node.installTap(onBus: 0,
-            bufferSize: 1024,
-            format: recordingFormat) { buffer, _ in
-            request.append(buffer)
+    internal var matchWord: Word?
+    internal let engine = AVAudioEngine()
+    internal var request: SFSpeechAudioBufferRecognitionRequest?
+    internal var task: SFSpeechRecognitionTask?
+
+    public func start(word: Word, lang: Chinese) {
+        matchWord = word
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+            OperationQueue.main.addOperation {
+                switch authStatus {
+                case .authorized:
+                    self.authorized = true
+                    self.listen(lang)
+                case .denied:
+                    self.authorized = false
+                    self.errorlog("User denied access to speech recognition")
+                case .restricted:
+                    self.authorized = false
+                    self.errorlog("Speech recognition restricted on this device")
+                case .notDetermined:
+                    self.authorized = false
+                    self.errorlog("Speech recognition not yet authorized")
+                @unknown default:
+                    self.authorized = false
+                    self.errorlog("Unknown error")
+                }
+            }
         }
     }
-    public func untapNode(_ node: AVAudioInputNode) {
-        node.removeTap(onBus: 0)
+
+    private func errorlog(_ error: String) {
+        errorText = error
+      //  Sys.log.error("Speech to text error: \(error)")
     }
+
+    public func stop() {
+        cancelRecording()
+        state = .notListening
+    }
+
 }

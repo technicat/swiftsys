@@ -14,7 +14,8 @@ public class TTS: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         synth = nil
     }
 
-    public func say(_ words: String,
+    public func say(
+        _ words: String,
         delegate: AVSpeechSynthesizerDelegate? = nil,
         language: Chinese = Chinese.cantonese,
         rate: Float = 0.3,
@@ -62,36 +63,41 @@ public class TTS: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     @Published public var speechRate = 0.3
     @Published public var utter = ""
 
-
-    public func speechSynthesizer(_: AVSpeechSynthesizer,
+    public func speechSynthesizer(
+        _: AVSpeechSynthesizer,
         didStart utterance: AVSpeechUtterance) {
         speaking = true
         muted = false
         utter = utterance.speechString
     }
 
-    public func speechSynthesizer(_: AVSpeechSynthesizer,
+    public func speechSynthesizer(
+        _: AVSpeechSynthesizer,
         didPause _: AVSpeechUtterance) {
         speaking = false
     }
 
-    public func speechSynthesizer(_: AVSpeechSynthesizer,
+    public func speechSynthesizer(
+        _: AVSpeechSynthesizer,
         didCancel _: AVSpeechUtterance) {
         speaking = false
     }
 
-    public func speechSynthesizer(_: AVSpeechSynthesizer,
+    public func speechSynthesizer(
+        _: AVSpeechSynthesizer,
         didContinue _: AVSpeechUtterance) {
         speaking = true
     }
 
-    public func speechSynthesizer(_: AVSpeechSynthesizer,
+    public func speechSynthesizer(
+        _: AVSpeechSynthesizer,
         willSpeakRangeOfSpeechString characterRange: NSRange,
         utterance _: AVSpeechUtterance) {
         range = characterRange
     }
 
-    public func speechSynthesizer(_: AVSpeechSynthesizer,
+    public func speechSynthesizer(
+        _: AVSpeechSynthesizer,
         didFinish _: AVSpeechUtterance) {
         speaking = false
     }
