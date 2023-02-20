@@ -4,6 +4,7 @@
 #if os(iOS)
     import MobileCoreServices
     import UniformTypeIdentifiers
+    import SwiftUI
 
     public extension String {
 
