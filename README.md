@@ -16,4 +16,3 @@ Linted with [SwiftLint](https://github.com/realm/SwiftLint).
 
 Should follow [Swift API guidelines](https://www.swift.org/documentation/api-design-guidelines/).
 
-Not a great name, but SwiftTalkChinese for example seemed too unwieldy. Will revisit.
