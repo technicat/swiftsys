@@ -1,6 +1,6 @@
 # SwiftSys
 
-In-progress, this is a hodgepodge of code from my [Talk Dim Sum](http://talkdimsum.com/) app that I want to open source, including
+In-progress, this is a hodgepodge of code from my apps (mostly [Talk Dim Sum](http://talkdimsum.com/)) that I want to open source and reuse, including
 
 - displaying and speaking Chinese words (Cantonese, Mandarin, and Mandarin with simplified characters)
 - map display and info links of places collected by region and country (used for restaurants in Talk Dim Sum but could be anything)
