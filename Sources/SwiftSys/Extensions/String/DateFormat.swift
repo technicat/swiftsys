@@ -8,6 +8,7 @@
 import Foundation
 
 @available(macOS 12.0, *)
+@available(iOS 15.0, *)
 public extension Date {
 
     var shortDate: String {
