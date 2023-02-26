@@ -16,3 +16,5 @@ Linted with [SwiftLint](https://github.com/realm/SwiftLint).
 
 Should follow [Swift API guidelines](https://www.swift.org/documentation/api-design-guidelines/).
 
+and [DocC documentation](https://www.swift.org/documentation/docc/writing-symbol-documentation-in-your-source-files)
+
