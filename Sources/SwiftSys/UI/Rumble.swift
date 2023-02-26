@@ -4,6 +4,8 @@
 #if os(iOS)
     import SwiftUI
 
+/// convenience functions initiate vibration
+/// e.g. Rumble.lightly()
     public class Rumble {
 
         public static var light = UIImpactFeedbackGenerator(style: .light)
