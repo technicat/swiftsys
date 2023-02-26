@@ -12,18 +12,18 @@ import Foundation
 public extension Date {
 
     var shortDate: String {
-        self.formatted(date: .abbreviated, time: .omitted)
+        formatted(date: .abbreviated, time: .omitted)
     }
 
     var longDate: String {
-        self.formatted(date: .long, time: .omitted)
+        formatted(date: .long, time: .omitted)
     }
 
     var dayDate: String {
-        self.formatted(date: .complete, time: .omitted)
+        formatted(date: .complete, time: .omitted)
     }
 
     var numDate: String {
-        self.formatted(date: .numeric, time: .omitted)
+        formatted(date: .numeric, time: .omitted)
     }
 }
