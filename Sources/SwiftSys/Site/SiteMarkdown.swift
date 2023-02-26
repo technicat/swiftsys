@@ -5,6 +5,7 @@ import Foundation
 
 extension Site: Identifiable {
 
+    /// markdown output of this link
     public var markdown: String {
         "[\(name)](\(url))"
     }

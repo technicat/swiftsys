@@ -6,6 +6,7 @@ import UIKit
 
 extension CGImagePropertyOrientation {
 
+    /// create a CGImagePropertyOrientation from a UIImage.Orientation
     public init(_ uiOrientation: UIImage.Orientation) {
         switch uiOrientation {
         case .up: self = .up
@@ -25,6 +26,7 @@ extension CGImagePropertyOrientation {
 
 extension UIImage.Orientation {
 
+    /// create  a UIImage.Orientation from a CGImagePropertyOrientation
     public init(_ cgOrientation: UIImage.Orientation) {
         switch cgOrientation {
         case .up: self = .up

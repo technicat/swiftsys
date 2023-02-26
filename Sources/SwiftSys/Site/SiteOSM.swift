@@ -6,6 +6,7 @@ import MapKit
 
 extension Site {
 
+    /// link to OpenStreetMaps
     public init? (osm loc: CLLocationCoordinate2D) {
         let url = "https://www.openstreetmap.org/#map=15/\(loc.latitude)/\(loc.longitude)"
         self.init("OpenStreetMaps", url: url)

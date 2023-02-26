@@ -1,7 +1,7 @@
 //
 //  Created by Philip Chu on 2/12/23.
 //
-#if !os(macOS)
+#if os(iOS)
     import SwiftUI
 
     public class Rumble {

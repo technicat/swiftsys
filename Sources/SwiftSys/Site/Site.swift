@@ -3,6 +3,7 @@
 
 import Foundation
 
+/// associate a name with a URL, basically a descriptor of a website
 public struct Site {
     public var name: String
     public var url: URL
