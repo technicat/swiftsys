@@ -10,31 +10,31 @@
 
         static var light = UIImpactFeedbackGenerator(style: .light)
 
-        static func lightly() {
+        public static func lightly() {
             light.impactOccurred()
         }
 
         static var medium = UIImpactFeedbackGenerator(style: .medium)
 
-        static func mediumly() {
+        public static func mediumly() {
             medium.impactOccurred()
         }
 
         static var heavy = UIImpactFeedbackGenerator(style: .heavy)
 
-        static func heavily() {
+        public static func heavily() {
             heavy.impactOccurred()
         }
 
         static var soft = UIImpactFeedbackGenerator(style: .soft)
 
-        static func softly() {
+        public static func softly() {
             soft.impactOccurred()
         }
 
         static var rigid = UIImpactFeedbackGenerator(style: .rigid)
 
-        static func rigidly() {
+        public static func rigidly() {
             rigid.impactOccurred()
         }
     }
