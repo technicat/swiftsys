@@ -33,7 +33,11 @@ public extension String {
     }
 
     func urlHttps(urlencode: Bool = false) throws -> URL {
-        try "https://\(self)".urlCreate(urlencode: urlencode)
+        try https.urlCreate(urlencode: urlencode)
+    }
+    
+    var https : String {
+        "https://\(self)"
     }
 
 }
