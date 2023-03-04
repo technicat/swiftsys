@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// convenience functions for formatted date strings
 @available(macOS 12.0, *)
 @available(iOS 15.0, *)
 public extension Date {
@@ -29,5 +30,17 @@ public extension Date {
     /// 10/21/2015
     var numDate: String {
         formatted(date: .numeric, time: .omitted)
+    }
+    
+    var shortTime: String {
+        formatted(date: .omitted, time: .shortened)
+    }
+    
+    var standardTime: String {
+        formatted(date: .omitted, time: .standard)
+    }
+    
+    var completeTime: String {
+        formatted(date: .omitted, time: .complete)
     }
 }

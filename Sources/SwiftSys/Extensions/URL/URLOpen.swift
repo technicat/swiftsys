@@ -10,6 +10,7 @@
 
 import SwiftUI
 
+/// open a URL in an external browser
 public extension URL {
     func open() throws {
         #if os(macOS)
