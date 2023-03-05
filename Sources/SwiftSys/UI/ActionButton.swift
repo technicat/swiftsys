@@ -18,7 +18,7 @@ public struct ActionButton: View {
     public let sysImage: String
     public let action: () -> Void
     
-    public init(text: String, sysImage: String, action: @escaping () -> Void) {
+    public init(_ text: String, sysImage: String, action: @escaping () -> Void) {
         self.text = text
         self.sysImage = sysImage
         self.action = action
