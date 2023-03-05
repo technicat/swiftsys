@@ -18,6 +18,12 @@ public struct ActionButton: View {
     public let sysImage: String
     public let action: () -> Void
     
+    public init(text: String, sysImage: String, action: @escaping () -> Void) {
+        self.text = text
+        self.sysImage = sysImage
+        self.action = action
+    }
+    
     public var body: some View {
         Button {
             #if os(iOS)
