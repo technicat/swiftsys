@@ -13,12 +13,12 @@ import SwiftUI
 /// control appearance with a button style
 /// e.g. IconOnlyButtonStyle
 @available(macOS 11.0, *)
-struct ActionButton: View {
+public struct ActionButton: View {
     let text: String
-    let systemImage: String
+    let sysImage: String
     let action: () -> Void
     
-    var body: some View {
+    public var body: some View {
         Button {
             #if os(iOS)
             Rumble.softly()
@@ -26,7 +26,7 @@ struct ActionButton: View {
             action()
         }
         label: {
-            Label(text, systemImage: systemImage)
+            Label(text, systemImage: sysImage)
         }
     }
 }
