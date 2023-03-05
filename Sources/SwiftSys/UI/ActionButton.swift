@@ -14,9 +14,9 @@ import SwiftUI
 /// e.g. IconOnlyButtonStyle
 @available(macOS 11.0, *)
 public struct ActionButton: View {
-    let text: String
-    let sysImage: String
-    let action: () -> Void
+    public let text: String
+    public let sysImage: String
+    public let action: () -> Void
     
     public var body: some View {
         Button {
