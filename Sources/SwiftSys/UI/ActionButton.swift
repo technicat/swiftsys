@@ -32,7 +32,7 @@ public struct ActionButton: View {
             action()
         }
         label: {
-            Label(text, systemImage: sysImage)
+            Label(LocalizedStringKey(text), systemImage: sysImage)
         }
     }
 }
