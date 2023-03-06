@@ -1,7 +1,4 @@
 //
-//  File.swift
-//  
-//
 //  Created by Philip Chu on 3/5/23.
 //
 
@@ -18,16 +15,16 @@ public struct ActionButton: View {
     let sysImage: String
     let localize: Bool
     let action: () -> Void
-    
+
     public init(_ text: String, sysImage: String, localize: Bool = true, action: @escaping () -> Void) {
         self.text = text
         self.sysImage = sysImage
         self.localize = localize
         self.action = action
     }
-    
+
     public var body: some View {
-        
+
         Button {
             #if os(iOS)
             Rumble.softly()

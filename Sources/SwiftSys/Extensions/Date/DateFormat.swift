@@ -31,15 +31,15 @@ public extension Date {
     var numDate: String {
         formatted(date: .numeric, time: .omitted)
     }
-    
+
     var shortTime: String {
         formatted(date: .omitted, time: .shortened)
     }
-    
+
     var standardTime: String {
         formatted(date: .omitted, time: .standard)
     }
-    
+
     var completeTime: String {
         formatted(date: .omitted, time: .complete)
     }

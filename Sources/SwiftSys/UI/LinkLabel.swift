@@ -6,9 +6,9 @@ import SwiftUI
 @available(macOS 11.0, *)
 public struct LinkLabel: View {
 
-    public let url: URL
-    public let name: String
-    public let sysImage: String // system image
+    let url: URL
+    let name: String
+    let sysImage: String
 
     public init(_ url: URL, name: String, sysImage: String = "link") {
         self.url = url
