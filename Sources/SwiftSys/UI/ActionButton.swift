@@ -14,17 +14,20 @@ import SwiftUI
 /// e.g. IconOnlyButtonStyle
 @available(macOS 11.0, *)
 public struct ActionButton: View {
-    public let text: String
-    public let sysImage: String
-    public let action: () -> Void
+    let text: String
+    let sysImage: String
+    let localize: Bool
+    let action: () -> Void
     
-    public init(_ text: String, sysImage: String, action: @escaping () -> Void) {
+    public init(_ text: String, sysImage: String, localize: Bool = true, action: @escaping () -> Void) {
         self.text = text
         self.sysImage = sysImage
+        self.localize = localize
         self.action = action
     }
     
     public var body: some View {
+        
         Button {
             #if os(iOS)
             Rumble.softly()
@@ -32,7 +35,11 @@ public struct ActionButton: View {
             action()
         }
         label: {
-            Label(LocalizedStringKey(text), systemImage: sysImage)
+            if localize {
+                Label(LocalizedStringKey(text), systemImage: sysImage)
+            } else {
+                Label(text, systemImage: sysImage)
+            }
         }
     }
 }

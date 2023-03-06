@@ -2,6 +2,7 @@
 
 import SwiftUI
 
+/// a Label for a Link
 @available(macOS 11.0, *)
 public struct LinkLabel: View {
 
