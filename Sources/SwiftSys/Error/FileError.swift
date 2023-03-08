@@ -3,5 +3,6 @@
 
 public enum FileError: Error {
 
+    /// file not found
     case notFound(_ file: String)
 }
