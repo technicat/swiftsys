@@ -43,7 +43,7 @@ public extension String {
     var https: String {
         "https://\(self)"
     }
-    
+
     var isHttps: Bool {
         hasPrefix("https://")
     }
