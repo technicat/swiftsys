@@ -27,8 +27,18 @@ public struct LinkLabel: View {
         self.init(link.url, name: link.name, sysImage: sysImage)
     }
 
-    public init(_ url: String, name: String, sysImage: String = "link") {
-        self.init(URL(string: url)!, name: name, sysImage: sysImage)
+    /// Create a LinkLabel from a string URL
+    /// 
+    /// - Parameters
+    ///     - url: the string URL to link to
+    ///     - name: the label text
+    ///     - sysImage: name of the system image in the label (browse Apple's SF Symbols app)
+    ///
+    public init?(_ url: String, name: String, sysImage: String = "link") {
+        guard let realURL = try? url.urlCreate() else {
+            return nil
+        }
+        self.init(realURL, name: name, sysImage: sysImage)
     }
 
     public var body: some View {
