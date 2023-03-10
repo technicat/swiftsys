@@ -19,7 +19,9 @@ public extension String {
         return new
     }
 
-    func urlCreate(urlencode: Bool = false) throws -> URL {
+    /// create a URL from string
+    /// todo - trim?
+    func urlCreate(urlencode: Bool = true) throws -> URL {
         if let url = URL(string: self) {
             return url
         } else {
@@ -32,12 +34,18 @@ public extension String {
         }
     }
 
-    func urlHttps(urlencode: Bool = false) throws -> URL {
+    /// create an https URL from this string (i.e.prepends the https:// prefix)
+    /// todo: trim?
+    func urlHttps(urlencode: Bool = true) throws -> URL {
         try https.urlCreate(urlencode: urlencode)
     }
 
     var https: String {
         "https://\(self)"
+    }
+    
+    var isHttps: Bool {
+        hasPrefix("https://")
     }
 
 }
