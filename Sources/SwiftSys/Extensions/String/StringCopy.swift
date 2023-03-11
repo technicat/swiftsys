@@ -8,7 +8,7 @@
 
     public extension String {
 
-        /// copy text to the clipboard
+        /// copy string to the clipboard
         func copy() {
             UIPasteboard.general.setValue(self,
                 forPasteboardType:

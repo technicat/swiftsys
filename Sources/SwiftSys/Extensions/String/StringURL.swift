@@ -3,6 +3,7 @@
 
 import Foundation
 
+/// convenience functions for URL strings
 public extension String {
 
     func urlEncode() throws -> String {
@@ -35,6 +36,8 @@ public extension String {
     }
 
     /// create an https URL from this string (i.e.prepends the https:// prefix)
+    /// - Parameters
+    ///     - urlencode: whether to urlencode the string
     /// todo: trim?
     func urlHttps(urlencode: Bool = true) throws -> URL {
         try https.urlCreate(urlencode: urlencode)
