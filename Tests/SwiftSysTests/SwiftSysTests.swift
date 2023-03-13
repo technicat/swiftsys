@@ -14,7 +14,8 @@ final class SwiftSysTests: XCTestCase {
     func testStringURL() throws {
         XCTAssertEqual("id".id, "id")
         XCTAssertNoThrow(try "".urlEncode())
-        XCTAssertNoThrow(try "http://technicat.com/".urlCreate())
+        XCTAssertNoThrow(try "http://technicat.com/".url())
+        XCTAssertNoThrow(try "  http://technicat.com/ ".url())
         XCTAssertNoThrow(try "http://technicat.com/".openWeb())
         XCTAssertNoThrow(try "technicat.com".urlHttps().open())
     }

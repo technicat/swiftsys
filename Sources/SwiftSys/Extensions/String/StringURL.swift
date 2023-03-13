@@ -21,9 +21,11 @@ public extension String {
     }
 
     /// create a URL from string
-    /// todo - trim?
-    func urlCreate(urlencode: Bool = true) throws -> URL {
-        if let url = URL(string: self) {
+    /// todo - make trim an option?
+    /// - Parameters
+    /// - urlencode:  optionally urlencode the string
+    func url(urlencode: Bool = true) throws -> URL {
+        if let url = URL(string: self.trimWS) {
             return url
         } else {
             if urlencode {
@@ -40,7 +42,7 @@ public extension String {
     ///     - urlencode: whether to urlencode the string
     /// todo: trim?
     func urlHttps(urlencode: Bool = true) throws -> URL {
-        try https.urlCreate(urlencode: urlencode)
+        try https.url(urlencode: urlencode)
     }
 
     var https: String {
