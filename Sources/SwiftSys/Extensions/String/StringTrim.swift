@@ -3,7 +3,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     
     var trimWS: String {
         trimmingCharacters(in: .whitespaces)
