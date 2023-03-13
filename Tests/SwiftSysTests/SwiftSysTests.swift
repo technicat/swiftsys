@@ -7,6 +7,10 @@ final class SwiftSysTests: XCTestCase {
         XCTAssertThrowsError(try Sys.jsonPath("jsonfile"))
         XCTAssertThrowsError(try Sys.jsonURL("jsonfile"))
     }
+    func testStringTrim() throws {
+        XCTAssertEqual("trim", " trim  ".trimWS)
+        XCTAssertEqual("trim", " trim  \n".trimWSNL)
+    }
     func testStringURL() throws {
         XCTAssertEqual("id".id, "id")
         XCTAssertNoThrow(try "".urlEncode())
