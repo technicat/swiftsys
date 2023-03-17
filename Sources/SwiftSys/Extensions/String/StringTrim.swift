@@ -4,11 +4,11 @@
 import Foundation
 
 public extension String {
-    
+
     var trimWS: String {
         trimmingCharacters(in: .whitespaces)
     }
-    
+
     var trimWSNL: String {
         trimmingCharacters(in: .whitespacesAndNewlines)
     }
