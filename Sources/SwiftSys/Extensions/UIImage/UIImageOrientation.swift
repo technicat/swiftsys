@@ -7,6 +7,7 @@ import UIKit
 extension CGImagePropertyOrientation {
 
     /// create a CGImagePropertyOrientation from a UIImage.Orientation
+    /// handy when converting a UIImage to a CGImage or CIImage
     public init(_ uiOrientation: UIImage.Orientation) {
         switch uiOrientation {
         case .up: self = .up
@@ -18,7 +19,7 @@ extension CGImagePropertyOrientation {
         case .right: self = .right
         case .rightMirrored: self = .rightMirrored
         @unknown default:
-                // should throw something
+            /// or should throw something or return nil?
             self = .up
         }
     }
@@ -38,7 +39,7 @@ extension UIImage.Orientation {
         case .right: self = .right
         case .rightMirrored: self = .rightMirrored
         @unknown default:
-            // should throw something
+            /// or should throw something or return nil?
             self = .up
         }
     }
