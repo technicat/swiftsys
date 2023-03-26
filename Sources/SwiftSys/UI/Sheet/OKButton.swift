@@ -9,6 +9,10 @@ public struct OKButton: View {
     @Environment(\.dismiss) private var dismiss
     
     let action: ()->Void
+    
+    public init(action: @escaping () -> Void) {
+        self.action = action
+    }
 
     public var body: some View {
 
