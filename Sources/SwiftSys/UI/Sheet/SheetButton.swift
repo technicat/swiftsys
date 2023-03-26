@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 
 /// Button for use in a sheet or popover
+@available(iOS 15.0, *)
 @available(macOS 12.0, *)
 public struct SheetButton: View {
 
