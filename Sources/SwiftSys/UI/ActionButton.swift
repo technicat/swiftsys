@@ -9,6 +9,7 @@ import SwiftUI
 /// alternatively user-supplied
 /// control appearance with a button style
 /// e.g. IconOnlyButtonStyle
+/// rumbles (should be optional)
 @available(macOS 11.0, *)
 public struct ActionButton: View {
     let text: String
