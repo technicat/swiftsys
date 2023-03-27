@@ -3,7 +3,7 @@
 
 import Foundation
 
-public enum Chinese: String {
+public enum Chinese: String, Language {
 
     case cantonese
     case mandarin
