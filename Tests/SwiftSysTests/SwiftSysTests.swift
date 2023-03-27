@@ -33,6 +33,11 @@ final class SwiftSysTests: XCTestCase {
         XCTAssertEqual(link.markdown, "[Technicat](https://technicat.com/)")
         XCTAssertNoThrow(try link.url.openWeb())
     }
+    func testLang() throws {
+        if #available(macOS 13, *) {
+            XCTAssertEqual(Sys.currentLang, "en")
+        }
+    }
     func testAppleMap() throws {
         let link = Site(amap: CLLocationCoordinate2D(latitude: 36.1639229,
                                                      longitude: -115.1457802))
