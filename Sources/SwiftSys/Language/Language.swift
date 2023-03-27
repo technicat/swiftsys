@@ -3,13 +3,13 @@
 
 import Foundation
 
-protocol Language {
+public protocol Language {
     
     /// 
     var spoken: String { get }
 }
 
-extension Language {
+public extension Language {
     
     /// current system language
     /// ISO 639 language code
