@@ -12,7 +12,7 @@ import SwiftUI
 
 /// open URL in an external browser
 public extension URL {
-    func open() throws {
+    func openWeb() throws {
         #if os(macOS)
         if !NSWorkspace.shared.open(self) {
             throw StringError.urlOpenFail(self)

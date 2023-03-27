@@ -21,7 +21,7 @@ final class SwiftSysTests: XCTestCase {
         XCTAssertNoThrow(try "http://technicat.com/".url())
         XCTAssertNoThrow(try "  http://technicat.com/ ".url())
         XCTAssertNoThrow(try "http://technicat.com/".openWeb())
-        XCTAssertNoThrow(try "technicat.com".urlHttps().open())
+        XCTAssertNoThrow(try "technicat.com".urlHttps().openWeb())
     }
     func testSite() throws {
         let name = "Technicat"
@@ -31,26 +31,26 @@ final class SwiftSysTests: XCTestCase {
         XCTAssertEqual(link.url, url)
         XCTAssertEqual(link.id, url)
         XCTAssertEqual(link.markdown, "[Technicat](https://technicat.com/)")
-        XCTAssertNoThrow(try link.url.open())
+        XCTAssertNoThrow(try link.url.openWeb())
     }
     func testAppleMap() throws {
         let link = Site(amap: CLLocationCoordinate2D(latitude: 36.1639229,
                                                      longitude: -115.1457802))
-        XCTAssertNoThrow(try link!.url.open())
+        XCTAssertNoThrow(try link!.url.openWeb())
     }
     func testGoogleMap() throws {
         let link = Site(gmap: CLLocationCoordinate2D(latitude: 36.1639229,
                                                      longitude: -115.1457802))
-        XCTAssertNoThrow(try link!.url.open())
+        XCTAssertNoThrow(try link!.url.openWeb())
     }
     func testOSM() throws {
         let link = Site(osm: CLLocationCoordinate2D(latitude: 36.1639229,
                                                      longitude: -115.1457802))
-        XCTAssertNoThrow(try link!.url.open())
+        XCTAssertNoThrow(try link!.url.openWeb())
     }
     func testWiktionary() throws {
         let link = Site(wkty: "芋頭糕")
-        XCTAssertNoThrow(try link!.url.open())
+        XCTAssertNoThrow(try link!.url.openWeb())
     }
     func testLanguage() throws {
         XCTAssertEqual(Chinese.cantonese.rawValue, "cantonese")

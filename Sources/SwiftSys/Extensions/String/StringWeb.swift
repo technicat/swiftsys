@@ -4,6 +4,6 @@
 public extension String {
 
     func openWeb() throws {
-        try url().open()
+        try url().openWeb()
     }
 }
