@@ -13,9 +13,10 @@ public extension Language {
     
     /// current system language
     /// ISO 639 language code
+    /// rename?
     @available(iOS 16, *)
     @available(macOS 13, *)
-    var currentLang:String? {
+    static var currentLang: String? {
         Locale.current.language.languageCode?.identifier
     }
 }
