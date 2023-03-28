@@ -13,4 +13,13 @@ public extension Sys {
     static var currentLang: String? {
         Locale.current.language.languageCode?.identifier
     }
+    
+    @available(iOS 16, *)
+    @available(macOS 13, *)
+    static var currentLangName: String? {
+        guard let lang = currentLang else {
+            return nil
+        }
+        return Locale.current.localizedString(forLanguageCode: lang)
+    }
 }

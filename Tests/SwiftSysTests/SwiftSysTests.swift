@@ -36,6 +36,7 @@ final class SwiftSysTests: XCTestCase {
     func testLang() throws {
         if #available(macOS 13, *) {
             XCTAssertEqual(Sys.currentLang, "en")
+            XCTAssertEqual(Sys.currentLangName, "English")
         }
     }
     func testAppleMap() throws {
