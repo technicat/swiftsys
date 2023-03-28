@@ -4,7 +4,7 @@
 import Foundation
 
 public extension Sys {
-    
+
     /// current system language
     /// ISO 639 language code
     /// rename?
@@ -13,7 +13,7 @@ public extension Sys {
     static var currentLang: String? {
         Locale.current.language.languageCode?.identifier
     }
-    
+
     @available(iOS 16, *)
     @available(macOS 13, *)
     static var currentLangName: String? {

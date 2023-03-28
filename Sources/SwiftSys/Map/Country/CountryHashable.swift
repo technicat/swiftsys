@@ -13,4 +13,3 @@ extension Country: Hashable {
         hasher.combine(id)
     }
 }
-

@@ -7,7 +7,7 @@ import SwiftUI
 public struct CancelButton: View {
 
     @Environment(\.dismiss) private var dismiss
-    
+
     public init() {
     }
 
@@ -15,7 +15,6 @@ public struct CancelButton: View {
 
         SheetButton("Cancel",
             sysImage: "hand.thumbsdown") {
-            
         }
     }
 }

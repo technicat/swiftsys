@@ -7,9 +7,9 @@ import SwiftUI
 public struct OKButton: View {
 
     @Environment(\.dismiss) private var dismiss
-    
-    let action: ()->Void
-    
+
+    let action: () -> Void
+
     public init(action: @escaping () -> Void) {
         self.action = action
     }

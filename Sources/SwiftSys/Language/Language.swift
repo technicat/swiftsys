@@ -4,7 +4,7 @@
 import Foundation
 
 public protocol Language {
-    
+
     /// 
     var spoken: String { get }
 }

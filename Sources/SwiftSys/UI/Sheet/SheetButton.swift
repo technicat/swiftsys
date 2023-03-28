@@ -7,12 +7,12 @@ import SwiftUI
 public struct SheetButton: View {
 
     @Environment(\.dismiss) private var dismiss
-    
+
     let text: String
     let sysImage: String
     let localize: Bool
-    let action: ()->Void
-    
+    let action: () -> Void
+
     public init(_ text: String, sysImage: String, localize: Bool = true, action: @escaping () -> Void) {
         self.text = text
         self.sysImage = sysImage

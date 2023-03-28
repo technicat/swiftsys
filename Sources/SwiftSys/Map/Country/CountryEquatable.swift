@@ -13,5 +13,3 @@ extension Country: Equatable {
         lhs.id == rhs.id
     }
 }
-
-
