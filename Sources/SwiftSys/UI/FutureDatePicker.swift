@@ -9,6 +9,11 @@ public struct FutureDatePicker: View {
     
     @Binding public var date: Date
     
+    public init (_ title:String, date: Binding<Date>) {
+        self.title = title
+        _date = date
+    }
+    
     public var body: some View {
         DatePicker(
             LocalizedStringKey(title),
