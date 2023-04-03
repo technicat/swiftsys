@@ -5,6 +5,9 @@ import SwiftUI
 @available(iOS 15.0, *)
 @available(macOS 12.0, *)
 public struct CancelButton: View {
+    
+    public init() {
+    }
 
     public var body: some View {
 
