@@ -16,9 +16,10 @@ public struct FutureDatePicker: View {
     
     public var body: some View {
         DatePicker(
-            LocalizedStringKey(title),
+           // LocalizedStringKey(title),
             selection: $date,
-            in: PartialRangeFrom(Date.now)
-        )
+            in: PartialRangeFrom(Date.now)) {
+                Label(LocalizedStringKey(title), systemImage: "calendar")
+            }
     }
 }
