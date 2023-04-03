@@ -6,11 +6,6 @@ import SwiftUI
 @available(macOS 12.0, *)
 public struct CancelButton: View {
 
-    @Environment(\.dismiss) private var dismiss
-
-    public init() {
-    }
-
     public var body: some View {
 
         SheetButton("Cancel",
@@ -18,3 +13,4 @@ public struct CancelButton: View {
         }
     }
 }
+
