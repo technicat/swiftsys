@@ -3,7 +3,7 @@ import SwiftUI
 
 @available(iOS 15, *)
 @available(macOS 12.0, *)
-public struct FutureDatedPicker: View {
+public struct FutureDatePicker: View {
     
     let title: String
     
@@ -11,7 +11,7 @@ public struct FutureDatedPicker: View {
     
     public var body: some View {
         DatePicker(
-            title,
+            LocalizedStringKey(title),
             selection: $date,
             in: PartialRangeFrom(Date.now)
         )
