@@ -5,9 +5,9 @@ import SwiftUI
 @available(macOS 12.0, *)
 public struct FutureDatePicker: View {
     
-    let title: String
+    public let title: String
     
-    @Binding var date: Date
+    @Binding public var date: Date
     
     public var body: some View {
         DatePicker(
