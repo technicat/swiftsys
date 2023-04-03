@@ -6,8 +6,6 @@ import SwiftUI
 @available(macOS 12.0, *)
 public struct OKButton: View {
 
-    @Environment(\.dismiss) private var dismiss
-
     let action: () -> Void
 
     public init(action: @escaping () -> Void) {
