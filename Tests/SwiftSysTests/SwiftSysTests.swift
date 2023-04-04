@@ -33,25 +33,27 @@ final class SwiftSysTests: XCTestCase {
         XCTAssertEqual(link.markdown, "[Technicat](https://technicat.com/)")
         XCTAssertNoThrow(try link.url.openWeb())
     }
+    @available(iOS 16, *)
+    @available(macOS 13, *)
     func testLang() throws {
-        if #available(macOS 13, *) {
-            XCTAssertEqual(Sys.currentLang, "en")
-            XCTAssertEqual(Sys.currentLangName, "English")
-        }
+        XCTAssertEqual(Sys.currentLang, "en")
+        XCTAssertEqual(Sys.currentLangName, "English")
+        XCTAssertEqual(ISO639_1.en.rawValue, "en")
+        XCTAssertEqual(ISO639_1.en.display, "English")
     }
     func testAppleMap() throws {
         let link = Site(amap: CLLocationCoordinate2D(latitude: 36.1639229,
-                                                     longitude: -115.1457802))
+            longitude: -115.1457802))
         XCTAssertNoThrow(try link!.url.openWeb())
     }
     func testGoogleMap() throws {
         let link = Site(gmap: CLLocationCoordinate2D(latitude: 36.1639229,
-                                                     longitude: -115.1457802))
+            longitude: -115.1457802))
         XCTAssertNoThrow(try link!.url.openWeb())
     }
     func testOSM() throws {
         let link = Site(osm: CLLocationCoordinate2D(latitude: 36.1639229,
-                                                     longitude: -115.1457802))
+            longitude: -115.1457802))
         XCTAssertNoThrow(try link!.url.openWeb())
     }
     func testWiktionary() throws {
@@ -71,10 +73,10 @@ final class SwiftSysTests: XCTestCase {
     func testWord() throws {
     }
     func testTTS() throws {
-      //  XCTAssertFalse(TTS.isSpeaking)
+        //  XCTAssertFalse(TTS.isSpeaking)
         XCTAssertNoThrow(try TTS().say("我想要中國茶",
-                                     language: Chinese.cantonese,
-                                     rate: 0.3,
-                                     volume: 1.0))
+                language: Chinese.cantonese,
+                rate: 0.3,
+                volume: 1.0))
     }
 }
