@@ -9,6 +9,10 @@ public struct LanguageMenu: View {
 
     @Binding var language: ISO639_1
     
+    public init (_ language: Binding<ISO639_1>) {
+        _language = language
+    }
+    
     public var body: some View {
         Menu {
             ForEach(ISO639_1.allCases.sorted(by: { $0.display > $1.display})) { lang in
