@@ -20,4 +20,3 @@ public struct LLabel: View {
             systemImage: sysImage)
     }
 }
-

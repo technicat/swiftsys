@@ -2,9 +2,9 @@
 //  Created by Philip Chu on 4/4/23.
 //
 
-extension ISO639_1: Displayable {
+extension ISO639a2: Displayable {
 
-    static var names: [ISO639_1: String] = [
+    static var names: [ISO639a2: String] = [
             .aa: "Afar",
             .ab: "Abkhazian",
             .ak: "Akan",
@@ -188,7 +188,6 @@ extension ISO639_1: Displayable {
     ]
 
     public var display: String {
-        ISO639_1.names[self] ?? self.rawValue
+        ISO639a2.names[self] ?? self.rawValue
     }
 }
-

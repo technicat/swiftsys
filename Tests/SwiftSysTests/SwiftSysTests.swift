@@ -38,8 +38,8 @@ final class SwiftSysTests: XCTestCase {
     func testLang() throws {
         XCTAssertEqual(Sys.currentLang, "en")
         XCTAssertEqual(Sys.currentLangName, "English")
-        XCTAssertEqual(ISO639_1.en.rawValue, "en")
-        XCTAssertEqual(ISO639_1.en.display, "English")
+        XCTAssertEqual(ISO639a2.en.rawValue, "en")
+        XCTAssertEqual(ISO639a2.en.display, "English")
     }
     func testAppleMap() throws {
         let link = Site(amap: CLLocationCoordinate2D(latitude: 36.1639229,
