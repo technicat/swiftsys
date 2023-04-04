@@ -19,7 +19,7 @@ public struct FutureDatePicker: View {
            // LocalizedStringKey(title),
             selection: $date,
             in: PartialRangeFrom(Date.now)) {
-                Label(LocalizedStringKey(title), systemImage: "calendar")
+                LLabel(title, sysImage: "calendar")
             }
     }
 }

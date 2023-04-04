@@ -34,7 +34,7 @@ public struct ActionButton: View {
         }
         label: {
             if localize {
-                Label(LocalizedStringKey(text), systemImage: sysImage)
+                LLabel(text, sysImage: sysImage)
             } else {
                 Label(text, systemImage: sysImage)
             }
