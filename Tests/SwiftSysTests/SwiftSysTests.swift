@@ -36,7 +36,7 @@ final class SwiftSysTests: XCTestCase {
     @available(iOS 16, *)
     @available(macOS 13, *)
     func testLang() throws {
-        XCTAssertEqual(Sys.currentLang, "en")
+        XCTAssertEqual(Sys.currentLangID, "en")
         XCTAssertEqual(Sys.currentLangName, "English")
         XCTAssertEqual(Sys.langName("en"), "English")
         XCTAssertEqual(ISO639a2.en.rawValue, "en")
