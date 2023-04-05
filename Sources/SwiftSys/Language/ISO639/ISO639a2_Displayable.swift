@@ -6,6 +6,6 @@ extension ISO639a2: Displayable {
 
     public var display: String {
         // langName provides localization
-        Sys.langName(self.rawValue) ?? ISO639a2.names[self] ?? self.rawValue
+        self.rawValue.languageName ?? ISO639a2.names[self] ?? self.rawValue
     }
 }

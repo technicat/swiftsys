@@ -7,6 +7,9 @@ final class SwiftSysTests: XCTestCase {
         XCTAssertThrowsError(try Sys.jsonPath("jsonfile"))
         XCTAssertThrowsError(try Sys.jsonURL("jsonfile"))
     }
+    func testStringLanguage() throws {
+        XCTAssertEqual("en".languageName, "English")
+    }
     func testStringTrim() throws {
         XCTAssertEqual("trim", " trim  ".trimWS)
         XCTAssertEqual("trim", " trim  \n".trimWSNL)
@@ -33,14 +36,19 @@ final class SwiftSysTests: XCTestCase {
         XCTAssertEqual(link.markdown, "[Technicat](https://technicat.com/)")
         XCTAssertNoThrow(try link.url.openWeb())
     }
+    func testISO639a2() throws {
+        XCTAssertEqual(ISO639a2.en.rawValue, "en")
+        XCTAssertEqual(ISO639a2.en.display, "English")
+    }
+    func testMastoCode() throws {
+        XCTAssertEqual(MastoCode.en.rawValue, "en")
+        XCTAssertEqual(MastoCode.en.display, "English")
+    }
     @available(iOS 16, *)
     @available(macOS 13, *)
     func testLang() throws {
         XCTAssertEqual(Sys.currentLangID, "en")
         XCTAssertEqual(Sys.currentLangName, "English")
-        XCTAssertEqual(Sys.langName("en"), "English")
-        XCTAssertEqual(ISO639a2.en.rawValue, "en")
-        XCTAssertEqual(ISO639a2.en.display, "English")
     }
     func testAppleMap() throws {
         let link = Site(amap: CLLocationCoordinate2D(latitude: 36.1639229,

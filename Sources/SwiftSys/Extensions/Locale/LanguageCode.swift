@@ -9,7 +9,7 @@ import Foundation
 extension Locale.LanguageCode: Displayable
 {
     public var display: String {
-        Sys.langName(identifier) ?? identifier
+        identifier.languageName ?? identifier
     }
 }
 
