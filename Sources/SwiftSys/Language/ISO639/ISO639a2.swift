@@ -2,6 +2,8 @@
 //  Created by Philip Chu on 4/4/23.
 //
 
+/// ISO639.1 (alpha2) codes
+/// for Mastodon, use MastoCode
 public enum ISO639a2: String, CaseIterable {
 
     // swiftlint:disable identifier_name
