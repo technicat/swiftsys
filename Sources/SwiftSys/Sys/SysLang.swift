@@ -20,6 +20,10 @@ public extension Sys {
         guard let lang = currentLang else {
             return nil
         }
+        return langName(lang)
+    }
+
+    static func langName(_ lang: String) -> String? {
         return Locale.current.localizedString(forLanguageCode: lang)
     }
 }
