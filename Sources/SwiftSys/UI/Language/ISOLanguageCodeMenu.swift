@@ -5,6 +5,7 @@
 import SwiftUI
 
 /// menu to select a Locale.LanguageCode from all ISO language codes
+/// todo - remove mis codes (not in ISO yet) from the list
 @available(macOS 13, *)
 @available(iOS 16, *)
 public struct ISOLanguageCodeMenu: View {
