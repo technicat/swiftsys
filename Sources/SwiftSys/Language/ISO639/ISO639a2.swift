@@ -18,7 +18,7 @@ public enum ISO639a2: String, CaseIterable {
          ka, kg, ki, kj, kk, kl, km, kn, ko, kr, ks, ku, kv, kw, ky,
          la, lb, lg, li, ln, lo, lt, lu, lv,
          mg, mh, mi, mk, ml, mn, mr, ms, mt, my,
-         na, nb, nd, ne, ng, nl, nn, no, np, nr, nv, ny,
+         na, nb, nd, ne, ng, nl, nn, no, nr, nv, ny,
          oc, oj, om, or, os,
          pa, pi, pl, ps, pt,
          qu,
