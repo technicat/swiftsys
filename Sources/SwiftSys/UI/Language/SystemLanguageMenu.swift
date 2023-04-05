@@ -8,21 +8,21 @@ import SwiftUI
 @available(iOS 16, *)
 public struct SystemLanguageMenu: View {
 
-    @Binding var language: Locale.LanguageCode?
+    @Binding var language: Locale.Language?
 
-    public init (_ language: Binding<Locale.LanguageCode?>) {
+    public init (_ language: Binding<Locale.Language?>) {
         _language = language
     }
 
     public var body: some View {
         Menu {
             ForEach(Locale.Language.systemLanguages) { lang in
-                if let code = lang.languageCode {
-                    ActionButton(code.display,
+                //if let code = lang.languageCode {
+                    ActionButton(lang.display,
                                  sysImage: "character.book.closed") {
-                        language = code
+                        language = lang
                     }
-                }
+               // }
             }
         } label: {
             LLabel(language?.display ?? "",
