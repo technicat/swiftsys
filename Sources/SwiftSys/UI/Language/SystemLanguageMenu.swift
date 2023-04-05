@@ -4,10 +4,9 @@
 
 import SwiftUI
 
-/// menu to select a Locale.LanguageCode from all ISO language codes
 @available(macOS 13, *)
 @available(iOS 16, *)
-public struct ISOLanguageCodeMenu: View {
+public struct SystemLanguageMenu: View {
 
     @Binding var language: Locale.LanguageCode?
 
@@ -17,10 +16,12 @@ public struct ISOLanguageCodeMenu: View {
 
     public var body: some View {
         Menu {
-            ForEach(Locale.LanguageCode.isoLanguageCodes.sorted(by: { $0.display > $1.display })) { lang in
-                ActionButton(lang.display,
-                    sysImage: "character.book.closed") {
-                    language = lang
+            ForEach(Locale.Language.systemLanguages) { lang in
+                if let code = lang.languageCode {
+                    ActionButton(code.display,
+                                 sysImage: "character.book.closed") {
+                        language = code
+                    }
                 }
             }
         } label: {
@@ -29,3 +30,7 @@ public struct ISOLanguageCodeMenu: View {
         }
     }
 }
+
+
+
+
