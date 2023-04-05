@@ -6,7 +6,7 @@ extension MastoCode: Displayable {
 
     public var display: String {
         // langName provides localization
-        Sys.langName(self.rawValue) ?? self.rawValue
+        Sys.langName(self.rawValue) ?? MastoCode.names[self] ?? self.rawValue
     }
 }
 
