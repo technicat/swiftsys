@@ -13,3 +13,10 @@ extension Locale.LanguageCode: Displayable
     }
 }
 
+@available(macOS 13, *)
+@available(iOS 16, *)
+extension Locale.LanguageCode: Identifiable {
+    public var id: String {
+        identifier
+    }
+}

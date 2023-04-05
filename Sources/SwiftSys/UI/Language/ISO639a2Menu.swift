@@ -4,8 +4,9 @@
 
 import SwiftUI
 
+/// menu to select an ISO639.1 (alpha2) enum
 @available(macOS 11.0, *)
-public struct LanguageMenu: View {
+public struct ISO639a2Menu: View {
 
     @Binding var language: ISO639a2
 
