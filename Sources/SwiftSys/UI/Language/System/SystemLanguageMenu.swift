@@ -8,7 +8,7 @@ import SwiftUI
 @available(iOS 16, *)
 public struct SystemLanguageMenu: View {
 
-    @Binding var language: Locale.Language?
+    @Binding var language: Locale.Language
 
     public init (_ language: Binding<Locale.Language?>) {
         _language = language
@@ -23,7 +23,7 @@ public struct SystemLanguageMenu: View {
                     }
             }
         } label: {
-            LLabel(language?.display ?? "",
+            LLabel(language.display,
                 sysImage: "character.book.closed")
         }
     }

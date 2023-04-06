@@ -10,9 +10,9 @@ import SwiftUI
 @available(iOS 16, *)
 public struct ISOLanguageCodeMenu: View {
 
-    @Binding var language: Locale.LanguageCode?
+    @Binding var language: Locale.LanguageCode
 
-    public init (_ language: Binding<Locale.LanguageCode?>) {
+    public init (_ language: Binding<Locale.LanguageCode>) {
         _language = language
     }
 
@@ -25,7 +25,7 @@ public struct ISOLanguageCodeMenu: View {
                 }
             }
         } label: {
-            LLabel(language?.display ?? "",
+            LLabel(language.display,
                 sysImage: "character.book.closed")
         }
     }
