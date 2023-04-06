@@ -16,7 +16,8 @@ public struct SystemLanguagePicker: View {
     }
 
     public var body: some View {
-        Picker(selection: $language, label: Text("Language")) {
+        Picker(selection: $language,
+               label: Text("Language")) {
             ForEach(Locale.Language.systemLanguages) { lang in
                     Text(lang.display) 
             }

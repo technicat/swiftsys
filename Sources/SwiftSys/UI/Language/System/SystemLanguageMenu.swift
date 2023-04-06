@@ -10,7 +10,7 @@ public struct SystemLanguageMenu: View {
 
     @Binding var language: Locale.Language
 
-    public init (_ language: Binding<Locale.Language?>) {
+    public init (_ language: Binding<Locale.Language>) {
         _language = language
     }
 
