@@ -4,6 +4,7 @@
 
 import Foundation
 
+/// minimum OS required for LanguageCode
 @available(macOS 13, *)
 @available(iOS 16, *)
 extension Locale.Language: Identifiable {
@@ -12,11 +13,12 @@ extension Locale.Language: Identifiable {
     }
 }
 
+/// minimum OS required for LanguageCode
 @available(iOS 16, *)
 @available(macOS 13, *)
 extension Locale.Language: Displayable
 {
     public var display: String {
-        "\(script?.identifier.scriptName ?? "") \(languageCode?.display ?? "")"
+        "\(region?.identifier.regionName ?? "")  \(script?.identifier.scriptName ?? "") \(languageCode?.display ?? "")"
     }
 }

@@ -14,6 +14,10 @@ extension String {
         Locale.current.localizedString(forScriptCode: self)
     }
     
+    var regionName: String? {
+        Locale.current.localizedString(forRegionCode: self)
+    }
+    
     var languageIDName: String? {
         Locale.current.localizedString(forIdentifier: self)
     }
