@@ -17,4 +17,8 @@ extension String {
         Locale.current.localizedString(forScriptCode: self)
     }
     
+    var languageIDName: String? {
+        Locale.current.localizedString(forIdentifier: self)
+    }
+    
 }

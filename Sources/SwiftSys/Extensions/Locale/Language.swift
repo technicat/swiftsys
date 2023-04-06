@@ -17,6 +17,6 @@ extension Locale.Language: Identifiable {
 extension Locale.Language: Displayable
 {
     public var display: String {
-        maximalIdentifier.scriptName ?? maximalIdentifier
+        maximalIdentifier.languageIDName ?? maximalIdentifier
     }
 }
