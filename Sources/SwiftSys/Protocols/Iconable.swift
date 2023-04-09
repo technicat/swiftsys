@@ -4,7 +4,7 @@
 
 import Foundation
 
-protocol Iconable {
+public protocol Iconable {
     
     /// name of a system icon from SF Symbols
     var icon: String { get }
