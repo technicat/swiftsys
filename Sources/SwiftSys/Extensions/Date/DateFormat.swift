@@ -43,4 +43,8 @@ public extension Date {
     var completeTime: String {
         formatted(date: .omitted, time: .complete)
     }
+    
+    var complete: String {
+        formatted(date: .complete, time: .complete)
+    }
 }
