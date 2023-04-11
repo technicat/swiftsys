@@ -3,7 +3,7 @@
 //
 
 extension ISO639a2 {
-    
+
     static var names: [ISO639a2: String] = [
         .aa: "Afar",
         .ab: "Abkhazian",
@@ -190,4 +190,3 @@ extension ISO639a2 {
         .zu: "Zulu"
     ]
 }
-

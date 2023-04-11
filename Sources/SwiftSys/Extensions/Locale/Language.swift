@@ -1,4 +1,4 @@
- //
+//
 //  Created by Philip Chu on 4/5/23.
 //
 
@@ -16,8 +16,7 @@ extension Locale.Language: Identifiable {
 /// minimum OS required for LanguageCode
 @available(iOS 16, *)
 @available(macOS 13, *)
-extension Locale.Language: Displayable
-{
+extension Locale.Language: Displayable {
     public var display: String {
         "\(region?.identifier.regionName ?? "")  \(script?.identifier.scriptName ?? "") \(languageCode?.display ?? "")"
     }

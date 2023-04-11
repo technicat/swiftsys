@@ -209,8 +209,6 @@ extension MastoCode {
             .tai: "Tai",
             .tok: "Toki Pona",
             .zba: "Balaibalan",
-            .zgh: "Standard Moroccan Tamazight",
+            .zgh: "Standard Moroccan Tamazight"
     ]
 }
-
-

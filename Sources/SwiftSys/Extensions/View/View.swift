@@ -13,7 +13,7 @@ public extension View {
     func round(_ radius: CGFloat) -> some View {
         self.roundedSquare(radius, width: radius*2)
     }
-    
+
     func roundedSquare(_ radius: CGFloat, width: CGFloat) -> some View {
         self.frame(width: width, height: width)
         .cornerRadius(radius)

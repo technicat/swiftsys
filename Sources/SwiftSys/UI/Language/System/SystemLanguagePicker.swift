@@ -19,13 +19,8 @@ public struct SystemLanguagePicker: View {
         Picker(selection: $language,
                label: Text("Language")) {
             ForEach(Locale.Language.systemLanguages) { lang in
-                    Text(lang.display) 
+                    Text(lang.display)
             }
         }
     }
 }
-
-
-
-
-

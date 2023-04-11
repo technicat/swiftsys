@@ -6,7 +6,7 @@ import Foundation
 @available(iOS 16, *)
 @available(macOS 13, *)
 public extension Sys {
-    
+
     /// current system language
     static var currentLangCode: Locale.LanguageCode? {
         Locale.current.language.languageCode
@@ -19,9 +19,9 @@ public extension Sys {
 
     /// current localized language name, if available
     static var currentLangName: String? {
-        guard let ID = currentLangID else {
+        guard let ident = currentLangID else {
             return nil
         }
-        return ID.languageName
+        return ident.languageName
     }
 }
