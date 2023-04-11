@@ -11,7 +11,11 @@ public extension View {
     /// - Parameters
     ///     - radius: radius of the circle, should be half the width/height of the View
     func round(_ radius: CGFloat) -> some View {
-        self.frame(width: radius*2, height: radius*2)
+        self.roundedSquare(radius, width: radius*2)
+    }
+    
+    func roundedSquare(_ radius: CGFloat, width: CGFloat) -> some View {
+        self.frame(width: width, height: width)
         .cornerRadius(radius)
     }
 }
