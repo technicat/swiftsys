@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Philip Chu on 4/12/23.
 //
@@ -11,7 +11,7 @@ import RegexBuilder
 @available(macOS 13, *)
 @available(iOS 16, *)
 extension String {
-    
+
     private static let wiktRegex = Regex {
         "{"
         Capture(OneOrMore(.word))
@@ -25,10 +25,16 @@ extension String {
         for match in matches {
             if let site = Site(wkty: String(match)) {
                 res = res.replacingOccurrences(of: "{\(match)}",
-                                               with: site.markdown)
+                    with: site.markdown)
             }
         }
         return res
+    }
+
+    public var markdown: AttributedString? {
+        try? AttributedString(markdown: expandedWikt,
+            options: AttributedString.MarkdownParsingOptions(interpretedSyntax:
+                    .inlineOnlyPreservingWhitespace))
     }
 
 }

@@ -8,10 +8,10 @@ import Foundation
 extension Item {
 
     public var markdown: AttributedString {
-        (try? AttributedString(markdown: description.expandedWikt,
-                               options: AttributedString.MarkdownParsingOptions(interpretedSyntax:
-                                    .inlineOnlyPreservingWhitespace)))
-                                    ?? AttributedString()
+        let full = description + 
+                    "\n\n**Characters**\n\n"
+                    + word.description
+        return full.markdown ?? AttributedString()
     }
 
 }
