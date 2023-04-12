@@ -15,22 +15,21 @@ public struct Item {
 
     public var imageFile: ImageList
 
+    public var description: String
+
     public var tags: [String]
 
     public var resources: LinkList
 
-    // just so we can make it public
     public init(word: Word,
                 imageFile: ImageList,
+                description: String,
                 tags: [String],
                 resources: LinkList) {
         self.word = word
         self.imageFile = imageFile
+        self.description = description
         self.tags = tags
         self.resources = resources
-    }
-    
-    public var description: String {
-        word.description
     }
 }
