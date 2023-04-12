@@ -1,17 +1,7 @@
 //  Created by Philip Chu on 7/31/15.
 //  Copyright (c) 2015 Technicat. All rights reserved.
 
-public struct Characters {
-    public var text: String
-    public var refs: LinkList
-
-    public init(_ text: String, refs: LinkList = []) {
-        self.text = text
-        self.refs = refs
-    }
-}
-
-// todo: rename, could be more than one word
+/// Cantonese-centric word/phrase entry
 public struct Word {
     public var cantonese: Characters
     public var english: String
@@ -19,16 +9,18 @@ public struct Word {
     public var pinyin: String // pinyin for mandarin
     public var mandarin: Characters? // if mandarin differs from cantonese
     public var simplified: Characters? // simplified chinese for mandarin
+    public var description: String
 
     // just so we can make it public
     public init(cantonese: Characters, english: String, yale: String, pinyin: String,
-                mandarin: Characters?, simplified: Characters?) {
+                mandarin: Characters?, simplified: Characters?, description: String = "") {
         self.cantonese = cantonese
         self.english = english
         self.yale = yale
         self.pinyin = pinyin
         self.mandarin = mandarin
         self.simplified = simplified
+        self.description = description
     }
 
     public func pronounce(_ language: Chinese) -> String {
