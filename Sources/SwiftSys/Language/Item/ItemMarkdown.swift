@@ -10,13 +10,11 @@ extension Item {
     public var markdown: AttributedString {
         if word.description.isEmpty {
             return description.markdown ?? AttributedString()
-        }
-        else {
-            let full = description + 
+        } else {
+            let full = description +
             "\n\n**Characters**\n\n"
             + word.description
             return full.markdown ?? AttributedString()
         }
     }
-
 }
