@@ -17,7 +17,7 @@ public extension String {
 
     /// text is empty or only whitespace
     var isWS: Bool {
-        trimWSNL.isEmpty
+        trimWS.isEmpty
     }
 
     /// text is empty or only whitespace or newlines
