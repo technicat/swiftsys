@@ -21,7 +21,7 @@ public struct ConfirmSheet: View {
 
     public var body: some View {
         VStack {
-            SheetTitle(title: title)
+            SheetTitle(title)
             Spacer()
             Text(LocalizedStringKey(msg))
             Divider()
