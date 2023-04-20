@@ -12,6 +12,12 @@ public struct ConfirmSheet: View {
     let title: String
     let msg: String
     let action: () -> Void
+    
+    public init(_ title: String, msg: String, action: @escaping () -> Void) {
+        self.title = title
+        self.msg = msg
+        self.action = action
+    }
 
     public var body: some View {
         VStack {

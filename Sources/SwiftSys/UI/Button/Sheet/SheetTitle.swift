@@ -11,6 +11,10 @@ public struct SheetTitle: View {
     
     let title: String
     
+    public init(_ title: String) {
+        self.title = title
+    }
+    
     public var body: some View {
         Text(LocalizedStringKey(title)).font(.headline)
     }
