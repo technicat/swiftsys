@@ -6,11 +6,11 @@ import Foundation
 import SwiftUI
 
 @available(macOS 10.15.0, *)
-struct SheetTitle: View {
+public struct SheetTitle: View {
     
     let title: String
     
-    var body: some View {
+    public var body: some View {
         Text(LocalizedStringKey(title)).font(.headline)
     }
 }

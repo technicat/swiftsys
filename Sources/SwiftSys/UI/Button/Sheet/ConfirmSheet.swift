@@ -6,13 +6,13 @@ import Foundation
 import SwiftUI
 
 @available(macOS 13.0, *)
-struct ConfirmSheet: View {
+public struct ConfirmSheet: View {
     
     let title: String
     let msg: String
     let action: () -> Void
 
-    var body: some View {
+    public var body: some View {
         VStack {
             SheetTitle(title: title)
             Spacer()
