@@ -4,8 +4,9 @@
 
 import Foundation
 
-extension String {
+public extension String {
 
+    /// todo - also check MastoCode
     var languageName: String? {
         Locale.current.localizedString(forLanguageCode: self)
     }
