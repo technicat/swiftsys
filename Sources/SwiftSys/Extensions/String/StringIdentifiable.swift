@@ -2,7 +2,7 @@
 //  Copyright (c) 2015 Technicat. All rights reserved.
 
 ///
-public extension String: Identifiable {
+extension String: Identifiable {
 
     public var id: String {
         self
