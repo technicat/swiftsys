@@ -10,7 +10,7 @@ import RegexBuilder
 
 @available(macOS 13, *)
 @available(iOS 16, *)
-extension String {
+public extension String {
 
     private static let wiktRegex = Regex {
         "{"
@@ -19,7 +19,7 @@ extension String {
 
     }
 
-    public var expandedWikt: String {
+    var expandedWikt: String {
         let matches = Set(matches(of: String.wiktRegex).map { $0.output.1 })
         var res = self
         for match in matches {
@@ -31,7 +31,7 @@ extension String {
         return res
     }
 
-    public var markdown: AttributedString? {
+    var markdown: AttributedString? {
         try? AttributedString(markdown: expandedWikt,
             options: AttributedString.MarkdownParsingOptions(interpretedSyntax:
                     .inlineOnlyPreservingWhitespace))
