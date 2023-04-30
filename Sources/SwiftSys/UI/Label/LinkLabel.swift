@@ -43,7 +43,7 @@ public struct LinkLabel: View {
 
     public var body: some View {
         Link(destination: url) {
-            Label(name, systemImage: sysImage)
+            LLabel(name, sysImage)
         }
     }
 }

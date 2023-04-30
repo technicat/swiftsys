@@ -7,6 +7,7 @@ import SwiftUI
 
 /// Button that turns on a bool binding
 /// Typically used for activating sheets
+@available(macOS 11.0, *)
 public struct BoolOnButton: View {
     
     let title: String
@@ -19,7 +20,7 @@ public struct BoolOnButton: View {
         self.image = image
         _sheet = sheet
     }
-    
+
     public var body:  some View {
         ActionButton(title,
                      sysImage: image) {
