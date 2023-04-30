@@ -18,7 +18,7 @@ public struct FutureDatePicker: View {
         DatePicker(
             selection: $date,
             in: PartialRangeFrom(Date.now)) {
-                LLabel(title, sysImage: "calendar")
+                LLabel(title, "calendar")
             }
     }
 }

@@ -23,8 +23,7 @@ public struct ISO639a2Menu: View {
                 }
             }
         } label: {
-            LLabel(language.display,
-                sysImage: "character.book.closed")
+            LLabel(language.display, "character.book.closed")
         }
     }
 }

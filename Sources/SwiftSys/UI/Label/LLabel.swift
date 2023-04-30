@@ -10,7 +10,8 @@ public struct LLabel: View {
     let title: String
     let sysImage: String
 
-    public init (_ title: String, sysImage: String) {
+    public init (_ title: String,
+                 _ sysImage: String) {
         self.title = title
         self.sysImage = sysImage
     }
