@@ -17,8 +17,7 @@ public struct ISO639a2Menu: View {
     public var body: some View {
         Menu {
             ForEach(ISO639a2.allCases.sorted(by: { $0.display > $1.display })) { lang in
-                ActionButton(lang.display,
-                    sysImage: "character.book.closed") {
+                ActionButton(lang.display, "character.book.closed") {
                     language = lang
                 }
             }

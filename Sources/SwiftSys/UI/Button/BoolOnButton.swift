@@ -22,8 +22,7 @@ public struct BoolOnButton: View {
     }
 
     public var body:  some View {
-        ActionButton(title,
-                     sysImage: image) {
+        ActionButton(title, image) {
             sheet = true
         }
     }

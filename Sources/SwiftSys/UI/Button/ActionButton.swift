@@ -17,7 +17,7 @@ public struct ActionButton: View {
     let localize: Bool
     let action: () -> Void
 
-    public init(_ text: String, sysImage: String, localize: Bool = true, action: @escaping () -> Void) {
+    public init(_ text: String, _ sysImage: String, localize: Bool = true, action: @escaping () -> Void) {
         self.text = text
         self.sysImage = sysImage
         self.localize = localize

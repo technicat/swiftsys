@@ -22,8 +22,7 @@ public struct SheetButton: View {
 
     public var body: some View {
 
-        ActionButton(text,
-            sysImage: sysImage) {
+        ActionButton(text, sysImage) {
             action()
             dismiss()
         }

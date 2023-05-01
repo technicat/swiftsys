@@ -18,7 +18,7 @@ public struct SystemLanguageMenu: View {
         Menu {
             ForEach(Locale.Language.systemLanguages) { lang in
                     ActionButton(lang.display,
-                                 sysImage: "character.book.closed") {
+                                 "character.book.closed") {
                         language = lang
                     }
             }
