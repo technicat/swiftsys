@@ -8,11 +8,11 @@ import SwiftUI
 @available(iOS 16.0, *)
 @available(macOS 13.0, *)
 public struct ConfirmSheet: View {
-    
+
     let title: String
     let msg: String
     let action: () -> Void
-    
+
     public init(_ title: String, msg: String, action: @escaping () -> Void) {
         self.title = title
         self.msg = msg

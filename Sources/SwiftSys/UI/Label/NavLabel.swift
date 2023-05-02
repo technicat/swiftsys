@@ -12,7 +12,7 @@ public struct NavLabel: View {
     let title: String
     let image: String
     let dest: any Hashable
-    
+
     public init(_ title: String, _ image: String, _ dest: any Hashable) {
         self.title = title
         self.image = image
