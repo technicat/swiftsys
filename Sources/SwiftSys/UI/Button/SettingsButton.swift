@@ -7,6 +7,9 @@ import SwiftUI
 
 #if os(iOS)
 public struct SettingsButton: View {
+    
+    public init() {
+    }
 
     public var body: some View {
         ActionButton("settings.open", "gearshape") {
