@@ -6,9 +6,9 @@ import Foundation
 import SwiftUI
 
 #if os(iOS)
-struct SettingsButton: View {
+public struct SettingsButton: View {
 
-    var body: some View {
+    public var body: some View {
         ActionButton("settings.open", "gearshape") {
             Sys.settings()
         }
