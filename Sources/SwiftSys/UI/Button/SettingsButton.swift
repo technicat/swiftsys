@@ -7,7 +7,7 @@ import SwiftUI
 
 #if os(iOS)
 public struct SettingsButton: View {
-    
+
     public init() {
     }
 

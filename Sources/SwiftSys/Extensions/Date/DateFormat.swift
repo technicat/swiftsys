@@ -51,7 +51,7 @@ public extension Date {
     var timeOrDate: String {
         Calendar.current.isDateInToday(self) ? shortTime : numDate
     }
-    
+
     var timeOrDateTime: String {
         Calendar.current.isDateInToday(self) ? shortTime : complete
     }
