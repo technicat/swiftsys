@@ -47,4 +47,12 @@ public extension Date {
     var complete: String {
         formatted(date: .complete, time: .complete)
     }
+
+    var timeOrDate: String {
+        Calendar.current.isDateInToday(self) ? shortTime : numDate
+    }
+    
+    var timeOrDateTime: String {
+        Calendar.current.isDateInToday(self) ? shortTime : complete
+    }
 }
