@@ -24,4 +24,9 @@ public extension String {
     var isWSNL: Bool {
         trimWSNL.isEmpty
     }
+
+    /// nil string is whitespace
+    var nilIfEmpty: String? {
+        isWSNL ? nil : self
+    }
 }
