@@ -10,7 +10,7 @@ public extension String {
         trimmingCharacters(in: .whitespaces)
     }
 
-    /// remoe leading and trailing whitespace and newlines
+    /// remove leading and trailing whitespace and newlines
     var trimWSNL: String {
         trimmingCharacters(in: .whitespacesAndNewlines)
     }
