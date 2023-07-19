@@ -9,14 +9,15 @@ import Foundation
 import SwiftUI
 
 public class UploadImage {
-    var image: UIImage
-    var compression = 0.0
-    
-    init(_ image: UIImage) {
+
+    public var image: UIImage
+    public var compression = 0.0
+
+    public init(_ image: UIImage) {
         self.image = image
     }
-    
-    var jpeg: Data? {
+
+    public var jpeg: Data? {
         image.jpegData(compressionQuality: compression)
     }
 }
