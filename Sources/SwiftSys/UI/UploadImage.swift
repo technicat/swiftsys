@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+#if os(iOS)
 public class UploadImage {
 
     public var image: UIImage
@@ -21,3 +22,4 @@ public class UploadImage {
         image.jpegData(compressionQuality: compression)
     }
 }
+#endif

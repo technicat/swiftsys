@@ -1,7 +1,7 @@
 //  Created by Philip Chu on 12/19/18.
 //  Copyright © 2018 Technicat. All rights reserved.
 
-public struct Line: Identifiable {
+public struct Line: Identifiable, Codable {
 
     public var id: Int = 0
     public var name: String

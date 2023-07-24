@@ -2,7 +2,7 @@
 //  Copyright (c) 2015 Technicat. All rights reserved.
 
 /// Cantonese-centric word/phrase entry
-public struct Word {
+public struct Word: Codable {
     public var cantonese: Characters
     public var english: String
     public var yale: String // yale for cantonese

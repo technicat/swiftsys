@@ -4,7 +4,7 @@
 
 /// ISO639.1 (alpha2) codes
 /// for Mastodon, use MastoCode
-public enum ISO639a2: String, CaseIterable {
+public enum ISO639a2: String, CaseIterable, Codable {
 
     // swiftlint:disable identifier_name
     case aa, ab, ae, af, ak, am, an, ar, `as`, av, ay, az,

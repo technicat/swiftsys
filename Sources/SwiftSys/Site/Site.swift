@@ -4,7 +4,7 @@
 import Foundation
 
 /// associate a name with a URL, basically a descriptor of a website
-public struct Site {
+public struct Site: Codable {
     public var name: String
     public var url: URL
 

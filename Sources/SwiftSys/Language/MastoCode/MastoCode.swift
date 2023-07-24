@@ -5,7 +5,7 @@
 // language codes supported by Mastodon (app/helpers/languages_helpers.rb)
 // ISO639.1 minus Guarani (gn) and Samoan (sm)
 // plus some ISO639.3 codes
-public enum MastoCode: String, CaseIterable {
+public enum MastoCode: String, CaseIterable, Codable {
 
     // swiftlint:disable identifier_name
     case aa, ab, ae, af, ak, am, an, ar, `as`, av, ay, az,
