@@ -1,16 +1,14 @@
 //  Created by Philip Chu on 8/2/16.
 //  Copyright © 2016 Technicat. All rights reserved.
 
-import MapKit
-
-public struct Place {
+public struct Place: Codable {
     public var name: String
     public var links: LinkList
     public var city: String
-    public var coordinate: CLLocationCoordinate2D
+    public var coordinate: Coord
     public var address: String
 
-    public init(name: String, links: LinkList, city: String, coordinate: CLLocationCoordinate2D, address: String) {
+    public init(name: String, links: LinkList, city: String, coordinate: Coord, address: String) {
         self.name = name
         self.links = links
         self.city = city
