@@ -11,7 +11,6 @@ public struct Word {
     public var simplified: Characters? // simplified chinese for mandarin
     public var description: String
 
-    // just so we can make it public
     public init(cantonese: Characters, english: String, yale: String, pinyin: String,
         mandarin: Characters?, simplified: Characters?, description: String = "") {
         self.cantonese = cantonese
