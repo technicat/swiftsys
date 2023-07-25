@@ -2,7 +2,7 @@
 //  Copyright (c) 2015 Technicat. All rights reserved.
 
 /// Cantonese-centric word/phrase entry
-public struct Word: Codable {
+public struct Word {
     public var cantonese: Characters
     public var english: String
     public var yale: String // yale for cantonese
@@ -13,7 +13,7 @@ public struct Word: Codable {
 
     // just so we can make it public
     public init(cantonese: Characters, english: String, yale: String, pinyin: String,
-                mandarin: Characters?, simplified: Characters?, description: String = "") {
+        mandarin: Characters?, simplified: Characters?, description: String = "") {
         self.cantonese = cantonese
         self.english = english
         self.yale = yale
@@ -34,7 +34,7 @@ public struct Word: Codable {
     public func chineseText(_ language: Chinese) -> String {
         switch language {
         case .cantonese: return cantonese.text
-        case .mandarin: return  mandarin?.text ?? cantonese.text
+        case .mandarin: return mandarin?.text ?? cantonese.text
         case .simplified: return simplified?.text ?? mandarin?.text ?? cantonese.text
         }
     }
@@ -42,7 +42,7 @@ public struct Word: Codable {
     public func chineseRefs(_ language: Chinese) -> LinkList {
         switch language {
         case .cantonese: return cantonese.refs
-        case .mandarin: return  mandarin?.refs ?? cantonese.refs
+        case .mandarin: return mandarin?.refs ?? cantonese.refs
         case .simplified: return simplified?.refs ?? mandarin?.refs ?? cantonese.refs
         }
     }
@@ -53,5 +53,19 @@ public struct Word: Codable {
 
     public func chineseEnglishParens(_ language: Chinese) -> String {
         "\(chineseText(language)) (\(english))"
+    }
+}
+
+extension Word: Codable {
+
+    enum CodingKeys: String, CodingKey {
+        case cantonese = "Cantonese"
+        case yale = "Yale"
+        case english = "English"
+        case pinyin = "Pinyin"
+        case mandarin = "Mandarin"
+        case simplified = "Simplified"
+        case description
+
     }
 }
