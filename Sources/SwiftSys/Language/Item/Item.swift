@@ -10,6 +10,11 @@
 public struct Postcard: Codable {
     public var image: String
     public var place: String
+    
+    public init(image: String, place: String) {
+        self.image = image
+        self.place = place
+    }
 }
 
 public struct Item: Codable {
