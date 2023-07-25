@@ -7,7 +7,7 @@
     import UIKit
 #endif
 
-public struct Scene: Codable {
+public struct Postcard: Codable {
     public var image: String
     public var place: String
 }
@@ -16,7 +16,7 @@ public struct Item: Codable {
 
     public var word: Word
 
-    public var imageFile: [Scene]
+    public var imageFile: [Postcard]
 
     public var description: String
 
@@ -25,7 +25,7 @@ public struct Item: Codable {
     public var resources: LinkList
 
     public init(word: Word,
-                imageFile: [Scene],
+                imageFile: [Postcard],
                 description: String,
                 tags: [String],
                 resources: LinkList) {
