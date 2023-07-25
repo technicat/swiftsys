@@ -7,13 +7,16 @@
     import UIKit
 #endif
 
-public typealias ImageList = [(image: String, place: String)]
+public struct Scene: Codable {
+    public var image: String
+    public var place: String
+}
 
-public struct Item {
+public struct Item: Codable {
 
     public var word: Word
 
-    public var imageFile: ImageList
+    public var imageFile: [Scene]
 
     public var description: String
 
@@ -22,7 +25,7 @@ public struct Item {
     public var resources: LinkList
 
     public init(word: Word,
-                imageFile: ImageList,
+                imageFile: [Scene],
                 description: String,
                 tags: [String],
                 resources: LinkList) {
