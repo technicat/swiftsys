@@ -4,9 +4,9 @@
 /// characters accompanied by a list of explanatory (dictionary, wiktionary) links
 public struct Characters: Codable {
     public var text: String
-    public var refs: LinkList
+    public var refs: [Site]
 
-    public init(_ text: String, refs: LinkList = []) {
+    public init(_ text: String, refs: [Site] = []) {
         self.text = text
         self.refs = refs
     }

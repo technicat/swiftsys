@@ -3,12 +3,12 @@
 
 public struct Place: Codable {
     public var name: String
-    public var links: LinkList
+    public var links: [Site]
     public var city: String
     public var coordinate: Coord
     public var address: String
 
-    public init(name: String, links: LinkList, city: String, coordinate: Coord, address: String) {
+    public init(name: String, links: [Site], city: String, coordinate: Coord, address: String) {
         self.name = name
         self.links = links
         self.city = city

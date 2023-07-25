@@ -27,13 +27,13 @@ public struct Item: Codable {
 
     public var tags: [String]
 
-    public var resources: LinkList
+    public var resources: [Site]
 
     public init(word: Word,
                 imageFile: [Postcard],
                 description: String,
                 tags: [String],
-                resources: LinkList) {
+                resources: [Site]) {
         self.word = word
         self.imageFile = imageFile
         self.description = description
