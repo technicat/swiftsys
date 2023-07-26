@@ -65,6 +65,35 @@ extension Word: Codable {
         case mandarin = "Mandarin"
         case simplified = "Simplified"
         case description
-
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        if let chars = try container.decodeIfPresent(Characters.self, forKey: .cantonese) {
+            self.cantonese = chars
+        } else if let str = try container.decodeIfPresent(String.self, forKey: .cantonese) {
+            self.cantonese = Characters(str)
+        } else {
+            // should throw
+            self.cantonese = Characters("")
+        }
+        if let chars = try container.decodeIfPresent(Characters.self, forKey: .mandarin) {
+            self.mandarin = chars
+        } else if let str = try container.decodeIfPresent(String.self, forKey: .mandarin) {
+            self.mandarin = Characters(str)
+        } else {
+            self.mandarin = nil
+        }
+        if let chars = try container.decodeIfPresent(Characters.self, forKey: .simplified) {
+            self.simplified = chars
+        } else if let str = try container.decodeIfPresent(String.self, forKey: .simplified) {
+            self.simplified = Characters(str)
+        } else {
+            self.simplified = nil
+        }
+        self.english = try container.decode(String.self, forKey: .english)
+        self.yale = try container.decode(String.self, forKey: .yale)
+        self.pinyin = try container.decode(String.self, forKey: .pinyin)
+        self.description = try container.decode(String.self, forKey: .description)
     }
 }
