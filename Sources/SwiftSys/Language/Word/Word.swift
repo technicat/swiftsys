@@ -94,6 +94,6 @@ extension Word: Codable {
         self.english = try container.decode(String.self, forKey: .english)
         self.yale = try container.decode(String.self, forKey: .yale)
         self.pinyin = try container.decode(String.self, forKey: .pinyin)
-        self.description = try container.decode(String.self, forKey: .description)
+        self.description = (try? container.decode(String.self, forKey: .description)) ?? ""
     }
 }
