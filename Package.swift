@@ -26,7 +26,10 @@ let package = Package(
         ),
         .testTarget(
             name: "SwiftSysTests",
-            dependencies: ["SwiftSys"]
+            dependencies: ["SwiftSys"],
+            resources: [
+                .copy("Resources")
+            ]
         )
     ]
 )
