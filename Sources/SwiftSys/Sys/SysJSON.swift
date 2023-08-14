@@ -11,9 +11,5 @@ extension Sys {
         }
         return path
     }
-
-    static public func jsonURL(_ file: String) throws -> URL {
-        let path = try jsonPath(file)
-        return URL(fileURLWithPath: path)
-    }
 }
+

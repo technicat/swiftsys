@@ -11,7 +11,7 @@ final class JSONTests: XCTestCase {
     
     func testWord() throws {
         // arrange
-        let json = try Data(fromJSON: "Word")
+        let json = try Data(fromJSON: "Resources/Word")
         let decoder = JSONDecoder()
         
         // act
