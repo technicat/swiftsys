@@ -16,12 +16,3 @@ extension JSONDecoder {
     }
     
 }
-
-extension Data {
-
-    public init(fromJSON file: String) throws {
-        try self.init(contentsOf: Sys.jsonURL(file))
-    }
-    
-}
-
