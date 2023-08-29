@@ -22,7 +22,7 @@ public extension String {
         var res = self
         for match in matches {
                 res = res.replacingOccurrences(of: "#\(match)",
-                    with: "*#\(match)*")
+                    with: "**#\(match)**")
         }
         return res
     }
