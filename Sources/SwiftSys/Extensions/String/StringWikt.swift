@@ -16,7 +16,6 @@ public extension String {
         "{"
         Capture(OneOrMore(.word))
         "}"
-
     }
 
     var expandedWikt: String {
@@ -31,7 +30,7 @@ public extension String {
         return res
     }
 
-    var markdown: AttributedString? {
+    var markdownWikt: AttributedString? {
         try? AttributedString(markdown: expandedWikt,
             options: AttributedString.MarkdownParsingOptions(interpretedSyntax:
                     .inlineOnlyPreservingWhitespace))

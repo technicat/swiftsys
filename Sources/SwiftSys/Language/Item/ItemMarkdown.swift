@@ -9,12 +9,12 @@ extension Item {
 
     public var markdown: AttributedString {
         if word.description.isEmpty {
-            return description.markdown ?? AttributedString()
+            return description.markdownWikt ?? AttributedString()
         } else {
             let full = description +
             "\n\n**Characters**\n\n"
             + word.description
-            return full.markdown ?? AttributedString()
+            return full.markdownWikt ?? AttributedString()
         }
     }
 }
