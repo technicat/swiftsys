@@ -12,9 +12,15 @@ final class TextTests: XCTestCase {
         XCTAssert(" \n\n  ".isWSNL)
     }
 
-@available(macOS 13, *)
-@available(iOS 16, *)
+    @available(macOS 13, *)
+    @available(iOS 16, *)
     func testTag() throws {
         XCTAssertEqual("#tag".bfTag, "**#tag**")
+    }
+
+    @available(macOS 13, *)
+    @available(iOS 16, *)
+    func testMention() throws {
+        XCTAssertEqual("@mention".bfMention, "**@mention**")
     }
 }
