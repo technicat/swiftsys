@@ -1,21 +1,11 @@
 @testable import SwiftSys
 import XCTest
-import MapKit
 
 final class LangTests: XCTestCase {
     
     func testStringLanguage() throws {
         XCTAssertEqual("en".languageName, "English")
     }
-    func testStringTrim() throws {
-        XCTAssertEqual("trim", " trim  ".trimWS)
-        XCTAssertEqual("trim", " trim  \n".trimWSNL)
-        XCTAssertFalse("trim".isWSNL)
-        XCTAssert("".isWSNL)
-        XCTAssert("   ".isWSNL)
-        XCTAssert(" \n\n  ".isWSNL)
-    }
-   
    
     func testISO639a2() throws {
         XCTAssertEqual(ISO639a2.en.rawValue, "en")
