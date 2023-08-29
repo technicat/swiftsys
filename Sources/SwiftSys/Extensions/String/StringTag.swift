@@ -21,7 +21,7 @@ public extension String {
         let matches = Set(matches(of: String.hashtagRegex).map { $0.output.1 })
         var res = self
         for match in matches {
-            if !match.output.isEmpty {
+            if !match.isEmpty {
                 res = res.replacingOccurrences(of: "#\(match)",
                     with: "**#\(match)**")
             }
