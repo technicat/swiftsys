@@ -5,6 +5,7 @@ import Foundation
 
 /// associate a name with a URL, basically a descriptor of a website
 public struct Site {
+
     public var name: String
     public var url: URL
 
@@ -23,7 +24,7 @@ public struct Site {
 }
 
 extension Site: Codable {
-    
+
     enum CodingKeys: String, CodingKey {
         case name
         case url = "URL"

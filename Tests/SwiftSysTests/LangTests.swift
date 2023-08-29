@@ -2,26 +2,28 @@
 import XCTest
 
 final class LangTests: XCTestCase {
-    
+
     func testStringLanguage() throws {
         XCTAssertEqual("en".languageName, "English")
     }
-   
+
     func testISO639a2() throws {
         XCTAssertEqual(ISO639a2.en.rawValue, "en")
         XCTAssertEqual(ISO639a2.en.display, "English")
     }
+
     func testMastoCode() throws {
         XCTAssertEqual(MastoCode.en.rawValue, "en")
         XCTAssertEqual(MastoCode.en.display, "English")
     }
+
     @available(iOS 16, *)
     @available(macOS 13, *)
     func testLang() throws {
         XCTAssertEqual(Sys.currentLangID, "en")
         XCTAssertEqual(Sys.currentLangName, "English")
     }
-   
+
     func testLanguage() throws {
         XCTAssertEqual(Chinese.cantonese.rawValue, "cantonese")
         XCTAssertEqual(Chinese.mandarin.rawValue, "mandarin")
@@ -35,8 +37,7 @@ final class LangTests: XCTestCase {
         XCTAssertThrowsError(try Chinese.language(3))
         XCTAssertThrowsError(try Chinese.language(-1))
     }
-    func testWord() throws {
-    }
+
     func testTTS() throws {
         //  XCTAssertFalse(TTS.isSpeaking)
         XCTAssertNoThrow(try TTS().say("我想要中國茶",

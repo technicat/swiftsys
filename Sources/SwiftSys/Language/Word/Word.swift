@@ -11,8 +11,13 @@ public struct Word {
     public var simplified: Characters? // simplified chinese for mandarin
     public var description: String
 
-    public init(cantonese: Characters, english: String, yale: String, pinyin: String,
-        mandarin: Characters?, simplified: Characters?, description: String = "") {
+    public init(cantonese: Characters,
+                english: String,
+                yale: String,
+                pinyin: String,
+                mandarin: Characters?,
+                simplified: Characters?,
+                description: String = "") {
         self.cantonese = cantonese
         self.english = english
         self.yale = yale
@@ -66,7 +71,7 @@ extension Word: Codable {
         case simplified = "Simplified"
         case description
     }
-    
+
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         if let chars = try container.decodeIfPresent(Characters.self, forKey: .cantonese) {

@@ -11,4 +11,3 @@ public struct Dialog: Codable {
         self.lines = lines
     }
 }
-

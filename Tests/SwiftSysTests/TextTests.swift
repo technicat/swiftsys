@@ -11,10 +11,10 @@ final class TextTests: XCTestCase {
         XCTAssert("   ".isWSNL)
         XCTAssert(" \n\n  ".isWSNL)
     }
-    
+
 @available(macOS 13, *)
 @available(iOS 16, *)
     func testTag() throws {
-        XCTAssertEqual("#tag".bfTag, "*tag*")
+        XCTAssertEqual("#tag".bfTag, "*#tag*")
     }
 }

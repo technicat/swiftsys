@@ -14,15 +14,15 @@ public extension String {
 
     private static let hashtagRegex = Regex {
         "#"
-        Capture(One(.word))
+        Capture(OneOrMore(.word))
     }
 
     var bfTag: String {
         let matches = Set(matches(of: String.hashtagRegex).map { $0.output.1 })
         var res = self
         for match in matches {
-                res = res.replacingOccurrences(of: "{\(match)}",
-                    with: "*\(match)*")
+                res = res.replacingOccurrences(of: "#\(match)",
+                    with: "*#\(match)*")
         }
         return res
     }
