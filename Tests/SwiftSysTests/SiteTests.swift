@@ -7,7 +7,7 @@ final class SiteTests: XCTestCase {
     func testSite() throws {
         let name = "Technicat"
         let url = URL(string: "https://technicat.com/")!
-        let link = Site(name, url: url)
+        let link = Site(name, URL: url)
         XCTAssertEqual(link.name, name)
         XCTAssertEqual(link.url, url)
         XCTAssertEqual(link.id, url)

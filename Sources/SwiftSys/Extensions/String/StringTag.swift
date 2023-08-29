@@ -17,7 +17,7 @@ public extension String {
         Capture(One(.word))
     }
 
-    var bfTag: String {
+    public var bfTag: String {
         let matches = Set(matches(of: String.hashtagRegex).map { $0.output.1 })
         var res = self
         for match in matches {

@@ -8,14 +8,14 @@ public struct Site {
     public var name: String
     public var url: URL
 
-    public init(_ name: String, url: URL) {
+    public init(_ name: String, URL: URL) {
         self.name = name
-        self.url = url
+        self.url = URL
     }
 
     public init?(_ name: String, url: String) {
         if let uurl = URL(string: url) {
-            self.init(name, url: uurl)
+            self.init(name, URL: uurl)
         } else {
             return nil
         }
