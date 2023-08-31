@@ -19,15 +19,13 @@ public extension String {
     }
 
     var expandedWikt: String {
-        let matches = Set(matches(of: String.wiktRegex).map { $0.output.1 })
-        var res = self
-        for match in matches {
-            if let site = Site(wkty: String(match)) {
-                res = res.replacingOccurrences(of: "{\(match)}",
-                    with: site.markdown)
+        replacing(String.wiktRegex, with: { match in
+            guard let site = Site(wkty: String(match.output.1)) else {
+                return self
             }
+            return site.markdown
         }
-        return res
+        )
     }
 
     var markdownWikt: AttributedString? {
