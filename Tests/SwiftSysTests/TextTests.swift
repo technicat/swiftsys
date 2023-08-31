@@ -17,6 +17,12 @@ final class TextTests: XCTestCase {
     func testTag() throws {
         XCTAssertEqual("#tag".bfTag, "**#tag**")
     }
+    
+    @available(macOS 13, *)
+    @available(iOS 16, *)
+    func testTags() throws {
+        XCTAssertEqual("#tag #tags".bfTag, "**#tag** **#tags**")
+    }
 
     @available(macOS 13, *)
     @available(iOS 16, *)

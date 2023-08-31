@@ -14,19 +14,11 @@ public extension String {
 
     private static let mentionRegex = Regex {
         "@"
-        Capture(OneOrMore(.word))
+        OneOrMore(.word)
     }
 
     var bfMention: String {
-        let matches = Set(matches(of: String.mentionRegex).map { $0.output.1 })
-        var res = self
-        for match in matches {
-            if !match.isEmpty {
-                res = res.replacingOccurrences(of: "@\(match)",
-                    with: "**@\(match)**")
-            }
-        }
-        return res
+        replacing(String.mentionRegex, with: { match in "**\(match.output)**" })
     }
 
 }

@@ -14,19 +14,11 @@ public extension String {
 
     private static let hashtagRegex = Regex {
         "#"
-        Capture(OneOrMore(.word))
+        OneOrMore(.word)
     }
 
     var bfTag: String {
-        let matches = Set(matches(of: String.hashtagRegex).map { $0.output.1 })
-        var res = self
-        for match in matches {
-            if !match.isEmpty {
-                res = res.replacingOccurrences(of: "#\(match)",
-                    with: "**#\(match)**")
-            }
-        }
-        return res
+        replacing(String.hashtagRegex, with: { match in "**\(match.output)**" })
     }
 
 }
