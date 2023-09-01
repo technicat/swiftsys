@@ -23,7 +23,8 @@ final class TextTests: XCTestCase {
     func testTags() throws {
         XCTAssertEqual("#tag".bfTag, "**#tag**")
         XCTAssertEqual("#Tag".bfTag, "**#Tag**")
-        XCTAssertEqual("#hash-tag".bfTag, "**#hash-tag**")
+        // mastodon doesn't allow hyphen
+        XCTAssertEqual("#hash-tag".bfTag, "**#hash**-tag")
         XCTAssertEqual("#tag #tags".bfTag, "**#tag** **#tags**")
     }
 
