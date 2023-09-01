@@ -16,7 +16,13 @@ public extension String {
 
     private static let hashtagRegex = Regex {
         "#"
-        OneOrMore(.word)
+        //  OneOrMore(.word)
+        OneOrMore {
+            CharacterClass(
+                .anyOf("-"),
+                .word
+            )
+        }
     }
 
     var bfTag: String {
