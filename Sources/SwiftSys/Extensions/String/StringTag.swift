@@ -11,6 +11,8 @@ import RegexBuilder
 @available(macOS 13, *)
 @available(iOS 16, *)
 public extension String {
+    
+// https://github.com/Gargron/mastodon/blob/master/app/models/tag.rb
 
     private static let hashtagRegex = Regex {
         "#"
