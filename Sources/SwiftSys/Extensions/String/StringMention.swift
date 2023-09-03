@@ -13,12 +13,20 @@ import RegexBuilder
 public extension String {
 
     private static let mentionRegex = Regex {
-        "@"
-        OneOrMore(.word)
+        Capture {
+            ChoiceOf {
+                Anchor.startOfLine
+                One(.whitespace)
+            }
+        }
+        Capture {
+            "@"
+            OneOrMore(.word)
+        }
     }
 
     var bfMention: String {
-        replacing(String.mentionRegex, with: { match in "**\(match.output)**" })
+        replacing(String.mentionRegex, with: { match in "\(match.output.1)**\(match.output.2)**" })
     }
 
 }

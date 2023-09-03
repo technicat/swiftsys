@@ -33,5 +33,6 @@ final class TextTests: XCTestCase {
     @available(iOS 16, *)
     func testMention() throws {
         XCTAssertEqual("@mention".bfMention, "**@mention**")
+        XCTAssertEqual("nota@mention".bfMention, "nota@mention")
     }
 }
