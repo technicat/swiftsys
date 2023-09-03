@@ -5,9 +5,6 @@ import RegexBuilder
 @available(iOS 16, *)
 public extension String {
 
-// compare with regex in
-// https://github.com/Gargron/mastodon/blob/master/app/models/tag.rb
-
     private static let hashtagRegex = Regex {
         Capture {
             ChoiceOf {
