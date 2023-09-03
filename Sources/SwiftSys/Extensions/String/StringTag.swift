@@ -1,10 +1,3 @@
-//
-//  File.swift
-//
-//
-//  Created by Philip Chu on 4/12/23.
-//
-
 import Foundation
 import RegexBuilder
 
