@@ -26,6 +26,7 @@ final class TextTests: XCTestCase {
         // mastodon doesn't allow hyphen
         XCTAssertEqual("#hash-tag".bfTag, "**#hash**-tag")
         XCTAssertEqual("#tag #tags".bfTag, "**#tag** **#tags**")
+        XCTAssertEqual("tag#tag".bfTag, "tag#tag")
     }
 
     @available(macOS 13, *)
