@@ -35,7 +35,7 @@ public struct FullText: View {
 
     @Binding var full: Bool
     
-    public init(_ text: String, _ full: Binding<Bool>) {
+    public init(_ text: String, full: Binding<Bool>) {
         self.text = text
         _full = full
     }
