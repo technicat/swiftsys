@@ -50,6 +50,9 @@ public struct FullableImage: View {
                 }
                 .fullScreenCover(isPresented: $full) {
                     FullImage(image, full: $full)
+                        .onTapGesture {
+                        full = false
+                    }
                 }
         }
 }
