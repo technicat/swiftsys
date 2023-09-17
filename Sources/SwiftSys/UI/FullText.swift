@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct FullableText: View {
+public struct FullableText: View {
 
     @State var full = false
 
