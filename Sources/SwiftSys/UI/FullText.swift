@@ -13,6 +13,10 @@ public struct FullableText: View {
     @State var full = false
 
     let text: String
+    
+    public init(_ text: String) {
+        self.text = text
+    }
 
     public var body: some View {
        Text(text)
@@ -30,6 +34,11 @@ public struct FullText: View {
     let text: String
 
     @Binding var full: Bool
+    
+    public init(_ text: String, _ full: Binding<Bool>) {
+        self.text = text
+        _full = full
+    }
 
     public var body: some View {
         ScrollView {
