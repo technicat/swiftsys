@@ -37,7 +37,7 @@ public struct FullableImage: View {
 
     let image: UIImage
     
-    public init(_ image: UIImagex) {
+    public init(_ image: UIImage) {
         self.image = image
     }
 
