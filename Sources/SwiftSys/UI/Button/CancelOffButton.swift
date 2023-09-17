@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 @available(macOS 12.0, *)
+@available(iOS 15.0, *)
 public struct CancelOffButton: View {
 
     @Binding var doit: Bool
