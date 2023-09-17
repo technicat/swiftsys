@@ -25,14 +25,13 @@ public struct FullableText: View {
     }
 }
 
-@available(macOS 10.15, *)
-struct FullText: View {
+public struct FullText: View {
 
     let text: String
 
     @Binding var full: Bool
 
-    var body: some View {
+    public var body: some View {
         ScrollView {
             Text(text).font(.body)
         }.padding()
