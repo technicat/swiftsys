@@ -24,7 +24,7 @@ public struct FullableText: View {
             full = true
         }
             .fullScreenCover(isPresented: $full) {
-                FullText(text: text, full: $full)
+                FullText(text, full: $full)
         }
     }
 }
