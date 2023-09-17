@@ -14,7 +14,7 @@ public struct FullableText: View {
 
     let text: String
 
-    var body: some View {
+    public var body: some View {
        Text(text)
             .onTapGesture {
             full = true
