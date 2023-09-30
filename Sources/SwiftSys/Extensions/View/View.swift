@@ -14,7 +14,7 @@ public extension View {
         self.roundedSquare(radius, width: radius*2)
     }
 
-    func roundedSquare(_ radius: CGFloat, width: CGFloat) -> some View {
+    func roundedSquare(_ radius: CGFloat = 0, width: CGFloat) -> some View {
         self.frame(width: width, height: width)
         .cornerRadius(radius)
     }
