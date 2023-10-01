@@ -11,6 +11,10 @@ import SwiftUI
 public struct Busy: View {
 
     let ctr: Int
+    
+    public init(ctr: Int) {
+        self.ctr = ctr
+    }
 
     public var body: some View {
         if ctr > 0 {
