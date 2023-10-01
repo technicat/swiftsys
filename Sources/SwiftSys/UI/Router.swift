@@ -10,7 +10,7 @@ import Foundation
 @available(macOS 10.15, *)
 public class Router<T>: ObservableObject {
 
-    @Published var path: [T] = []
+    @Published public var path: [T] = []
 
     func push(_ route: T) {
         path.append(route)
