@@ -15,11 +15,11 @@ public class Router<T>: ObservableObject {
     public init() {
     }
 
-    func push(_ route: T) {
+    public func push(_ route: T) {
         path.append(route)
     }
 
-    func pop() {
+    public func pop() {
         if !path.isEmpty {
             path.removeLast()
         }
