@@ -11,6 +11,9 @@ import Foundation
 public class Router<T>: ObservableObject {
 
     @Published public var path: [T] = []
+    
+    public init() {
+    }
 
     func push(_ route: T) {
         path.append(route)
