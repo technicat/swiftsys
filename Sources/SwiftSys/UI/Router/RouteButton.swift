@@ -10,6 +10,7 @@ import SwiftUI
 import TipKit
 
 @available(macOS 14.0, *)
+@available(iOS 17.0, *)
 public struct RouteButton<T: Equatable>: View {
 
     @EnvironmentObject var router: Router<T>
