@@ -2,11 +2,11 @@
 //  Copyright © 2019 Technicat. All rights reserved.
 
 #if os(iOS)
-    import UIKit
+import UIKit
 #endif
 #if os(macOS)
-    import AppKit
-    public typealias UIImage = NSImage
+import AppKit
+public typealias UIImage = NSImage
 #endif
 
 extension UIImage {
@@ -23,7 +23,7 @@ extension UIImage {
         Sys.documentsPath(name)
     }
 
-#if os(iOS)
+    #if os(iOS)
     func writeJPEG(_ name: String) {
         if let data = jpegData(compressionQuality: 0.8) {
             let filename = UIImage.pathJPEG(name)
@@ -37,5 +37,5 @@ extension UIImage {
             try? data.write(to: filename)
         }
     }
-#endif
+    #endif
 }

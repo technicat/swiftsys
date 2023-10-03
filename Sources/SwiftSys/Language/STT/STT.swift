@@ -14,8 +14,8 @@ public class STT: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
             throw STTError.noSampleRate
         }
         node.installTap(onBus: 0,
-            bufferSize: 1024,
-            format: recordingFormat) { buffer, _ in
+                        bufferSize: 1024,
+                        format: recordingFormat) { buffer, _ in
             request.append(buffer)
         }
     }
@@ -34,8 +34,8 @@ public class STT: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
         request = nil
         engine.stop()
         untapNode(engine.inputNode)
-  //      sttEngine.reset()
-  //      sttTask = nil
+        //      sttEngine.reset()
+        //      sttTask = nil
     }
 
     private func listen(_ lang: Chinese) {
@@ -84,11 +84,11 @@ public class STT: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
             resultHandler: { result, error in
                 if error != nil {
                     // set sttState? cancel?
-                  //  Sys.log.error("Speech to text error: \(error!)")
+                    //  Sys.log.error("Speech to text error: \(error!)")
                 }
                 guard let result = result else {
                     // set sttState? cancel?
-                   // Sys.log.info("Speech to text: no result")
+                    // Sys.log.info("Speech to text: no result")
                     return
                 }
                 // pass this in?
@@ -97,7 +97,7 @@ public class STT: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
                     // should never can happen, but we should cancel
                     self.state = .fail
                     self.cancelRecording()
-                 //   Sys.log.error("STT match word is missing")
+                    //   Sys.log.error("STT match word is missing")
                     return
                 }
                 self.text = result.bestTranscription.formattedString
@@ -154,7 +154,7 @@ public class STT: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
 
     private func errorlog(_ error: String) {
         errorText = error
-      //  Sys.log.error("Speech to text error: \(error)")
+        //  Sys.log.error("Speech to text error: \(error)")
     }
 
     public func stop() {

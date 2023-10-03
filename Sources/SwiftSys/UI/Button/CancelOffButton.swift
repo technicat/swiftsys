@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Philip Chu on 9/16/23.
 //
@@ -13,7 +13,7 @@ import SwiftUI
 public struct CancelOffButton: View {
 
     @Binding var doit: Bool
-    
+
     public init(_ doit: Binding<Bool>) {
         _doit = doit
     }
@@ -24,4 +24,3 @@ public struct CancelOffButton: View {
         }
     }
 }
-

@@ -30,8 +30,8 @@ public extension String {
 
     var markdownWikt: AttributedString? {
         try? AttributedString(markdown: expandedWikt,
-            options: AttributedString.MarkdownParsingOptions(interpretedSyntax:
-                    .inlineOnlyPreservingWhitespace))
+                              options: AttributedString.MarkdownParsingOptions(interpretedSyntax:
+                                                                                .inlineOnlyPreservingWhitespace))
     }
 
 }

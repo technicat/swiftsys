@@ -22,11 +22,11 @@ public class TTS: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         volume: Float = 1.0) throws {
         // https://stackoverflow.com/questions/53619027/avspeechsynthesizer-volume-too-low
         #if os(iOS)
-            let audioSession = AVAudioSession.sharedInstance()
-            try audioSession.setCategory(AVAudioSession.Category.playAndRecord)
-            try audioSession.setMode(AVAudioSession.Mode.default)
-            try audioSession.setActive(true)
-            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
+        let audioSession = AVAudioSession.sharedInstance()
+        try audioSession.setCategory(AVAudioSession.Category.playAndRecord)
+        try audioSession.setMode(AVAudioSession.Mode.default)
+        try audioSession.setActive(true)
+        try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
         #endif
         if synth == nil {
             synth = AVSpeechSynthesizer()

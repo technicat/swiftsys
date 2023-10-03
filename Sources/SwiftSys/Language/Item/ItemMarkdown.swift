@@ -12,8 +12,8 @@ extension Item {
             return description.markdownWikt ?? AttributedString()
         } else {
             let full = description +
-            "\n\n**Characters**\n\n"
-            + word.description
+                "\n\n**Characters**\n\n"
+                + word.description
             return full.markdownWikt ?? AttributedString()
         }
     }

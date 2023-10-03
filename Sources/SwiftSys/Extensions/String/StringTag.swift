@@ -17,8 +17,8 @@ public extension String {
             OneOrMore(.word)
         }
     }
-        .anchorsMatchLineEndings()
-        .wordBoundaryKind(.default)
+    .anchorsMatchLineEndings()
+    .wordBoundaryKind(.default)
 
     var bfTag: String {
         replacing(String.hashtagRegex, with: { match in "\(match.output.1)**\(match.output.2)**" })

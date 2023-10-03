@@ -1,6 +1,6 @@
 //
 //  FullText.swift
-//  
+//
 //
 //  Created by Philip Chu on 9/16/23.
 //
@@ -13,19 +13,19 @@ public struct FullableText: View {
     @State var full = false
 
     let text: String
-    
+
     public init(_ text: String) {
         self.text = text
     }
 
     public var body: some View {
-       Text(text)
+        Text(text)
             .onTapGesture {
-            full = true
-        }
+                full = true
+            }
             .fullScreenCover(isPresented: $full) {
                 FullText(text, full: $full)
-        }
+            }
     }
 }
 
@@ -34,7 +34,7 @@ public struct FullText: View {
     let text: String
 
     @Binding var full: Bool
-    
+
     public init(_ text: String, full: Binding<Bool>) {
         self.text = text
         _full = full
@@ -44,7 +44,7 @@ public struct FullText: View {
         ScrollView {
             Text(text).font(.body)
         }.padding()
-            .onTapGesture {
+        .onTapGesture {
             full = false
         }
     }

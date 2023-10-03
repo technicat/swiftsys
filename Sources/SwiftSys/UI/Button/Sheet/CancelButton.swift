@@ -12,7 +12,7 @@ public struct CancelButton: View {
     public var body: some View {
 
         SheetButton("Cancel",
-            sysImage: "hand.thumbsdown") {
+                    sysImage: "hand.thumbsdown") {
         }
     }
 }

@@ -17,19 +17,19 @@ final class SiteTests: XCTestCase {
 
     func testAppleMap() throws {
         let link = Site(amap: CLLocationCoordinate2D(latitude: 36.1639229,
-            longitude: -115.1457802))
+                                                     longitude: -115.1457802))
         XCTAssertNoThrow(try link!.url.openWeb())
     }
 
     func testGoogleMap() throws {
         let link = Site(gmap: CLLocationCoordinate2D(latitude: 36.1639229,
-            longitude: -115.1457802))
+                                                     longitude: -115.1457802))
         XCTAssertNoThrow(try link!.url.openWeb())
     }
 
     func testOSM() throws {
         let link = Site(osm: CLLocationCoordinate2D(latitude: 36.1639229,
-            longitude: -115.1457802))
+                                                    longitude: -115.1457802))
         XCTAssertNoThrow(try link!.url.openWeb())
     }
 

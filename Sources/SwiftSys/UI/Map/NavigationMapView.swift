@@ -15,8 +15,8 @@ public struct NavigationMapView: View {
         self.region = region
         _cregion = .init(initialValue:
                             MKCoordinateRegion(center: place.coordinate.mapCoord,
-                span: MKCoordinateSpan(latitudeDelta: 0.005,
-                    longitudeDelta: 0.005)))
+                                               span: MKCoordinateSpan(latitudeDelta: 0.005,
+                                                                      longitudeDelta: 0.005)))
     }
 
     public var body: some View {

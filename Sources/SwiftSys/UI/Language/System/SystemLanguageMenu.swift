@@ -17,10 +17,10 @@ public struct SystemLanguageMenu: View {
     public var body: some View {
         Menu {
             ForEach(Locale.Language.systemLanguages) { lang in
-                    ActionButton(lang.display,
-                                 "character.book.closed") {
-                        language = lang
-                    }
+                ActionButton(lang.display,
+                             "character.book.closed") {
+                    language = lang
+                }
             }
         } label: {
             LLabel(language.display, "character.book.closed")

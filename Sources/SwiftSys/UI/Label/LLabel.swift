@@ -18,6 +18,6 @@ public struct LLabel: View {
 
     public var body: some View {
         Label(LocalizedStringKey(title),
-            systemImage: sysImage)
+              systemImage: sysImage)
     }
 }

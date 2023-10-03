@@ -16,7 +16,7 @@ public struct MastoCodePicker: View {
     public var body: some View {
         Picker(selection: $language, label: Text("Language")) {
             ForEach(MastoCode.allCases.sorted(by: { $0.display < $1.display })) { lang in
-                    Text(lang.display)
+                Text(lang.display)
             }
         }
     }

@@ -15,7 +15,7 @@ public struct OKButton: View {
     public var body: some View {
 
         SheetButton("OK",
-            sysImage: "hand.thumbsup") {
+                    sysImage: "hand.thumbsup") {
             action()
         }
     }

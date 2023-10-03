@@ -11,12 +11,12 @@ public struct LinkLabel: View {
     let sysImage: String
 
     /// Create a LinkLabel from a URL
-    /// 
+    ///
     /// - Parameters
     ///     - url: the URL to link to
     ///     - name: the label text
     ///     - sysImage: name of the system image in the label (browse Apple's SF Symbols app)
-    /// 
+    ///
     public init(_ url: URL, name: String, sysImage: String = "link") {
         self.url = url
         self.name = name
@@ -28,7 +28,7 @@ public struct LinkLabel: View {
     }
 
     /// Create a LinkLabel from a string URL
-    /// 
+    ///
     /// - Parameters
     ///     - url: the string URL to link to
     ///     - name: the label text
