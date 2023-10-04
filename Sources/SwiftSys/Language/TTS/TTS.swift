@@ -5,7 +5,9 @@ import AVFoundation
 import AVFAudio
 
 @available(macOS 11, *)
-public class TTS: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
+@available(iOS 17, *)
+@Observable
+public class TTS: NSObject, AVSpeechSynthesizerDelegate {
 
     private var synth: AVSpeechSynthesizer?
 
@@ -57,17 +59,17 @@ public class TTS: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
 
     // delegate, observable
 
-    @Published public var speaking = false
-    @Published public var muted = false
-    @Published public var range = NSRange()
-    @Published public var speechRate = 0.3
-    @Published public var utter = ""
+    public var speaking = false
+ //   public var muted = false
+    public var range = NSRange()
+    public var speechRate = 0.3
+    public var utter = ""
 
     public func speechSynthesizer(
         _: AVSpeechSynthesizer,
         didStart utterance: AVSpeechUtterance) {
         speaking = true
-        muted = false
+      //  muted = false
         utter = utterance.speechString
     }
 

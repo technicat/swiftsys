@@ -4,7 +4,9 @@
 import Speech
 
 @available(macOS 10.15, *)
-public class STT: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
+@available(iOS 17.0, *)
+@Observable
+public class STT: NSObject, SFSpeechRecognizerDelegate {
 
     private func tapNode(_ node: AVAudioInputNode,
                          _ request: SFSpeechAudioBufferRecognitionRequest) throws {
@@ -117,10 +119,10 @@ public class STT: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
 
     // stt delegate
 
-    @Published public var authorized = false
-    @Published public var text = ""
-    @Published public var errorText = ""
-    @Published public var state = STTState.notListening
+    public var authorized = false
+    public var text = ""
+    public var errorText = ""
+    public var state = STTState.notListening
 
     internal var matchWord: Word?
     internal let engine = AVAudioEngine()
