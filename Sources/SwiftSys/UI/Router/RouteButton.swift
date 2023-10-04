@@ -13,7 +13,7 @@ import TipKit
 @available(iOS 17.0, *)
 public struct RouteButton<T: Equatable>: View {
 
-    @EnvironmentObject var router: Router<T>
+    @Environment(Router.self) var router: Router<T>
 
     let title: String
     let image: String

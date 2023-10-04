@@ -7,10 +7,13 @@
 
 import Foundation
 
-@available(macOS 10.15, *)
-public class Router<T: Equatable>: ObservableObject {
 
-    @Published public var path: [T] = []
+@available(macOS 10.15, *)
+@available(iOS 17.0, *)
+@Observable
+public class Router<T: Equatable> {
+
+    public var path: [T] = []
 
     public init() {
     }
