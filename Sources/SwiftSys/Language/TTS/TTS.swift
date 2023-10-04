@@ -60,7 +60,6 @@ public class TTS: NSObject, AVSpeechSynthesizerDelegate {
     // delegate, observable
 
     public var speaking = false
- //   public var muted = false
     public var range = NSRange()
     public var speechRate = 0.3
     public var utter = ""
@@ -69,7 +68,6 @@ public class TTS: NSObject, AVSpeechSynthesizerDelegate {
         _: AVSpeechSynthesizer,
         didStart utterance: AVSpeechUtterance) {
         speaking = true
-      //  muted = false
         utter = utterance.speechString
     }
 

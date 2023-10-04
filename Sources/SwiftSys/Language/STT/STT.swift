@@ -124,10 +124,10 @@ public class STT: NSObject, SFSpeechRecognizerDelegate {
     public var errorText = ""
     public var state = STTState.notListening
 
-    internal var matchWord: Word?
-    internal let engine = AVAudioEngine()
-    internal var request: SFSpeechAudioBufferRecognitionRequest?
-    internal var task: SFSpeechRecognitionTask?
+    @ObservationIgnored internal var matchWord: Word?
+    @ObservationIgnored internal let engine = AVAudioEngine()
+    @ObservationIgnored internal var request: SFSpeechAudioBufferRecognitionRequest?
+    @ObservationIgnored internal var task: SFSpeechRecognitionTask?
 
     public func start(word: Word, lang: Chinese) {
         matchWord = word
