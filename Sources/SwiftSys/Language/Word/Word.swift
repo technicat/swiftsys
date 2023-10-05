@@ -74,24 +74,24 @@ extension Word: Codable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        if let chars = try container.decodeIfPresent(Characters.self, forKey: .cantonese) {
+        if let chars = try? container.decodeIfPresent(Characters.self, forKey: .cantonese) {
             self.cantonese = chars
-        } else if let str = try container.decodeIfPresent(String.self, forKey: .cantonese) {
+        } else if let str = try? container.decodeIfPresent(String.self, forKey: .cantonese) {
             self.cantonese = Characters(str)
         } else {
             // should throw
             self.cantonese = Characters("")
         }
-        if let chars = try container.decodeIfPresent(Characters.self, forKey: .mandarin) {
+        if let chars = try? container.decodeIfPresent(Characters.self, forKey: .mandarin) {
             self.mandarin = chars
-        } else if let str = try container.decodeIfPresent(String.self, forKey: .mandarin) {
+        } else if let str = try? container.decodeIfPresent(String.self, forKey: .mandarin) {
             self.mandarin = Characters(str)
         } else {
             self.mandarin = nil
         }
-        if let chars = try container.decodeIfPresent(Characters.self, forKey: .simplified) {
+        if let chars = try? container.decodeIfPresent(Characters.self, forKey: .simplified) {
             self.simplified = chars
-        } else if let str = try container.decodeIfPresent(String.self, forKey: .simplified) {
+        } else if let str = try? container.decodeIfPresent(String.self, forKey: .simplified) {
             self.simplified = Characters(str)
         } else {
             self.simplified = nil

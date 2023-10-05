@@ -16,7 +16,6 @@ public struct Line: Identifiable, Codable {
     }
 
     enum CodingKeys: String, CodingKey {
-        case id
         case name
         case words
     }
