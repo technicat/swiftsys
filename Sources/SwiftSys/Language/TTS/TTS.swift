@@ -4,7 +4,7 @@
 import AVFoundation
 import AVFAudio
 
-@available(macOS 11, *)
+@available(macOS 14, *)
 @available(iOS 17, *)
 @Observable
 public class TTS: NSObject, AVSpeechSynthesizerDelegate {

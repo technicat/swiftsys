@@ -38,6 +38,7 @@ final class LangTests: XCTestCase {
         XCTAssertThrowsError(try Chinese.language(-1))
     }
 
+    @available(macOS 14, *)
     func testTTS() throws {
         //  XCTAssertFalse(TTS.isSpeaking)
         XCTAssertNoThrow(try TTS().say("我想要中國茶",

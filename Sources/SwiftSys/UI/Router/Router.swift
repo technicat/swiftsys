@@ -7,8 +7,7 @@
 
 import Foundation
 
-
-@available(macOS 10.15, *)
+@available(macOS 14, *)
 @available(iOS 17.0, *)
 @Observable
 public class Router<T: Equatable> {
