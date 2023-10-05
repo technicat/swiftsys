@@ -13,21 +13,21 @@ public extension Item {
         stockImage
     }
 
-    var imagePlace: String {
+    var imagePlace: String? {
         stockImagePlace
     }
 
     var stockImage: UIImage? {
-        guard imageFile.count > 0 else {
+        guard images.count > 0 else {
             return nil
         }
-        return UIImage(named: imageFile[0].image)
+        return UIImage(named: images[0].image)
     }
 
-    var stockImagePlace: String {
-        guard imageFile.count > 0 else {
-            return "Unknown"
+    var stockImagePlace: String? {
+        guard images.count > 0 else {
+            return nil
         }
-        return imageFile[0].place
+        return images[0].place
     }
 }

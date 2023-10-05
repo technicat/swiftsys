@@ -10,7 +10,7 @@ import UIKit
 public struct Postcard: Codable {
 
     public var image: String
-    public var place: String
+    public var place: String?
 
     public init(image: String, place: String) {
         self.image = image
@@ -22,21 +22,21 @@ public struct Item: Codable {
 
     public var word: Word
 
-    public var imageFile: [Postcard]
+    public var images: [Postcard]
 
     public var description: String
 
-    public var tags: [String]
+    public var tags: [String]?
 
     public var resources: [Site]
 
     public init(word: Word,
-                imageFile: [Postcard],
+                images: [Postcard],
                 description: String,
                 tags: [String],
                 resources: [Site]) {
         self.word = word
-        self.imageFile = imageFile
+        self.images = images
         self.description = description
         self.tags = tags
         self.resources = resources

@@ -4,6 +4,10 @@
 extension Item {
 
     public func isTag(_ word: Word) -> Bool {
-        tags.contains(word.id)
+        tags?.contains(word.id) ?? false
+    }
+    
+    public func isTag(_ word: String) -> Bool {
+        tags?.contains(word) ?? false
     }
 }
