@@ -15,7 +15,7 @@ public struct Place: Decodable {
         self.coordinate = coordinate
         self.address = address
     }
-    
+
     enum CodingKeys: String, CodingKey {
         case name
         case links
@@ -34,7 +34,7 @@ public struct Place: Decodable {
 
         let lat = try container.decode(Double.self, forKey: .lat)
         let lon = try container.decode(Double.self, forKey: .lon)
-        
-        self.coordinate = Coord(lat: lat,lon: lon)
+
+        self.coordinate = Coord(lat: lat, lon: lon)
     }
 }
