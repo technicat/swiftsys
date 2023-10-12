@@ -11,10 +11,10 @@ extension Word: Hashable {
     public static func add(_ word: Word) {
         words[word.id] = word
     }
-    
+
     public static func chineseEnglish(_ word: String, _ language: Chinese) -> String {
         Word.words[word]?.chineseEnglish(language)
-        ?? word
+            ?? word
     }
 }
 
