@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 15.0, *)
 @available(macOS 11.0, *)
 public struct Busy: View {
 
@@ -19,6 +20,7 @@ public struct Busy: View {
     public var body: some View {
         if ctr > 0 {
             ProgressView()
+                .controlSize(.large)
         }
     }
 }
