@@ -34,6 +34,6 @@ public class Router<T: Equatable> {
     }
 
     func clear() {
-        path = []
+        path.removeAll()
     }
 }
