@@ -33,7 +33,7 @@ public class Router<T: Equatable> {
         }
     }
 
-    func clear() {
+    public func clear() {
         path.removeAll()
     }
 }
