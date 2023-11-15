@@ -11,12 +11,18 @@ public struct SheetButton: View {
     let text: String
     let sysImage: String
     let localize: Bool
+    let role: ButtonRole?
     let action: () -> Void
 
-    public init(_ text: String, sysImage: String, localize: Bool = true, action: @escaping () -> Void) {
+    public init(_ text: String,
+                sysImage: String,
+                localize: Bool = true,
+                role: ButtonRole? = nil,
+                action: @escaping () -> Void) {
         self.text = text
         self.sysImage = sysImage
         self.localize = localize
+        self.role = role
         self.action = action
     }
 
