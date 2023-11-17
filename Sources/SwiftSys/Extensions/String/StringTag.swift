@@ -24,4 +24,11 @@ public extension String {
         replacing(String.hashtagRegex, with: { match in "\(match.output.1)**\(match.output.2)**" })
     }
 
+    var hashName: String {
+        "#\(self)"
+    }
+
+    var atName: String {
+        "@\(self)"
+    }
 }
