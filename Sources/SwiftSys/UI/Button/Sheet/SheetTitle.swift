@@ -15,6 +15,8 @@ public struct SheetTitle: View {
     }
 
     public var body: some View {
-        Text(LocalizedStringKey(title)).font(.headline)
+        Text(LocalizedStringKey(title))
+            .font(.caption)
+            .multilineTextAlignment(.center)
     }
 }
