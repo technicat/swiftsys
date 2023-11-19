@@ -5,7 +5,7 @@
 import SwiftUI
 
 @available(iOS 15.0, *)
-@available(macOS 11.0, *)
+@available(macOS 12.0, *)
 public struct MastoCodeMenu: View {
 
     @Binding var language: MastoCode

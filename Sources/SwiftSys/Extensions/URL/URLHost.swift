@@ -5,7 +5,7 @@
 import Foundation
 
 extension URL {
-    
+
     var host: String? {
         guard let comp = URLComponents(url: self, resolvingAgainstBaseURL: false) else {
             return nil

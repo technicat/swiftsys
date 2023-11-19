@@ -6,7 +6,7 @@ import SwiftUI
 
 /// menu to select an ISO639.1 (alpha2) enum
 @available(iOS 15.0, *)
-@available(macOS 11.0, *)
+@available(macOS 12.0, *)
 public struct ISO639a2Menu: View {
 
     @Binding var language: ISO639a2

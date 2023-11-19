@@ -8,7 +8,7 @@ import SwiftUI
 /// Button that turns on a bool binding
 /// Typically used for activating sheets
 @available(iOS 15.0, *)
-@available(macOS 11.0, *)
+@available(macOS 12.0, *)
 public struct BoolOnButton: View {
 
     let title: String

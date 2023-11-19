@@ -11,7 +11,7 @@ import SwiftUI
 /// e.g. IconOnlyButtonStyle
 /// rumbles (should be optional)
 @available(iOS 15.0, *)
-@available(macOS 11.0, *)
+@available(macOS 12.0, *)
 public struct ActionButton: View {
     let text: String
     let sysImage: String
