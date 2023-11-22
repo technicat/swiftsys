@@ -11,7 +11,7 @@ public struct DeleteButton: View {
         self.action = action
     }
 
-    var body: some View {
+    public var body: some View {
         ActionButton("Delete", "trash",
                      role: .destructive) {
             action()
