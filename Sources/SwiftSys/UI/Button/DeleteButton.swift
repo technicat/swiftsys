@@ -6,7 +6,7 @@ import SwiftUI
 public struct DeleteButton: View {
 
     let action: () -> Void
-    
+
     public init(action: @escaping () -> Void) {
         self.action = action
     }
