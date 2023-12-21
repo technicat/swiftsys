@@ -2,7 +2,7 @@
 //  Copyright © 2016 Technicat. All rights reserved.
 
 extension Place: Identifiable {
-    public var id: String {
-        name + address
-    }
+  public var id: String {
+    name + address
+  }
 }

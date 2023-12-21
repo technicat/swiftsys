@@ -2,8 +2,8 @@
 //  Copyright (c) 2015 Technicat. All rights reserved.
 
 public enum STTError: Error {
-    case startEngine
-    case noRecognizer
-    case noSampleRate
-    case unavailableRecognizer
+  case startEngine
+  case noRecognizer
+  case noSampleRate
+  case unavailableRecognizer
 }

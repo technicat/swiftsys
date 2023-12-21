@@ -8,16 +8,16 @@ import Foundation
 @available(macOS 13, *)
 @available(iOS 16, *)
 extension Locale.Language: Identifiable {
-    public var id: String {
-        self.maximalIdentifier
-    }
+  public var id: String {
+    self.maximalIdentifier
+  }
 }
 
 /// minimum OS required for LanguageCode
 @available(iOS 16, *)
 @available(macOS 13, *)
 extension Locale.Language: Displayable {
-    public var display: String {
-        "\(region?.identifier.regionName ?? "")  \(script?.identifier.scriptName ?? "") \(languageCode?.display ?? "")"
-    }
+  public var display: String {
+    "\(region?.identifier.regionName ?? "")  \(script?.identifier.scriptName ?? "") \(languageCode?.display ?? "")"
+  }
 }

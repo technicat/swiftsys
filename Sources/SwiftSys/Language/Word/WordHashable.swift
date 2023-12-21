@@ -2,22 +2,22 @@
 //  Copyright (c) 2015 Technicat. All rights reserved.
 
 extension Word: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(id)
+  }
 
-    public static var words: [String: Word] = Dictionary()
+  public static var words: [String: Word] = Dictionary()
 
-    public static func add(_ word: Word) {
-        words[word.id] = word
-    }
+  public static func add(_ word: Word) {
+    words[word.id] = word
+  }
 
-    public static func chineseEnglish(_ word: String, _ language: Chinese) -> String {
-        Word.words[word]?.chineseEnglish(language)
-            ?? word
-    }
+  public static func chineseEnglish(_ word: String, _ language: Chinese) -> String {
+    Word.words[word]?.chineseEnglish(language)
+      ?? word
+  }
 }
 
 public func == (lhs: Word, rhs: Word) -> Bool {
-    lhs.id == rhs.id
+  lhs.id == rhs.id
 }

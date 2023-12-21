@@ -6,7 +6,7 @@ import Foundation
 
 extension Country: Equatable {
 
-    static public func == (lhs: Country, rhs: Country) -> Bool {
-        lhs.id == rhs.id
-    }
+  static public func == (lhs: Country, rhs: Country) -> Bool {
+    lhs.id == rhs.id
+  }
 }

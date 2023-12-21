@@ -4,12 +4,12 @@
 import Foundation
 
 public func == (lhs: Item, rhs: Item) -> Bool {
-    lhs.id == rhs.id
+  lhs.id == rhs.id
 }
 
 extension Item: Identifiable, Equatable {
 
-    public var id: String {
-        word.id
-    }
+  public var id: String {
+    word.id
+  }
 }

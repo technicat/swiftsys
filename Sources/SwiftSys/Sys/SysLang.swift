@@ -5,23 +5,23 @@ import Foundation
 
 @available(iOS 16, *)
 @available(macOS 13, *)
-public extension Sys {
+extension Sys {
 
-    /// current system language
-    static var currentLangCode: Locale.LanguageCode? {
-        Locale.current.language.languageCode
-    }
+  /// current system language
+  public static var currentLangCode: Locale.LanguageCode? {
+    Locale.current.language.languageCode
+  }
 
-    /// current ISO 639 language code
-    static var currentLangID: String? {
-        currentLangCode?.identifier
-    }
+  /// current ISO 639 language code
+  public static var currentLangID: String? {
+    currentLangCode?.identifier
+  }
 
-    /// current localized language name, if available
-    static var currentLangName: String? {
-        guard let ident = currentLangID else {
-            return nil
-        }
-        return ident.languageName
+  /// current localized language name, if available
+  public static var currentLangName: String? {
+    guard let ident = currentLangID else {
+      return nil
     }
+    return ident.languageName
+  }
 }

@@ -7,49 +7,49 @@ import Foundation
 /// convenience functions for formatted date strings
 @available(macOS 12.0, *)
 @available(iOS 15.0, *)
-public extension Date {
+extension Date {
 
-    /// Oct 21, 2015
-    var shortDate: String {
-        formatted(date: .abbreviated, time: .omitted)
-    }
+  /// Oct 21, 2015
+  public var shortDate: String {
+    formatted(date: .abbreviated, time: .omitted)
+  }
 
-    /// October 21, 2015
-    var longDate: String {
-        formatted(date: .long, time: .omitted)
-    }
+  /// October 21, 2015
+  public var longDate: String {
+    formatted(date: .long, time: .omitted)
+  }
 
-    /// Wednesday, October 21, 2015"
-    var dayDate: String {
-        formatted(date: .complete, time: .omitted)
-    }
+  /// Wednesday, October 21, 2015"
+  public var dayDate: String {
+    formatted(date: .complete, time: .omitted)
+  }
 
-    /// 10/21/2015
-    var numDate: String {
-        formatted(date: .numeric, time: .omitted)
-    }
+  /// 10/21/2015
+  public var numDate: String {
+    formatted(date: .numeric, time: .omitted)
+  }
 
-    var shortTime: String {
-        formatted(date: .omitted, time: .shortened)
-    }
+  public var shortTime: String {
+    formatted(date: .omitted, time: .shortened)
+  }
 
-    var standardTime: String {
-        formatted(date: .omitted, time: .standard)
-    }
+  public var standardTime: String {
+    formatted(date: .omitted, time: .standard)
+  }
 
-    var completeTime: String {
-        formatted(date: .omitted, time: .complete)
-    }
+  public var completeTime: String {
+    formatted(date: .omitted, time: .complete)
+  }
 
-    var complete: String {
-        formatted(date: .complete, time: .complete)
-    }
+  public var complete: String {
+    formatted(date: .complete, time: .complete)
+  }
 
-    var timeOrDate: String {
-        Calendar.current.isDateInToday(self) ? shortTime : numDate
-    }
+  public var timeOrDate: String {
+    Calendar.current.isDateInToday(self) ? shortTime : numDate
+  }
 
-    var timeOrDateTime: String {
-        Calendar.current.isDateInToday(self) ? shortTime : complete
-    }
+  public var timeOrDateTime: String {
+    Calendar.current.isDateInToday(self) ? shortTime : complete
+  }
 }

@@ -9,19 +9,19 @@ import SwiftUI
 @available(iOS 16.0, *)
 public struct NavLabel: View {
 
-    let title: String
-    let image: String
-    let dest: any Hashable
+  let title: String
+  let image: String
+  let dest: any Hashable
 
-    public init(_ title: String, _ image: String, _ dest: any Hashable) {
-        self.title = title
-        self.image = image
-        self.dest = dest
-    }
+  public init(_ title: String, _ image: String, _ dest: any Hashable) {
+    self.title = title
+    self.image = image
+    self.dest = dest
+  }
 
-    public var body: some View {
-        NavigationLink(value: dest) {
-            LLabel(title, image)
-        }
+  public var body: some View {
+    NavigationLink(value: dest) {
+      LLabel(title, image)
     }
+  }
 }

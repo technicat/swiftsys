@@ -5,7 +5,7 @@ import Foundation
 
 public enum StringError: Error {
 
-    case urlEncodeFail(_ url: String)
-    case urlDecodeFail(_ url: String)
-    case urlOpenFail(_ url: URL)
+  case urlEncodeFail(_ url: String)
+  case urlDecodeFail(_ url: String)
+  case urlOpenFail(_ url: URL)
 }

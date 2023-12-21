@@ -4,8 +4,8 @@
 
 extension ISO639a2: Displayable {
 
-    public var display: String {
-        // langName provides localization
-        self.rawValue.languageName ?? ISO639a2.names[self] ?? self.rawValue
-    }
+  public var display: String {
+    // langName provides localization
+    self.rawValue.languageName ?? ISO639a2.names[self] ?? self.rawValue
+  }
 }

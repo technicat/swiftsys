@@ -2,9 +2,9 @@
 //  Copyright (c) 2015 Technicat. All rights reserved.
 
 public enum STTState: String {
-    case notListening
-    case listening
-    case fail
-    case success
-    case error
+  case notListening
+  case listening
+  case fail
+  case success
+  case error
 }

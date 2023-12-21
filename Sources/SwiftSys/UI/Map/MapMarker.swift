@@ -7,16 +7,16 @@ import SwiftUI
 @available(macOS 11.0, *)
 public struct MapMarker: View {
 
-    let place: Place
+  let place: Place
 
-    public var body: some View {
-        VStack {
-            Image(systemName: "mappin")
-                .imageScale(.large)
-                .foregroundColor(.red)
-            Text(place.name)
-                .font(.callout)
-                .foregroundColor(.red)
-        }
+  public var body: some View {
+    VStack {
+      Image(systemName: "mappin")
+        .imageScale(.large)
+        .foregroundColor(.red)
+      Text(place.name)
+        .font(.callout)
+        .foregroundColor(.red)
     }
+  }
 }

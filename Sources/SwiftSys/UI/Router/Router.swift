@@ -12,28 +12,28 @@ import Foundation
 @Observable
 public class Router<T: Equatable> {
 
-    public var path: [T] = []
+  public var path: [T] = []
 
-    public init() {
-    }
+  public init() {
+  }
 
-    public func push(_ route: T) {
-        path.append(route)
-    }
+  public func push(_ route: T) {
+    path.append(route)
+  }
 
-    public func pushNew(_ route: T) {
-        if path.last != route {
-            push(route)
-        }
+  public func pushNew(_ route: T) {
+    if path.last != route {
+      push(route)
     }
+  }
 
-    public func pop() {
-        if !path.isEmpty {
-            path.removeLast()
-        }
+  public func pop() {
+    if !path.isEmpty {
+      path.removeLast()
     }
+  }
 
-    public func clear() {
-        path.removeAll()
-    }
+  public func clear() {
+    path.removeAll()
+  }
 }

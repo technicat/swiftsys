@@ -6,7 +6,7 @@ import Foundation
 
 extension Data {
 
-    public init(fromJSON file: String) throws {
-        try self.init(contentsOf: URL(jsonURLWithPath: file))
-    }
+  public init(fromJSON file: String) throws {
+    try self.init(contentsOf: URL(jsonURLWithPath: file))
+  }
 }

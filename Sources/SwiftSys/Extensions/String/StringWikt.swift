@@ -7,28 +7,32 @@ import RegexBuilder
 
 @available(macOS 13, *)
 @available(iOS 16, *)
-public extension String {
+extension String {
 
-    private static let wiktRegex = Regex {
-        "{"
-        Capture(OneOrMore(.word))
-        "}"
-    }
+  private static let wiktRegex = Regex {
+    "{"
+    Capture(OneOrMore(.word))
+    "}"
+  }
 
-    var expandedWikt: String {
-        replacing(String.wiktRegex, with: { match in
-            guard let site = Site(wkty: String(match.output.1)) else {
-                return self
-            }
-            return site.markdown
+  public var expandedWikt: String {
+    replacing(
+      String.wiktRegex,
+      with: { match in
+        guard let site = Site(wkty: String(match.output.1)) else {
+          return self
         }
-        )
-    }
+        return site.markdown
+      }
+    )
+  }
 
-    var markdownWikt: AttributedString? {
-        try? AttributedString(markdown: expandedWikt,
-                              options: AttributedString.MarkdownParsingOptions(interpretedSyntax:
-                                                                                .inlineOnlyPreservingWhitespace))
-    }
+  public var markdownWikt: AttributedString? {
+    try? AttributedString(
+      markdown: expandedWikt,
+      options: AttributedString.MarkdownParsingOptions(
+        interpretedSyntax:
+          .inlineOnlyPreservingWhitespace))
+  }
 
 }

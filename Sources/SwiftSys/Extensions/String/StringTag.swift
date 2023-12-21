@@ -3,32 +3,32 @@ import RegexBuilder
 
 @available(macOS 13, *)
 @available(iOS 16, *)
-public extension String {
+extension String {
 
-    private static let hashtagRegex = Regex {
-        Capture {
-            ChoiceOf {
-                Anchor.startOfLine
-                One(.whitespace)
-            }
-        }
-        Capture {
-            "#"
-            OneOrMore(.word)
-        }
+  private static let hashtagRegex = Regex {
+    Capture {
+      ChoiceOf {
+        Anchor.startOfLine
+        One(.whitespace)
+      }
     }
-    .anchorsMatchLineEndings()
-    .wordBoundaryKind(.default)
+    Capture {
+      "#"
+      OneOrMore(.word)
+    }
+  }
+  .anchorsMatchLineEndings()
+  .wordBoundaryKind(.default)
 
-    var bfTag: String {
-        replacing(String.hashtagRegex, with: { match in "\(match.output.1)**\(match.output.2)**" })
-    }
+  public var bfTag: String {
+    replacing(String.hashtagRegex, with: { match in "\(match.output.1)**\(match.output.2)**" })
+  }
 
-    var hashName: String {
-        "#\(self)"
-    }
+  public var hashName: String {
+    "#\(self)"
+  }
 
-    var atName: String {
-        "@\(self)"
-    }
+  public var atName: String {
+    "@\(self)"
+  }
 }

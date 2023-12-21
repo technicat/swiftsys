@@ -8,22 +8,24 @@ import SwiftUI
 @available(iOS 16, *)
 public struct SystemLanguageMenu: View {
 
-    @Binding var language: Locale.Language
+  @Binding var language: Locale.Language
 
-    public init (_ language: Binding<Locale.Language>) {
-        _language = language
-    }
+  public init(_ language: Binding<Locale.Language>) {
+    _language = language
+  }
 
-    public var body: some View {
-        Menu {
-            ForEach(Locale.Language.systemLanguages) { lang in
-                ActionButton(lang.display,
-                             "character.book.closed") {
-                    language = lang
-                }
-            }
-        } label: {
-            LLabel(language.display, "character.book.closed")
+  public var body: some View {
+    Menu {
+      ForEach(Locale.Language.systemLanguages) { lang in
+        ActionButton(
+          lang.display,
+          "character.book.closed"
+        ) {
+          language = lang
         }
+      }
+    } label: {
+      LLabel(language.display, "character.book.closed")
     }
+  }
 }

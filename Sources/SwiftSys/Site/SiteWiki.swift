@@ -5,12 +5,12 @@ import Foundation
 
 extension Site {
 
-    /// link to wiktionary
-    /// will take care of urlEncoding
-    public init? (wkty chars: String) {
-        guard let url = try? "https://en.wiktionary.org/wiki/\(chars)".urlEncode() else {
-            return nil
-        }
-        self.init(chars, url: url)
+  /// link to wiktionary
+  /// will take care of urlEncoding
+  public init?(wkty chars: String) {
+    guard let url = try? "https://en.wiktionary.org/wiki/\(chars)".urlEncode() else {
+      return nil
     }
+    self.init(chars, url: url)
+  }
 }

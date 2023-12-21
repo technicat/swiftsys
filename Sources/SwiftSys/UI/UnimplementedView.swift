@@ -9,14 +9,14 @@ import SwiftUI
 @available(macOS 14.0, *)
 public struct UnimplementedView: View {
 
-    public init() {
-    }
+  public init() {
+  }
 
-    public var body: some View {
-        ContentUnavailableView {
-            LLabel("unimplemented", "circle.slash")
-        } description: {
-            Text("unimplemented.description")
-        }
+  public var body: some View {
+    ContentUnavailableView {
+      LLabel("unimplemented", "circle.slash")
+    } description: {
+      Text("unimplemented.description")
     }
+  }
 }

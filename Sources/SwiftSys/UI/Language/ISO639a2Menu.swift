@@ -9,21 +9,21 @@ import SwiftUI
 @available(macOS 12.0, *)
 public struct ISO639a2Menu: View {
 
-    @Binding var language: ISO639a2
+  @Binding var language: ISO639a2
 
-    public init (_ language: Binding<ISO639a2>) {
-        _language = language
-    }
+  public init(_ language: Binding<ISO639a2>) {
+    _language = language
+  }
 
-    public var body: some View {
-        Menu {
-            ForEach(ISO639a2.allCases.sorted(by: { $0.display > $1.display })) { lang in
-                ActionButton(lang.display, "character.book.closed") {
-                    language = lang
-                }
-            }
-        } label: {
-            LLabel(language.display, "character.book.closed")
+  public var body: some View {
+    Menu {
+      ForEach(ISO639a2.allCases.sorted(by: { $0.display > $1.display })) { lang in
+        ActionButton(lang.display, "character.book.closed") {
+          language = lang
         }
+      }
+    } label: {
+      LLabel(language.display, "character.book.closed")
     }
+  }
 }

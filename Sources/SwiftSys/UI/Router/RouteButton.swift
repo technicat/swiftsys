@@ -13,26 +13,26 @@ import TipKit
 @available(iOS 17.0, *)
 public struct RouteButton<T: Equatable>: View {
 
-    @Environment(Router.self) var router: Router<T>
+  @Environment(Router.self) var router: Router<T>
 
-    let title: String
-    let image: String
-    let route: T
-    let tip: (any Tip)?
+  let title: String
+  let image: String
+  let route: T
+  let tip: (any Tip)?
 
-    public init(title: String, image: String, route: T, tip: (any Tip)? = nil) {
-        self.title = title
-        self.image = image
-        self.route = route
-        self.tip = tip
+  public init(title: String, image: String, route: T, tip: (any Tip)? = nil) {
+    self.title = title
+    self.image = image
+    self.route = route
+    self.tip = tip
+  }
+
+  public var body: some View {
+    ActionButton(title, image) {
+      if let tip {
+        tip.invalidate(reason: .actionPerformed)
+      }
+      router.pushNew(route)
     }
-
-    public var body: some View {
-        ActionButton(title, image) {
-            if let tip {
-                tip.invalidate(reason: .actionPerformed)
-            }
-            router.pushNew(route)
-        }
-    }
+  }
 }

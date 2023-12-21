@@ -3,16 +3,16 @@
 
 public enum Chinese: String, CaseIterable, Codable {
 
-    case cantonese, mandarin, simplified
+  case cantonese, mandarin, simplified
 }
 
 extension Chinese: Displayable {
-    public var display: String {
-        switch self {
-        case .cantonese: return "Cantonese"
-        case .mandarin: return "Mandarin"
-        case .simplified: return "Simplified"
-        }
+  public var display: String {
+    switch self {
+    case .cantonese: return "Cantonese"
+    case .mandarin: return "Mandarin"
+    case .simplified: return "Simplified"
     }
+  }
 
 }

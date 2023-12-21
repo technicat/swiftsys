@@ -3,11 +3,11 @@
 
 extension Dialog: Hashable {
 
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(id)
+  }
 }
 
 public func == (lhs: Dialog, rhs: Dialog) -> Bool {
-    lhs.id == rhs.id
+  lhs.id == rhs.id
 }

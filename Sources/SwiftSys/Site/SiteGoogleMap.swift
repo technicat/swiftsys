@@ -6,9 +6,10 @@ import MapKit
 
 extension Site {
 
-    /// create a link to Google Maps centered on a coordinate
-    public init? (gmap loc: CLLocationCoordinate2D) {
-        let url = "https://www.google.com/maps/@?api=1&map_action=map&center=\(loc.latitude)%2C\(loc.longitude)"
-        self.init("Google Maps", url: url)
-    }
+  /// create a link to Google Maps centered on a coordinate
+  public init?(gmap loc: CLLocationCoordinate2D) {
+    let url =
+      "https://www.google.com/maps/@?api=1&map_action=map&center=\(loc.latitude)%2C\(loc.longitude)"
+    self.init("Google Maps", url: url)
+  }
 }

@@ -10,21 +10,22 @@ import SwiftUI
 @available(iOS 16, *)
 public struct ISOLanguageCodeMenu: View {
 
-    @Binding var language: Locale.LanguageCode
+  @Binding var language: Locale.LanguageCode
 
-    public init (_ language: Binding<Locale.LanguageCode>) {
-        _language = language
-    }
+  public init(_ language: Binding<Locale.LanguageCode>) {
+    _language = language
+  }
 
-    public var body: some View {
-        Menu {
-            ForEach(Locale.LanguageCode.isoLanguageCodes.sorted(by: { $0.display > $1.display })) { lang in
-                ActionButton(lang.display, "character.book.closed") {
-                    language = lang
-                }
-            }
-        } label: {
-            LLabel(language.display, "character.book.closed")
+  public var body: some View {
+    Menu {
+      ForEach(Locale.LanguageCode.isoLanguageCodes.sorted(by: { $0.display > $1.display })) {
+        lang in
+        ActionButton(lang.display, "character.book.closed") {
+          language = lang
         }
+      }
+    } label: {
+      LLabel(language.display, "character.book.closed")
     }
+  }
 }

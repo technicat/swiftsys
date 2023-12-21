@@ -6,7 +6,7 @@ import Foundation
 
 extension Country: Hashable {
 
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(id)
+  }
 }

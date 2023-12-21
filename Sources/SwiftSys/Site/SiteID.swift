@@ -5,8 +5,8 @@ import Foundation
 
 extension Site {
 
-    /// use URL to key
-    public var id: URL {
-        url
-    }
+  /// use URL to key
+  public var id: URL {
+    url
+  }
 }

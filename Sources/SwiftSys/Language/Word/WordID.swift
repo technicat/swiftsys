@@ -2,7 +2,7 @@
 //  Copyright (c) 2015 Technicat. All rights reserved.
 
 extension Word: Identifiable {
-    public var id: String {
-        cantonese.text
-    }
+  public var id: String {
+    cantonese.text
+  }
 }

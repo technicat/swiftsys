@@ -6,14 +6,16 @@ import SwiftUI
 @available(macOS 12.0, *)
 public struct CancelButton: View {
 
-    public init() {
-    }
+  public init() {
+  }
 
-    public var body: some View {
+  public var body: some View {
 
-        SheetButton("Cancel",
-                    sysImage: "hand.thumbsdown",
-                    role: .cancel) {
-        }
+    SheetButton(
+      "Cancel",
+      sysImage: "hand.thumbsdown",
+      role: .cancel
+    ) {
     }
+  }
 }

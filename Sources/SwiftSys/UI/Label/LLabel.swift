@@ -7,17 +7,20 @@ import SwiftUI
 @available(macOS 11, *)
 public struct LLabel: View {
 
-    let title: String
-    let sysImage: String
+  let title: String
+  let sysImage: String
 
-    public init (_ title: String,
-                 _ sysImage: String) {
-        self.title = title
-        self.sysImage = sysImage
-    }
+  public init(
+    _ title: String,
+    _ sysImage: String
+  ) {
+    self.title = title
+    self.sysImage = sysImage
+  }
 
-    public var body: some View {
-        Label(LocalizedStringKey(title),
-              systemImage: sysImage)
-    }
+  public var body: some View {
+    Label(
+      LocalizedStringKey(title),
+      systemImage: sysImage)
+  }
 }

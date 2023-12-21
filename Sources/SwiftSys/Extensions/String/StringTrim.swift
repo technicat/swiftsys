@@ -3,30 +3,30 @@
 
 import Foundation
 
-public extension String {
+extension String {
 
-    /// remove leading and trailing whitespace
-    var trimWS: String {
-        trimmingCharacters(in: .whitespaces)
-    }
+  /// remove leading and trailing whitespace
+  public var trimWS: String {
+    trimmingCharacters(in: .whitespaces)
+  }
 
-    /// remove leading and trailing whitespace and newlines
-    var trimWSNL: String {
-        trimmingCharacters(in: .whitespacesAndNewlines)
-    }
+  /// remove leading and trailing whitespace and newlines
+  public var trimWSNL: String {
+    trimmingCharacters(in: .whitespacesAndNewlines)
+  }
 
-    /// text is empty or only whitespace
-    var isWS: Bool {
-        trimWS.isEmpty
-    }
+  /// text is empty or only whitespace
+  public var isWS: Bool {
+    trimWS.isEmpty
+  }
 
-    /// text is empty or only whitespace or newlines
-    var isWSNL: Bool {
-        trimWSNL.isEmpty
-    }
+  /// text is empty or only whitespace or newlines
+  public var isWSNL: Bool {
+    trimWSNL.isEmpty
+  }
 
-    /// nil string is whitespace
-    var nilIfEmpty: String? {
-        isWSNL ? nil : self
-    }
+  /// nil string is whitespace
+  public var nilIfEmpty: String? {
+    isWSNL ? nil : self
+  }
 }

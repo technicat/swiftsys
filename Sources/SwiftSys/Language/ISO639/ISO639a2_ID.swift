@@ -3,7 +3,7 @@
 //
 
 extension ISO639a2: Identifiable {
-    public var id: String {
-        self.rawValue
-    }
+  public var id: String {
+    self.rawValue
+  }
 }

@@ -4,22 +4,22 @@
 
 import Foundation
 
-public extension String {
+extension String {
 
-    /// todo - also check MastoCode
-    var languageName: String? {
-        Locale.current.localizedString(forLanguageCode: self)
-    }
+  /// todo - also check MastoCode
+  public var languageName: String? {
+    Locale.current.localizedString(forLanguageCode: self)
+  }
 
-    var scriptName: String? {
-        Locale.current.localizedString(forScriptCode: self)
-    }
+  public var scriptName: String? {
+    Locale.current.localizedString(forScriptCode: self)
+  }
 
-    var regionName: String? {
-        Locale.current.localizedString(forRegionCode: self)
-    }
+  public var regionName: String? {
+    Locale.current.localizedString(forRegionCode: self)
+  }
 
-    var languageIDName: String? {
-        Locale.current.localizedString(forIdentifier: self)
-    }
+  public var languageIDName: String? {
+    Locale.current.localizedString(forIdentifier: self)
+  }
 }

@@ -4,17 +4,17 @@
 /// no need to use these anymore since AppStorage can save enum
 extension Chinese {
 
-    public static func language(_ index: Int) throws -> Chinese {
-        guard index >= 0 && index < Chinese.allCases.count else {
-            throw LanguageError.noLanguage(index)
-        }
-        return Chinese.allCases[index]
+  public static func language(_ index: Int) throws -> Chinese {
+    guard index >= 0 && index < Chinese.allCases.count else {
+      throw LanguageError.noLanguage(index)
     }
+    return Chinese.allCases[index]
+  }
 
-    public static func langCanto(_ index: Int) -> Chinese {
-        guard let lang = try? language(index) else {
-            return .cantonese
-        }
-        return lang
+  public static func langCanto(_ index: Int) -> Chinese {
+    guard let lang = try? language(index) else {
+      return .cantonese
     }
+    return lang
+  }
 }

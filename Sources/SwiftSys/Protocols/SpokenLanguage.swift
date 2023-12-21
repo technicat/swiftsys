@@ -3,6 +3,6 @@
 
 public protocol SpokenLanguage {
 
-    /// locale passed to TTS
-    var spoken: String { get }
+  /// locale passed to TTS
+  var spoken: String { get }
 }

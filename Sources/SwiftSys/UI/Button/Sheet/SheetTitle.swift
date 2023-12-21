@@ -8,15 +8,15 @@ import SwiftUI
 @available(iOS 15.0, *)
 public struct SheetTitle: View {
 
-    let title: String
+  let title: String
 
-    public init(_ title: String) {
-        self.title = title
-    }
+  public init(_ title: String) {
+    self.title = title
+  }
 
-    public var body: some View {
-        Text(LocalizedStringKey(title))
-            .font(.caption)
-            .multilineTextAlignment(.center)
-    }
+  public var body: some View {
+    Text(LocalizedStringKey(title))
+      .font(.caption)
+      .multilineTextAlignment(.center)
+  }
 }

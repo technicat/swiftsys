@@ -5,20 +5,21 @@ import SwiftUI
 @available(macOS 12.0, *)
 public struct FutureDatePicker: View {
 
-    public let title: String
+  public let title: String
 
-    @Binding public var date: Date
+  @Binding public var date: Date
 
-    public init (_ title: String, date: Binding<Date>) {
-        self.title = title
-        _date = date
+  public init(_ title: String, date: Binding<Date>) {
+    self.title = title
+    _date = date
+  }
+
+  public var body: some View {
+    DatePicker(
+      selection: $date,
+      in: PartialRangeFrom(Date.now)
+    ) {
+      LLabel(title, "calendar")
     }
-
-    public var body: some View {
-        DatePicker(
-            selection: $date,
-            in: PartialRangeFrom(Date.now)) {
-            LLabel(title, "calendar")
-        }
-    }
+  }
 }

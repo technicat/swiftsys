@@ -2,40 +2,40 @@
 //  Copyright © 2019 Technicat. All rights reserved.
 
 #if os(iOS)
-import UIKit
+  import UIKit
 #endif
 #if os(macOS)
-import AppKit
-public typealias UIImage = NSImage
+  import AppKit
+  public typealias UIImage = NSImage
 #endif
 
 extension UIImage {
 
-    static func pathJPEG(_ name: String) -> URL {
-        pathSave(name + ".jpg")
-    }
+  static func pathJPEG(_ name: String) -> URL {
+    pathSave(name + ".jpg")
+  }
 
-    static func pathPNG(_ name: String) -> URL {
-        pathSave(name + ".png")
-    }
+  static func pathPNG(_ name: String) -> URL {
+    pathSave(name + ".png")
+  }
 
-    static func pathSave(_ name: String) -> URL {
-        Sys.documentsPath(name)
-    }
+  static func pathSave(_ name: String) -> URL {
+    Sys.documentsPath(name)
+  }
 
-    #if os(iOS)
+  #if os(iOS)
     func writeJPEG(_ name: String) {
-        if let data = jpegData(compressionQuality: 0.8) {
-            let filename = UIImage.pathJPEG(name)
-            try? data.write(to: filename)
-        }
+      if let data = jpegData(compressionQuality: 0.8) {
+        let filename = UIImage.pathJPEG(name)
+        try? data.write(to: filename)
+      }
     }
 
     func writePNG(_ name: String) {
-        if let data = pngData() {
-            let filename = UIImage.pathPNG(name)
-            try? data.write(to: filename)
-        }
+      if let data = pngData() {
+        let filename = UIImage.pathPNG(name)
+        try? data.write(to: filename)
+      }
     }
-    #endif
+  #endif
 }

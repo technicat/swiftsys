@@ -2,11 +2,11 @@
 //  Copyright © 2019 Technicat. All rights reserved.
 
 public struct Country: Decodable {
-    public var name: String
-    public var regions: [Region]
+  public var name: String
+  public var regions: [Region]
 
-    public init(name: String, regions: [Region]) {
-        self.name = name
-        self.regions = regions
-    }
+  public init(name: String, regions: [Region]) {
+    self.name = name
+    self.regions = regions
+  }
 }

@@ -1,10 +1,11 @@
-@testable import SwiftSys
-import XCTest
 import Foundation
+import XCTest
+
+@testable import SwiftSys
 
 final class JSONTests: XCTestCase {
 
-    func testJSON() throws {
-        XCTAssertThrowsError(try Sys.jsonPath("jsonfile"))
-    }
+  func testJSON() throws {
+    XCTAssertThrowsError(try Sys.jsonPath("jsonfile"))
+  }
 }

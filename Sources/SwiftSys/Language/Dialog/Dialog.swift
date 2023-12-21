@@ -3,11 +3,11 @@
 
 public struct Dialog: Codable {
 
-    public var name: String
-    public var lines: [Line] = []
+  public var name: String
+  public var lines: [Line] = []
 
-    public init(name: String, lines: [Line]) {
-        self.name = name
-        self.lines = lines
-    }
+  public init(name: String, lines: [Line]) {
+    self.name = name
+    self.lines = lines
+  }
 }

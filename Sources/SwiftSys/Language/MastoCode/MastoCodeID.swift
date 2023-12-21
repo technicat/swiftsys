@@ -3,7 +3,7 @@
 //
 
 extension MastoCode: Identifiable {
-    public var id: String {
-        self.rawValue
-    }
+  public var id: String {
+    self.rawValue
+  }
 }

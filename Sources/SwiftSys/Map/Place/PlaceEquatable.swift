@@ -3,7 +3,7 @@
 
 extension Place: Equatable {
 
-    static public func == (lhs: Place, rhs: Place) -> Bool {
-        lhs.id == rhs.id
-    }
+  static public func == (lhs: Place, rhs: Place) -> Bool {
+    lhs.id == rhs.id
+  }
 }

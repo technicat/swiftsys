@@ -3,7 +3,7 @@
 
 extension Dialog: Identifiable {
 
-    public var id: String {
-        name
-    }
+  public var id: String {
+    name
+  }
 }

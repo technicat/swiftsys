@@ -9,15 +9,15 @@ import SwiftUI
 @available(iOS 15.0, *)
 public struct CancelOffButton: View {
 
-    @Binding var doit: Bool
+  @Binding var doit: Bool
 
-    public init(_ doit: Binding<Bool>) {
-        _doit = doit
-    }
+  public init(_ doit: Binding<Bool>) {
+    _doit = doit
+  }
 
-    public var body: some View {
-        Button("cancel", role: .cancel) {
-            doit = false
-        }
+  public var body: some View {
+    Button("cancel", role: .cancel) {
+      doit = false
     }
+  }
 }

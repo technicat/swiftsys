@@ -6,16 +6,16 @@ import Foundation
 import SwiftUI
 
 #if os(iOS)
-@available(iOS 15.0, *)
-public struct SettingsButton: View {
+  @available(iOS 15.0, *)
+  public struct SettingsButton: View {
 
     public init() {
     }
 
     public var body: some View {
-        ActionButton("settings.open", "gearshape") {
-            Sys.settings()
-        }
+      ActionButton("settings.open", "gearshape") {
+        Sys.settings()
+      }
     }
-}
+  }
 #endif

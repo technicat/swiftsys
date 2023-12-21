@@ -4,7 +4,7 @@
 ///
 extension String: Identifiable {
 
-    public var id: String {
-        self
-    }
+  public var id: String {
+    self
+  }
 }

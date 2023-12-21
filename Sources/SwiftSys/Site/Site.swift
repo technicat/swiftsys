@@ -6,27 +6,27 @@ import Foundation
 /// associate a name with a URL, basically a descriptor of a website
 public struct Site {
 
-    public var name: String
-    public var url: URL
+  public var name: String
+  public var url: URL
 
-    public init(_ name: String, URL: URL) {
-        self.name = name
-        self.url = URL
-    }
+  public init(_ name: String, URL: URL) {
+    self.name = name
+    self.url = URL
+  }
 
-    public init?(_ name: String, url: String) {
-        if let uurl = URL(string: url) {
-            self.init(name, URL: uurl)
-        } else {
-            return nil
-        }
+  public init?(_ name: String, url: String) {
+    if let uurl = URL(string: url) {
+      self.init(name, URL: uurl)
+    } else {
+      return nil
     }
+  }
 }
 
 extension Site: Codable {
 
-    enum CodingKeys: String, CodingKey {
-        case name
-        case url = "URL"
-    }
+  enum CodingKeys: String, CodingKey {
+    case name
+    case url = "URL"
+  }
 }
