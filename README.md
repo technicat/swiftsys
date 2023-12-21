@@ -16,7 +16,7 @@ In-progress, this is a hodgepodge of Swift and SwiftUI code that I reuse among a
 - A Site class encapsulating URLs with support for markdown and various sites
 - misc stuff
 
-Formatted and linted with [SwiftLint](https://github.com/realm/SwiftLint).
+Formatted and linted with [swift-format](https://github.com/apple/swift-format).
 
 Should follow [Swift API guidelines](https://www.swift.org/documentation/api-design-guidelines/).
 
