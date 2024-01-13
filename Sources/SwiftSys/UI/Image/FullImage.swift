@@ -9,6 +9,7 @@
   import Foundation
   import SwiftUI
 
+@available(iOS 17.0, *)
   public struct FullImage: View {
 
     let image: UIImage
@@ -30,7 +31,8 @@
     }
   }
 
-  public struct FullableImage: View {
+@available(iOS 17.0, *)
+public struct FullableImage: View {
 
     @State var full = false
 
@@ -48,9 +50,10 @@
           full = true
         }
         .fullScreenCover(isPresented: $full) {
-          FullImage(image, full: $full)
-            .onTapGesture {
-              full = false
+            PanZoomView { FullImage(image, full: $full)
+                    .onTapGesture {
+                        full = false
+                    }
             }
         }
     }
