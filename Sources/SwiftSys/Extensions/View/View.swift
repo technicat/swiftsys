@@ -10,6 +10,7 @@ extension View {
   /// make the View round
   /// - Parameters
   ///     - radius: radius of the circle, should be half the width/height of the View
+  @warn_unqualified_access
   public func round(_ radius: CGFloat) -> some View {
     self.roundedSquare(radius, width: radius * 2)
   }
