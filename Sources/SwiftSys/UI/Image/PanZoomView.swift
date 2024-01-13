@@ -12,9 +12,9 @@ public struct PanZoomView<Content: View>: View {
 
   @ViewBuilder let content: () -> Content
 
-    public init(_ content: @escaping () -> Content) {
-      self.content = content
-    }
+  public init(_ content: @escaping () -> Content) {
+    self.content = content
+  }
 
   private var totalZoom: Double {
     zoom * mag
