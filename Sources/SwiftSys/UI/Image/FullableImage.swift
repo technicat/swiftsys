@@ -1,14 +1,7 @@
-//
-//  FullImage.swift
-//
-//
-//  Created by Philip Chu on 9/16/23.
-//
+import Foundation
+import SwiftUI
 
 #if os(iOS)
-  import Foundation
-  import SwiftUI
-
   @available(iOS 17.0, *)
   public struct FullableImage: View {
 

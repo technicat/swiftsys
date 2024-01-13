@@ -5,10 +5,10 @@
 //  Created by Philip Chu on 9/16/23.
 //
 
-#if os(iOS)
-  import Foundation
-  import SwiftUI
+import Foundation
+import SwiftUI
 
+#if os(iOS)
   @available(iOS 17.0, *)
   public struct FullImage: View {
 

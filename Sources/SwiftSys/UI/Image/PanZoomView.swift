@@ -10,7 +10,7 @@ public struct PanZoomView<Content: View>: View {
   @State private var offset = CGSize()
   @State private var trans = CGSize()
 
-  @ViewBuilder let content: () -> Content
+  @ViewBuilder private let content: () -> Content
 
   public init(_ content: @escaping () -> Content) {
     self.content = content
