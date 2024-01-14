@@ -20,4 +20,10 @@ extension View {
     self.frame(width: width, height: width)
       .cornerRadius(radius)
   }
+
+  @available(iOS 17.0, *)
+  @warn_unqualified_access
+  public func panZoom() -> some View {
+    PanZoomView { self }
+  }
 }
