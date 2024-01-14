@@ -15,6 +15,7 @@ extension View {
     self.roundedSquare(radius, width: radius * 2)
   }
 
+  @warn_unqualified_access
   public func roundedSquare(_ radius: CGFloat = 0, width: CGFloat) -> some View {
     self.frame(width: width, height: width)
       .cornerRadius(radius)
