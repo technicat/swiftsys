@@ -37,6 +37,12 @@ extension String {
     }
   }
 
+  /// convenience wrapper to access URL
+  /// returns it as an optional instead of throwing
+  public var ourl: URL? {
+    try? url()
+  }
+
   /// create an https URL from this string (i.e.prepends the https:// prefix)
   /// - Parameters
   ///     - urlencode: whether to urlencode the string
