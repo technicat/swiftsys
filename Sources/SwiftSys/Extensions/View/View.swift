@@ -21,7 +21,8 @@ extension View {
       .cornerRadius(radius)
   }
 
-  @available(iOS 17.0, *)
+    @available(macOS 14, *)
+    @available(iOS 17.0, *)
   @warn_unqualified_access
   public func panZoom() -> some View {
     PanZoomView { self }
