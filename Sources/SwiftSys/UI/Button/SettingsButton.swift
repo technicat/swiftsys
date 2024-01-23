@@ -13,7 +13,7 @@ import SwiftUI
     }
 
     public var body: some View {
-      ActionButton("settings.open", "gearshape") {
+      ActionButton("Settings", "gearshape") {
         Sys.settings()
       }
     }
