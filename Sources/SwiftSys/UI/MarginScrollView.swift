@@ -7,7 +7,7 @@ public struct MarginScrollView<Content: View>: View {
 
   @ViewBuilder let scroll: () -> Content
 
-    public var body: some View {
+  public var body: some View {
     ScrollView {
       scroll()
     }
