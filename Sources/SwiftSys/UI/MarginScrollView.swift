@@ -6,12 +6,12 @@ public struct MarginScrollView<Content: View>: View {
 
   let margin = 10
 
- let content: Content
-    
-    public init(@ViewBuilder let content: @escaping () -> Content) {
-        self.content = content()
-    }
-    
+  let content: Content
+
+  public init(@ViewBuilder let content: @escaping () -> Content) {
+    self.content = content()
+  }
+
   public var body: some View {
     ScrollView {
       content
