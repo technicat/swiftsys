@@ -19,7 +19,7 @@ extension String {
     Locale.current.localizedString(forRegionCode: self)
   }
 
-  public var languageIDName: String? {
-    Locale.current.localizedString(forIdentifier: self)
+  public var languageIDName: String {
+    Locale.current.localizedString(forIdentifier: self) ?? self
   }
 }
