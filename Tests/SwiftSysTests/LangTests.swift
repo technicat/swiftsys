@@ -13,11 +13,6 @@ final class LangTests: XCTestCase {
     XCTAssertEqual(ISO639a2.en.display, "English")
   }
 
-  func testMastoCode() throws {
-    XCTAssertEqual(MastoCode.en.rawValue, "en")
-    XCTAssertEqual(MastoCode.en.display, "English")
-  }
-
   @available(iOS 16, *)
   @available(macOS 13, *)
   func testLang() throws {

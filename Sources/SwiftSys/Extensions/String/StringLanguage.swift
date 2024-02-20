@@ -6,7 +6,6 @@ import Foundation
 
 extension String {
 
-  /// todo - also check MastoCode
   public var languageName: String? {
     Locale.current.localizedString(forLanguageCode: self)
   }
