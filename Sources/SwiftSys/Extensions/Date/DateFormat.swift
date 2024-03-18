@@ -19,7 +19,7 @@ extension Date {
     formatted(date: .long, time: .omitted)
   }
 
-  /// Wednesday, October 21, 2015"
+  /// Wednesday, October 21, 2015
   public var dayDate: String {
     formatted(date: .complete, time: .omitted)
   }
