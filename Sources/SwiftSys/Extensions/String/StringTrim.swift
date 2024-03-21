@@ -26,7 +26,15 @@ extension String {
   }
 
   /// nil string is whitespace
-  public var nilIfEmpty: String? {
+  public var orNil: String? {
     isWSNL ? nil : self
   }
 }
+
+extension Array {
+/// nil string is whitespace
+public var orNil: Array? {
+  isEmpty ? nil : self
+}
+}
+
