@@ -17,8 +17,4 @@ extension String {
   public var regionName: String? {
     Locale.current.localizedString(forRegionCode: self)
   }
-
-  public var languageIDName: String {
-    Locale.current.localizedString(forIdentifier: self) ?? self
-  }
 }
