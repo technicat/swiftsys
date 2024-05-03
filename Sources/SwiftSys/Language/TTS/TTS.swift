@@ -16,10 +16,11 @@ public class TTS: NSObject, AVSpeechSynthesizerDelegate {
     synth = nil
   }
 
+    // todo - pass in language string so this is more reusable
   public func say(
     _ words: String,
     delegate: AVSpeechSynthesizerDelegate? = nil,
-    language: Chinese = Chinese.cantonese,
+    language: String, // Chinese = Chinese.cantonese,
     rate: Float = 0.3,
     volume: Float = 1.0
   ) throws {
@@ -38,7 +39,7 @@ public class TTS: NSObject, AVSpeechSynthesizerDelegate {
 
     let utterance = AVSpeechUtterance(string: words)
     // should we precreate voices?
-    guard let voice = AVSpeechSynthesisVoice(language: language.spoken) else {
+      guard let voice = AVSpeechSynthesisVoice(language: language) else { // .spoken) else {
       throw LanguageError.noVoice(language)
     }
     utterance.voice = voice

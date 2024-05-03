@@ -3,6 +3,6 @@
 
 public enum LanguageError: Error {
 
-  case noVoice(_ lang: Chinese)
+  case noVoice(_ lang: String) // Chinese)
   case noLanguage(_ index: Int)
 }
