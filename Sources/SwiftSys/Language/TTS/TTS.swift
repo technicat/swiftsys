@@ -20,7 +20,7 @@ public class TTS: NSObject, AVSpeechSynthesizerDelegate {
   public func say(
     _ words: String,
     delegate: AVSpeechSynthesizerDelegate? = nil,
-    language: String, // Chinese = Chinese.cantonese,
+    language: String = "en", // Chinese = Chinese.cantonese,
     rate: Float = 0.3,
     volume: Float = 1.0
   ) throws {
